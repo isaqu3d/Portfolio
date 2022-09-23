@@ -1,4 +1,4 @@
-import CardInfo from "../components/CardInfo";
+import CardText from "../components/CardText";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
         justifyContent: "center",
       }}
     >
-      <CardInfo />
+      <CardText />
     </div>
   );
 }
