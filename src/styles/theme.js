@@ -1,8 +1,34 @@
 import { extendTheme } from "@chakra-ui/react";
+import { mode } from "@chakra-ui/theme-tools";
 
 const customTheme = {
   config: {
-    initialColorMode: "dark",
+    initialColorMode: "light",
+    useSystemColorMode: true,
+  },
+
+  styles: {
+    global: (props) => ({
+      body: {
+        bg: mode("#f0e7db", "#202023")(props),
+      },
+    }),
+  },
+
+  components: {
+    Heading: {
+      variants: {
+        "section-title": {
+          textDecoration: "underline",
+          fontSize: 20,
+          textUnderlineOffset: 6,
+          textDecorationColor: "#525252",
+          textDecorationThickness: 4,
+          marginTop: 3,
+          marginBottom: 4,
+        },
+      },
+    },
   },
 
   breakpoints: {
@@ -38,12 +64,11 @@ const customTheme = {
     400: "#4A746F",
   },
 
-  styles: {
-    global: {
-      body: {
-        bg: "background.500",
-      },
-    },
+  Link: {
+    baseStyle: (props) => ({
+      color: mode("#3d7aed", "#ff63c3")(props),
+      textUnderlineOffset: 3,
+    }),
   },
 };
 
