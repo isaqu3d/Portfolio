@@ -71,7 +71,9 @@ export default function Home() {
             Fala DEVs, Sou um desenvolvedor Web e Mobile Junior. Sou um grande
             entusiasta da tecnologia e um apaixonado por programação. Atualmente
             estudo focado as seguintes tech: ReactJS, NextJS, TailwindCSS e
-            CSS-In-JS.
+            CSS-In-JS. Pretendo me tornar um programador Full-Stack e para isso
+            eu trabalho e estudo muito para conseguir realizar essa meta. E
+            então DEVs... Bora codar!
           </Paragraph>
         </Section>
         <Box align="center">
