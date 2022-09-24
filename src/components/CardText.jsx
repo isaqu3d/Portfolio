@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, useColorModeValue } from "@chakra-ui/react";
 
 export default function CardText() {
   return (
@@ -8,7 +8,7 @@ export default function CardText() {
       p={3}
       textAlign="center"
       css={{ backdropFilter: "blur(10px)" }}
-      background="gray.200"
+      bg={useColorModeValue("whiteAlpha.500", "whiteAlpha.200")}
       color="white.100"
     >
       Olá, Eu sou um desenvolvedor Web e Mobile
