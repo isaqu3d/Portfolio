@@ -1,3 +1,7 @@
+import Image from "next/image";
+import NextLink from "next/link";
+
+import { ChevronRightIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
@@ -7,9 +11,6 @@ import {
   List,
   ListItem,
 } from "@chakra-ui/react";
-
-import Image from "next/image";
-import NextLink from "next/link";
 
 import { IoLogoGithub, IoLogoInstagram, IoLogoLinkedin } from "react-icons/io5";
 
@@ -23,7 +24,6 @@ export default function Home() {
     <>
       <Container>
         <CardText />
-
         <Box
           display="flex"
           alignItems="center"
@@ -64,7 +64,7 @@ export default function Home() {
 
         <Section>
           <Heading as="h3" variant="section-title">
-            Trabalho
+            Sobre mim
           </Heading>
 
           <Paragraph>
@@ -72,11 +72,15 @@ export default function Home() {
             entusiasta da tecnologia e um apaixonado por programação. Atualmente
             estudo focado as seguintes tech: ReactJS, NextJS, TailwindCSS e
             CSS-In-JS.
-            <NextLink href="/works/inkdrop" passHref scroll={false}>
-              <Link>Inkdrop</Link>
-            </NextLink>
           </Paragraph>
         </Section>
+        <Box align="center">
+          <NextLink href="/projects">
+            <Button colorScheme="teal" rightIcon={<ChevronRightIcon />}>
+              Projetos
+            </Button>
+          </NextLink>
+        </Box>
 
         <Section delay={0.2}>
           <Heading as="h3" variant="section-title">
@@ -102,7 +106,7 @@ export default function Home() {
 
         <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
-            I ♥
+            Eu ♥
           </Heading>
           <Paragraph>Musica, Jogar, Codar, Ler, Aprender</Paragraph>
         </Section>
