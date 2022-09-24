@@ -9,7 +9,7 @@ export default function CardText() {
       textAlign="center"
       css={{ backdropFilter: "blur(10px)" }}
       bg={useColorModeValue("whiteAlpha.500", "whiteAlpha.200")}
-      color="white.100"
+      color={useColorModeValue("black.500", "white.200")}
     >
       Olá, Eu sou um desenvolvedor Web e Mobile
     </Box>
