@@ -3,7 +3,7 @@ import { mode } from "@chakra-ui/theme-tools";
 
 const customTheme = {
   config: {
-    initialColorMode: "dark",
+    initialColorMode: "light",
     useSystemColorMode: true,
   },
 
