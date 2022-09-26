@@ -14,9 +14,9 @@ import {
 
 import { IoLogoGithub, IoLogoInstagram, IoLogoLinkedin } from "react-icons/io5";
 
-import { BioSection, BioYear } from "../components/BioSection";
+import Bio from "../components/Bio";
 import CardText from "../components/CardText";
-import Paragraph from "../components/Paragraph";
+import { Paragraph } from "../components/Paragraph";
 import Section from "../components/Section";
 
 export default function Home() {
@@ -67,15 +67,14 @@ export default function Home() {
             Sobre mim
           </Heading>
 
-          <Paragraph>
+          <Paragraph textIndent={["0", "0", "0"]}>
             Fala DEVs, Sou um desenvolvedor Web e Mobile Junior. Sou um grande
             entusiasta da tecnologia e um apaixonado por programação. Atualmente
-            estudo focado as seguintes tech: ReactJS, NextJS, TailwindCSS e
-            CSS-In-JS. Pretendo me tornar um programador Full-Stack e para isso
-            eu trabalho e estudo muito para conseguir realizar essa meta. E
-            então DEVs... Bora codar!
+            estudo focado as seguintes eu trabalho e estudo muito para conseguir
+            realizar essa meta. E então DEVs... Bora codar!
           </Paragraph>
         </Section>
+
         <Box align="center">
           <NextLink href="/projects">
             <Button colorScheme="teal" rightIcon={<ChevronRightIcon />}>
@@ -85,25 +84,7 @@ export default function Home() {
         </Box>
 
         <Section delay={0.2}>
-          <Heading as="h3" variant="section-title">
-            Bio
-          </Heading>
-          <BioSection>
-            <BioYear>2002</BioYear>
-            Nasci em Fortaleza - CE, Brasil.
-          </BioSection>
-
-          <BioSection>
-            <BioYear>2020</BioYear>
-            Comecei a conhecer a área de programação e me apaixonando pela área
-          </BioSection>
-
-          <BioSection>
-            <BioYear>2022</BioYear>
-            Comecei a estudar focado e agora faço parte do time de
-            <span> &quot;Dev Voluntário&quot; </span>
-            na Tech Pro Bem
-          </BioSection>
+          <Bio />
         </Section>
 
         <Section delay={0.3}>
