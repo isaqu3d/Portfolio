@@ -2,22 +2,13 @@ import Image from "next/image";
 import NextLink from "next/link";
 
 import { ChevronRightIcon } from "@chakra-ui/icons";
-import {
-  Box,
-  Button,
-  Container,
-  Heading,
-  Link,
-  List,
-  ListItem,
-} from "@chakra-ui/react";
-
-import { IoLogoGithub, IoLogoInstagram, IoLogoLinkedin } from "react-icons/io5";
+import { Box, Button, Container, Heading } from "@chakra-ui/react";
 
 import Bio from "../components/Bio";
 import CardText from "../components/CardText";
 import { Paragraph } from "../components/Paragraph";
 import Section from "../components/Section";
+import SocialMedia from "../components/SocialMedia";
 
 export default function Home() {
   return (
@@ -95,52 +86,7 @@ export default function Home() {
         </Section>
 
         <Section delay={0.3}>
-          <Heading as="h3" variant="section-title">
-            Conecte-se Comigo
-          </Heading>
-          <List>
-            <ListItem>
-              <Link
-                href="https://www.instagram.com/_isaque.s_/"
-                target="_blank"
-              >
-                <Button
-                  variant="ghost"
-                  colorScheme="teal"
-                  leftIcon={<IoLogoInstagram />}
-                >
-                  @_isaque.s_
-                </Button>
-              </Link>
-            </ListItem>
-
-            <ListItem>
-              <Link
-                href="https://www.linkedin.com/in/isaque-de-sousa/"
-                target="_blank"
-              >
-                <Button
-                  variant="ghost"
-                  colorScheme="teal"
-                  leftIcon={<IoLogoLinkedin />}
-                >
-                  @linkedln
-                </Button>
-              </Link>
-            </ListItem>
-
-            <ListItem>
-              <Link href="https://github.com/X-SpeedBlack-X" target="_blank">
-                <Button
-                  variant="ghost"
-                  colorScheme="teal"
-                  leftIcon={<IoLogoGithub />}
-                >
-                  @GitHub
-                </Button>
-              </Link>
-            </ListItem>
-          </List>
+          <SocialMedia />
         </Section>
       </Container>
     </>
