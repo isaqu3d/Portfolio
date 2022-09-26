@@ -19,7 +19,8 @@ export default function Home() {
             display="inline-block"
             borderRadius="full"
             overflow="hidden"
-            h="300px"
+            h={["150px", "250px"]}
+            w={["150px", "250px"]}
           >
             <Image
               src="/avatar.png"
