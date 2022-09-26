@@ -3,7 +3,7 @@ import { mode } from "@chakra-ui/theme-tools";
 
 const customTheme = {
   config: {
-    initialColorMode: "light",
+    initialColorMode: "dark",
     useSystemColorMode: true,
   },
 
@@ -12,6 +12,13 @@ const customTheme = {
       body: {
         bg: mode("#f0e7db", "#202023")(props),
       },
+    }),
+  },
+
+  Link: {
+    baseStyle: (props) => ({
+      color: mode("#3d7aed", "#ff63c3")(props),
+      textUnderlineOffset: 3,
     }),
   },
 
@@ -62,13 +69,6 @@ const customTheme = {
   blue: {
     300: "#73C9BE",
     400: "#4A746F",
-  },
-
-  Link: {
-    baseStyle: (props) => ({
-      color: mode("#3d7aed", "#ff63c3")(props),
-      textUnderlineOffset: 3,
-    }),
   },
 };
 
