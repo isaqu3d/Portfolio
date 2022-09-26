@@ -14,7 +14,24 @@ export default function Home() {
   return (
     <>
       <Container>
+        <Box pb={5} mt={{ base: 4, md: 0 }} ml={{ md: 6 }} textAlign="center">
+          <Box
+            display="inline-block"
+            borderRadius="full"
+            overflow="hidden"
+            h="300px"
+          >
+            <Image
+              src="/avatar.png"
+              alt="Imagem de perfil"
+              width="300px"
+              height="300px"
+            />
+          </Box>
+        </Box>
+
         <CardText />
+
         <Box
           display="flex"
           alignItems="center"
@@ -45,7 +62,7 @@ export default function Home() {
             >
               <Image
                 src="/profile.jpeg"
-                alt="Profile image"
+                alt="Imagem de perfil"
                 width="100%"
                 height="100%"
               />
@@ -66,13 +83,15 @@ export default function Home() {
           </Paragraph>
         </Section>
 
-        <Box align="center">
-          <NextLink href="/projects">
-            <Button colorScheme="teal" rightIcon={<ChevronRightIcon />}>
-              Projetos
-            </Button>
-          </NextLink>
-        </Box>
+        <Section delay={0.2}>
+          <Box align="center">
+            <NextLink href="/projects">
+              <Button colorScheme="teal" rightIcon={<ChevronRightIcon />}>
+                Projetos
+              </Button>
+            </NextLink>
+          </Box>
+        </Section>
 
         <Section delay={0.2}>
           <Bio />
