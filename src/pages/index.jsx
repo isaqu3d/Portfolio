@@ -14,23 +14,6 @@ export default function Home() {
   return (
     <>
       <Container>
-        <Box pb={5} mt={{ base: 4, md: 0 }} ml={{ md: 6 }} textAlign="center">
-          <Box
-            display="inline-block"
-            borderRadius="full"
-            overflow="hidden"
-            h={["150px", "250px"]}
-            w={["150px", "250px"]}
-          >
-            <Image
-              src="/avatar.png"
-              alt="Imagem de perfil"
-              width="300px"
-              height="300px"
-            />
-          </Box>
-        </Box>
-
         <CardText />
 
         <Box
