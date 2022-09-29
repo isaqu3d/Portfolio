@@ -1,4 +1,5 @@
-import { Container, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Box, Container, Heading, SimpleGrid } from "@chakra-ui/react";
+import GitHubCalendar from "react-github-calendar";
 import Section from "../components/Section";
 import SkillsCard from "../components/SkillsCard";
 import { SKILLS_CARD } from "../utils/skills-card";
@@ -46,6 +47,20 @@ export default function Skills() {
             ))}
           </SimpleGrid>
         </Section>
+
+        <Heading as="h3" variant="section-title" fontSize={20}>
+          Commits
+        </Heading>
+        <Box>
+          <GitHubCalendar
+            username="x-speedblack-x"
+            year={new Date().getFullYear()}
+            color="#cd5ff8"
+            fontSize={12}
+            blockSize={14}
+            blockMargin={5}
+          />
+        </Box>
       </Container>
     </>
   );
