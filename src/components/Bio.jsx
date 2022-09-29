@@ -11,8 +11,6 @@ export const BioYear = styled.span`
   margin-right: 1em;
 `;
 
-import React from "react";
-
 export default function Bio() {
   return (
     <>
