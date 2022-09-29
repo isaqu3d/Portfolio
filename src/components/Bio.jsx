@@ -25,14 +25,14 @@ export default function Bio() {
       <BioSection>
         <BioYear>2020</BioYear>
         Comecei a conhecer a área de programação e cada vez mais estou me
-        apaixonando pela área
+        apaixonando pela área.
       </BioSection>
 
       <BioSection>
         <BioYear>2022</BioYear>
         Comecei a estudar focado e agora faço parte do time de
         <span> &quot;Dev Voluntário&quot; </span>
-        na Tech Pro Bem
+        na Tech Pro Bem.
       </BioSection>
     </>
   );
