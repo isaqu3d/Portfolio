@@ -57,7 +57,7 @@ export default function Skills() {
             year={new Date().getFullYear()}
             color="#cd5ff8"
             hideColorLegend
-            fontSize={14}
+            fontSize={18}
             blockSize={14}
             blockMargin={5}
           />
