@@ -14,7 +14,6 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
-import { useRouter } from "next/router";
 
 import { IoLogoGithub } from "react-icons/io5";
 import Logo from "./Logo";
@@ -22,7 +21,7 @@ import ThemeToggleButton from "./ThemeToggleButton";
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href;
-  const inactiveColor = useColorModeValue("gray200", "whiteAlpha.900");
+  const inactiveColor = useColorModeValue("gray.200", "whiteAlpha.900");
   return (
     <NextLink href={href} passHref scroll={false}>
       <Link
@@ -40,7 +39,6 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
 
 export default function Navbar(props) {
   const { path } = props;
-  const router = useRouter();
 
   return (
     <Box
@@ -67,22 +65,17 @@ export default function Navbar(props) {
         </Flex>
 
         <Stack
+          flexGrow={1}
           direction={{ base: "column", md: "row" }}
           display={{ base: "none", md: "flex" }}
-          width={{ base: "full", md: "auto" }}
+          /*   width={{ base: "full", md: "auto" }} */
           alignItems="center"
-          flexGrow={1}
-          mt={{ base: 4, md: 0 }}
+          /*    mt={{ base: 4, md: 0 }} */
         >
           <LinkItem href="/projects" path={path}>
             Projetos
           </LinkItem>
-          {/*  <Link
-            href="/"
-            className={router.pathname === "/" ? "bg:'#3333" : "#fff"}
-          >
-            teste
-          </Link> */}
+
           <LinkItem href="/skills" path={path}>
             Habilidades
           </LinkItem>
