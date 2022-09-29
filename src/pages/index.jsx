@@ -59,10 +59,11 @@ export default function Home() {
             Sobre mim
           </Heading>
 
-          <Paragraph textIndent={["0", "0", "0"]}>
+          <Paragraph>
             Fala DEVs, Sou um desenvolvedor Web e Mobile Junior. Sou um grande
             entusiasta da tecnologia e um apaixonado por programação. Atualmente
-            estudo focado as seguintes eu trabalho e estudo muito para conseguir
+            estudo focado as seguintes Tech: ReactJS, NextJS, TypeScript
+            ,TailwindCSS, CSS-In-JS. eu trabalho e estudo muito para conseguir
             realizar essa meta. E então DEVs... Bora codar!
           </Paragraph>
         </Section>
