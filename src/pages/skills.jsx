@@ -56,7 +56,8 @@ export default function Skills() {
             username="x-speedblack-x"
             year={new Date().getFullYear()}
             color="#cd5ff8"
-            fontSize={12}
+            hideColorLegend
+            fontSize={14}
             blockSize={14}
             blockMargin={5}
           />
