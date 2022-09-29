@@ -86,7 +86,7 @@ export default function Home() {
           <Heading as="h3" variant="section-title">
             Eu ♥
           </Heading>
-          <Paragraph>Musica, Jogar, Codar, Ler, Aprender</Paragraph>
+          <Paragraph>Musica, Jogar, Codar, Ler, Aprender.</Paragraph>
         </Section>
 
         <Section delay={0.3}>
