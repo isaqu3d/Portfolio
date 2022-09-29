@@ -62,8 +62,8 @@ export default function Home() {
           <Paragraph>
             Fala DEVs, Sou um desenvolvedor Web e Mobile Junior. Sou um grande
             entusiasta da tecnologia e um apaixonado por programação. Atualmente
-            estudo focado as seguintes Tech: ReactJS, NextJS, TypeScript
-            ,TailwindCSS, CSS-In-JS. eu trabalho e estudo muito para conseguir
+            estudo focado as seguintes Tech: ReactJS, NextJS, TypeScript,
+            TailwindCSS, CSS-In-JS. eu trabalho e estudo muito para conseguir
             realizar essa meta. E então DEVs... Bora codar!
           </Paragraph>
         </Section>
