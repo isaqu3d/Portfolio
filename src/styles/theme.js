@@ -64,6 +64,10 @@ const customTheme = {
       300: "#FF63C3",
       400: "#CF55A1",
     },
+
+    purple: {
+      700: " #c889e6a2",
+    },
   },
 
   blue: {
