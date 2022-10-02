@@ -28,7 +28,7 @@ export default function eventplatform() {
 
       <Paragraph>
         Seja bem-vindo ao projeto Move.it. Esse projeto é um aplicação de um
-        pomodoro para melhor seus estudos, pois, quando o tempo chega ao fim e
+        pomodoro para melhorar seus estudos, pois, quando o tempo chega ao fim e
         lança um desafio para você fazer. E depois de completar o desafio você
         ganha XP para upar de level, e podendo iniciar o Pomodoro novamente.
       </Paragraph>
