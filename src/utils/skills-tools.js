@@ -4,6 +4,7 @@ import {
   SiLinux,
   SiNotion,
   SiPostman,
+  SiSpotify,
   SiVercel,
   SiVisualstudiocode,
 } from "react-icons/si";
@@ -40,12 +41,16 @@ export const SKILLS_TOOLS = [
   {
     id: 6,
     icon: SiGithub,
-    color: "#000",
   },
 
   {
     id: 7,
     icon: SiNotion,
-    color: "#000",
+  },
+
+  {
+    icon: SiSpotify,
+    id: 8,
+    color: "#1DB954",
   },
 ];
