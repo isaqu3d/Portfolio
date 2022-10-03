@@ -20,7 +20,7 @@ import { IoLogoGithub } from "react-icons/io5";
 import Logo from "./Logo";
 import ThemeToggleButton from "./ThemeToggleButton";
 
-const LinkItem = ({ href, path, target, children, ...props }) => {
+const LinkItem = ({ href, children, ...props }) => {
   const router = useRouter();
   const active = router.asPath === href;
   const inactiveColor = useColorModeValue("gray.200", "whiteAlpha.900");
@@ -30,7 +30,7 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
         p={2}
         bg={active ? "teal.400" : undefined}
         color={active ? "#202023" : inactiveColor}
-        target={target}
+        borderRadius={5}
         {...props}
       >
         {children}
