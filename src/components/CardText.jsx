@@ -1,4 +1,5 @@
 import { Box, useColorModeValue } from "@chakra-ui/react";
+import { Typewriter } from "./TypeWriter";
 
 export default function CardText() {
   return (
@@ -11,7 +12,7 @@ export default function CardText() {
       bg={useColorModeValue("whiteAlpha.500", "whiteAlpha.200")}
       color={useColorModeValue("black.500", "white.200")}
     >
-      Olá, Eu sou um desenvolvedor Web e Mobile
+      <Typewriter />
     </Box>
   );
 }
