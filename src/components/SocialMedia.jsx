@@ -1,6 +1,5 @@
 import { Button, Heading, Link, List, ListItem } from "@chakra-ui/react";
 
-import React from "react";
 import { IoLogoGithub, IoLogoInstagram, IoLogoLinkedin } from "react-icons/io5";
 
 export default function SocialMedia() {
