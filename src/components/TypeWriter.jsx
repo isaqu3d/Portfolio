@@ -5,7 +5,7 @@ export function Typewriter() {
     <TypewriterComponent
       options={{
         strings: [
-          "Olá, Seja bem-vindo ao meu portfolio!",
+          "Olá, Seja bem-vindo ao meu portfolio",
           "Sou Desenvolvedor Web e Mobile",
           "Front-end Junior",
           "Entusiasta da tecnologia",
