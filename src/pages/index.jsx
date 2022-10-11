@@ -28,12 +28,7 @@ export default function Home() {
             <p>Entusiasta Digital ( Code / Desenvolvedor / Remoto )</p>
           </Box>
 
-          <Box
-            flexShrink={0}
-            /*  mt={{ base: 4, md: 0 }}
-            ml={{ md: 6 }} */
-            /*   textAlign="center" */
-          >
+          <Box flexShrink={0}>
             <Box
               borderColor="whiteAlpha.800"
               borderWidth={2}
@@ -62,9 +57,10 @@ export default function Home() {
           <Paragraph>
             Fala DEVs, Sou um desenvolvedor Web e Mobile Junior. Sou um grande
             entusiasta da tecnologia e um apaixonado por programação. Atualmente
-            estudo focado as seguintes Tech: ReactJS, NextJS, TypeScript,
-            TailwindCSS, CSS-In-JS. eu trabalho e estudo muito para conseguir
-            realizar essa meta. E então DEVs... Bora codar!
+            estudo focado as seguintes Techs: ReactJS, NextJS, TypeScript,
+            TailwindCSS, CSS-In-JS. Eu pretendo me tornar um dev Full-Stack, e
+            para isto, trabalho e estudo muito para conseguir realizar essa
+            meta. E então DEVs... Bora codar!
           </Paragraph>
         </Section>
 
