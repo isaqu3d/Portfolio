@@ -5,16 +5,16 @@ export function Typewriter() {
     <TypewriterComponent
       options={{
         strings: [
-          "Olá, Seja bem-vindo ao meu portfolio",
-          "Sou Desenvolvedor Web e Mobile",
-          "Front-end Junior",
-          "Entusiasta da tecnologia",
+          "< Olá, Seja bem-vindo ao meu portfolio",
+          "< Entusiasta da tecnologia",
+          "< Sou Desenvolvedor Web e Mobile",
+          "< Front-end Junior",
         ],
         autoStart: true,
         loop: true,
         deleteSpeed: 15,
         delay: 45,
-        cursor: "< />",
+        cursor: " />",
       }}
     />
   );
