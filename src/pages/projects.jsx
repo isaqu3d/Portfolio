@@ -1,5 +1,5 @@
 import { Container, Heading, SimpleGrid } from "@chakra-ui/react";
-import thumbEventPlaform from "../../public/project/eventplatoform.png";
+import thumbEventPlatform from "../../public/project/eventplatform.png";
 import thumbPomodoro from "../../public/project/move.it.png";
 import ProjectGridItem from "../components/Projects/ProjectGridItem ";
 
@@ -18,7 +18,7 @@ export default function projects() {
             <ProjectGridItem
               id="eventplatform"
               title="Plataforma de Evento"
-              thumbnail={thumbEventPlaform}
+              thumbnail={thumbEventPlatform}
             >
               Projeto criado na NLW com intuito de fazer uma plataforma de
               aulas. Como por exemplo: Aulas de programação, Matemática,
