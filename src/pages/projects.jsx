@@ -20,9 +20,7 @@ export default function projects() {
               title="Plataforma de Evento"
               thumbnail={thumbEventPlatform}
             >
-              Projeto criado na NLW com intuito de fazer uma plataforma de
-              aulas. Como por exemplo: Aulas de programação, Matemática,
-              intensivão de aulas, etc.
+              Plataforma de videos de todos os tipos e gostos! 💻
             </ProjectGridItem>
           </Section>
 
@@ -32,8 +30,7 @@ export default function projects() {
               thumbnail={thumbPomodoro}
               id="move.it"
             >
-              Projeto de Pomodoro criado na NLW com intuito de
-              melhorar/organizar seus estudos e tempo.
+              Projeto para fazer você não ficar parado! 🏃‍♂️
             </ProjectGridItem>
           </Section>
         </SimpleGrid>
