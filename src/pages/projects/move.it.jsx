@@ -2,7 +2,7 @@ import { Container } from "@chakra-ui/react";
 import { ListItemProject } from "../../components/Projects/ListItemProject";
 
 import HeaderItemProject from "../../components/Projects/HeaderItemProject";
-import ProjectImage from "../../components/Projects/ProjectImage";
+import ImageProject from "../../components/Projects/ImageProject";
 import Section from "../../components/Section";
 
 export default function eventplatform() {
@@ -27,9 +27,9 @@ export default function eventplatform() {
           description="NextJS, TypeScript"
           target="_blank"
         />
-        <ProjectImage src="/project/pomodoro_2.png" />
-        <ProjectImage src="/project/pomodoro_3.png" />
-        <ProjectImage src="/project/pomodoro_4.png" />
+        <ImageProject src="/project/pomodoro_2.png" />
+        <ImageProject src="/project/pomodoro_3.png" />
+        <ImageProject src="/project/pomodoro_4.png" />
       </Section>
     </Container>
   );
