@@ -38,14 +38,6 @@ const customTheme = {
     },
   },
 
-  breakpoints: {
-    sm: "30em",
-    md: "48em",
-    lg: "62em",
-    xl: "80em",
-    "2xl": "96em",
-  },
-
   colors: {
     background: {
       500: "#202023",
@@ -70,7 +62,7 @@ const customTheme = {
     },
   },
 
-  blue: {
+  teal: {
     300: "#73C9BE",
     400: "#4A746F",
   },
