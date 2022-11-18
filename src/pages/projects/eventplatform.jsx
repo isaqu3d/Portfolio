@@ -2,7 +2,7 @@ import { Container } from "@chakra-ui/react";
 import { ListItemProject } from "../../components/Projects/ListItemProject";
 
 import HeaderItemProject from "../../components/Projects/HeaderItemProject";
-import ProjectImage from "../../components/Projects/ProjectImage";
+import ImageProject from "../../components/Projects/ImageProject";
 import Section from "../../components/Section";
 
 export default function eventplatform() {
@@ -27,8 +27,8 @@ export default function eventplatform() {
           target="_blank"
         />
 
-        <ProjectImage src="/project/eventplatform_2.png" />
-        <ProjectImage src="/project/eventplatform_3.png" />
+        <ImageProject src="/project/eventplatform_2.png" />
+        <ImageProject src="/project/eventplatform_3.png" />
       </Section>
     </Container>
   );
