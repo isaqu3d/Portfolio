@@ -30,9 +30,8 @@ export default function Bio() {
 
       <BioSection>
         <BioYear>2022</BioYear>
-        Comecei a estudar focado e agora faço parte do time de
-        <span> &quot;Dev Voluntário&quot; </span>
-        na Tech Pro Bem.
+        Comecei a estudar focado e agora faço parte do time de &quot;Dev
+        Voluntário&quot; na Tech Pro Bem.
       </BioSection>
     </>
   );
