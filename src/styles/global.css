@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-serif;
+}
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 10px 0 6px #313134;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #525252;
+  outline: 1px solid black;
+}
