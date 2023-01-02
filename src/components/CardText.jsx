@@ -1,18 +1,19 @@
-import { Box, useColorModeValue } from "@chakra-ui/react";
+import useThemeData from "../hook/useThemeData";
 import { Typewriter } from "./TypeWriter";
 
 export default function CardText() {
+  const { theme } = useThemeData();
   return (
-    <Box
-      borderRadius="lg"
-      mb={6}
-      p={3}
-      textAlign="center"
-      css={{ backdropFilter: "blur(10px)" }}
-      bg={useColorModeValue("whiteAlpha.500", "whiteAlpha.200")}
-      color={useColorModeValue("black.500", "white.200")}
-    >
-      <Typewriter />
-    </Box>
+    <>
+      <div
+        className={`${
+          theme
+            ? "bg-white-100 bg-opacity-40  text-black"
+            : "bg-gray-600 text-white-300"
+        }  flex justify-center items-center  shadow-xl rounded-lg mb-4 p-1 text-center h-12`}
+      >
+        <Typewriter />
+      </div>
+    </>
   );
 }

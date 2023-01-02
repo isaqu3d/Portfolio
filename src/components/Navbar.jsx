@@ -1,124 +1,74 @@
-import { HamburgerIcon } from "@chakra-ui/icons";
-import {
-  Box,
-  Container,
-  Flex,
-  Heading,
-  IconButton,
-  Link,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-  Stack,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import NextLink from "next/link";
+import { default as NextLink } from "next/link";
 import { useRouter } from "next/router";
-
 import { IoLogoGithub } from "react-icons/io5";
+import useThemeData from "../hook/useThemeData";
+import { ButtonTheme } from "./ButtonTheme";
 import Logo from "./Logo";
-import ThemeToggleButton from "./ThemeToggleButton";
+import { MenuItem } from "./MenuItem";
 
 const LinkItem = ({ href, children, ...props }) => {
   const router = useRouter();
   const active = router.asPath === href;
-  const inactiveColor = useColorModeValue("gray.200", "whiteAlpha.900");
+
   return (
     <NextLink href={href} passHref scroll={false}>
-      <Link
-        p={2}
-        bg={active ? "teal.400" : undefined}
-        color={active ? "#202023" : inactiveColor}
-        borderRadius={5}
+      <a
+        href={href}
+        className={`${
+          active ? "bg-teal-400 text-black rounded-md p-2" : "hover:underline"
+        } 
+        `}
         {...props}
       >
         {children}
-      </Link>
+      </a>
     </NextLink>
   );
 };
 
 export default function Navbar() {
+  const { theme, changeTheme } = useThemeData();
   return (
-    <Box
-      position="fixed"
-      as="nav"
-      w="100%"
-      bg={useColorModeValue("#ffffff40", "#20202380")}
-      css={{ backdropFilter: "blur(10px)" }}
-      zIndex={2}
-    >
-      <Container
-        display="flex"
-        p={2}
-        maxW="container.md"
-        wrap="wrap"
-        align="center"
-        justify="space-between"
+    <>
+      <header
+        className={`${
+          theme ? "bg-white-100/10" : "bg-gray-900/10"
+        }  fixed w-full flex justify-center z-50 backdrop-blur-sm`}
       >
-        <Flex align="center" mr={5}>
-          <Heading as="h1" size="lg" letterSpacing={"tighter"}>
-            <Logo />
-          </Heading>
-        </Flex>
+        <nav className="flex flex-1 justify-between p-2 max-w-screen-md">
+          <div className="flex items-center mr-5">
+            <h1>
+              <Logo />
+            </h1>
+          </div>
 
-        <Stack
-          flexGrow={1}
-          direction={{ base: "column", md: "row" }}
-          display={{ base: "none", md: "flex" }}
-          alignItems="center"
-        >
-          <LinkItem href="/projects">Projetos</LinkItem>
-
-          <LinkItem href="/skills">Habilidades</LinkItem>
-
-          <LinkItem
-            target="_blank"
-            href="https://github.com/X-SpeedBlack-X/portfolio-chakra"
-            display="inline-flex"
-            alignItems="center"
-            style={{ gap: 4 }}
-            pl={2}
+          <div
+            className={`${
+              theme ? " text-gray-600 " : "text-white-100"
+            } flex-grow items-center hidden md:flex gap-4 `}
           >
-            <IoLogoGithub />
-            Código
-          </LinkItem>
-        </Stack>
+            <LinkItem href="/projects">Projetos</LinkItem>
+            <LinkItem href="/skills">Habilidades</LinkItem>
+            <LinkItem
+              target="_blank"
+              href="https://github.com/X-SpeedBlack-X/portfolio-chakra"
+            >
+              <div className="flex justify-center items-center gap-1">
+                <IoLogoGithub />
+                Código
+              </div>
+            </LinkItem>
+          </div>
 
-        <Box flex={1} align="right">
-          <ThemeToggleButton />
+          <div className="flex flex-col xs:flex-row justify-end gap-2">
+            <ButtonTheme theme={theme} changeTheme={changeTheme} />
 
-          <Box ml={2} display={{ base: "inline-block", md: "none" }}>
-            <Menu isLazy id="navbar-menu">
-              <MenuButton
-                as={IconButton}
-                icon={<HamburgerIcon />}
-                variant="outline"
-                aria-label="Options"
-              />
-              <MenuList>
-                <NextLink href="/" passHref>
-                  <MenuItem as={Link}>Sobre mim</MenuItem>
-                </NextLink>
-                <NextLink href="/projects" passHref>
-                  <MenuItem as={Link}>Projetos</MenuItem>
-                </NextLink>
-                <NextLink href="/skills" passHref>
-                  <MenuItem as={Link}>Habilidades</MenuItem>
-                </NextLink>
-
-                <MenuItem
-                  as={Link}
-                  href="https://github.com/craftzdog/craftzdog-homepage"
-                >
-                  Código fonte
-                </MenuItem>
-              </MenuList>
-            </Menu>
-          </Box>
-        </Box>
-      </Container>
-    </Box>
+            <div>
+              <MenuItem />
+            </div>
+          </div>
+        </nav>
+      </header>
+    </>
   );
 }
