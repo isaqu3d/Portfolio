@@ -1,5 +1,4 @@
-import NextLink from "next/link";
-import { Button } from "../components/Button";
+import { ButtonLink } from "../components/ButtonLink";
 import { Heading } from "../components/Heading";
 
 export default function NotFound() {
@@ -16,9 +15,7 @@ export default function NotFound() {
       <div className="w-full h-[1px] bg-gray-600 my-8"></div>
 
       <div className="flex justify-center">
-        <NextLink href="/" passHref>
-          <Button>Retorne ao inicio</Button>
-        </NextLink>
+        <ButtonLink href="/">Retorne ao inicio</ButtonLink>
       </div>
     </div>
   );
