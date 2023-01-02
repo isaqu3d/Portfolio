@@ -1,38 +1,38 @@
-import { Box, Heading } from "@chakra-ui/react";
-import styled from "@emotion/styled";
+import useThemeData from "../hook/useThemeData";
+import { Heading } from "./Heading";
 
-export const BioSection = styled(Box)`
-  padding-left: 3.4em;
-  text-indent: -3.4em;
-`;
+export const BioSectionTwo = ({ children }) => {
+  const { theme } = useThemeData();
+  return (
+    <div
+      className={`${theme ? "text-black" : "text-white-100"} pl-14 -indent-14`}
+    >
+      {children}
+    </div>
+  );
+};
 
-export const BioYear = styled.span`
-  font-weight: bold;
-  margin-right: 1em;
-`;
+export const BioYearTwo = ({ children }) => {
+  return <span className="font-bold mr-4">{children}</span>;
+};
 
 export default function Bio() {
   return (
     <>
-      <Heading as="h3" variant="section-title">
-        Bio
-      </Heading>
-      <BioSection>
-        <BioYear>2002</BioYear>
-        Nasci em Fortaleza - CE, Brasil.
-      </BioSection>
+      <Heading>Bio</Heading>
+      <BioSectionTwo>
+        <BioYearTwo>2002</BioYearTwo> Nasci em Fortaleza - CE, Brasil.
+      </BioSectionTwo>
 
-      <BioSection>
-        <BioYear>2020</BioYear>
-        Comecei a conhecer a área de programação e cada vez mais estou me
-        apaixonando pela área.
-      </BioSection>
+      <BioSectionTwo>
+        <BioYearTwo>2020</BioYearTwo> Comecei a conhecer a área de programação e
+        cada vez mais estou me apaixonando pela área.
+      </BioSectionTwo>
 
-      <BioSection>
-        <BioYear>2022</BioYear>
-        Comecei a estudar focado e agora faço parte do time de &quot;Dev
-        Voluntário&quot; na Tech Pro Bem.
-      </BioSection>
+      <BioSectionTwo>
+        <BioYearTwo>2022</BioYearTwo> Comecei a estudar focado e agora faço
+        parte do time de &quot;Dev Voluntário&quot; na Tech Pro Bem.
+      </BioSectionTwo>
     </>
   );
 }
