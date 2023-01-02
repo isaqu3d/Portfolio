@@ -1,40 +1,32 @@
-import { Container, Heading, SimpleGrid } from "@chakra-ui/react";
 import thumbEventPlatform from "../../public/project/eventplatform.png";
 import thumbPomodoro from "../../public/project/move.it.png";
+import { Heading } from "../components/Heading";
+import { Motion } from "../components/Motion";
 import ProjectGridItem from "../components/Projects/ProjectGridItem ";
-
-import Section from "../components/Section";
 
 export default function projects() {
   return (
-    <>
-      <Container>
-        <Heading as="h3" variant="section-title" fontSize={20} mb={4}>
-          Projetos
-        </Heading>
+    <div className="max-w-lg px-4 font-serif">
+      <Motion>
+        <Heading>Projetos</Heading>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <ProjectGridItem
+            id="eventplatform"
+            title="Plataforma de Evento"
+            thumbnail={thumbEventPlatform}
+          >
+            Plataforma de videos de todos os tipos e gostos! 💻
+          </ProjectGridItem>
 
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
-          <Section>
-            <ProjectGridItem
-              id="eventplatform"
-              title="Plataforma de Evento"
-              thumbnail={thumbEventPlatform}
-            >
-              Plataforma de videos de todos os tipos e gostos! 💻
-            </ProjectGridItem>
-          </Section>
-
-          <Section>
-            <ProjectGridItem
-              title="Pomodoro"
-              thumbnail={thumbPomodoro}
-              id="move.it"
-            >
-              Projeto para fazer você não ficar parado! 🏃‍♂️
-            </ProjectGridItem>
-          </Section>
-        </SimpleGrid>
-      </Container>
-    </>
+          <ProjectGridItem
+            title="Pomodoro"
+            thumbnail={thumbPomodoro}
+            id="move.it"
+          >
+            Projeto para fazer você não ficar parado! 🏃‍♂️
+          </ProjectGridItem>
+        </div>
+      </Motion>
+    </div>
   );
 }
