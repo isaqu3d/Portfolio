@@ -1,5 +1,5 @@
-import { ChevronRightIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
+import { BiChevronRight } from "react-icons/bi";
 import useThemeData from "../../hook/useThemeData";
 import { Heading } from "../Heading";
 
@@ -21,7 +21,7 @@ export default function Title({ children, className }) {
           </a>
         </NextLink>
         <span>
-          <ChevronRightIcon />
+          <BiChevronRight />
         </span>
         <Heading className="inline-flex items-center text-xl mb-4 no-underline">
           {children}
