@@ -9,7 +9,11 @@ export default function MyDocument() {
         {/* <link rel="ico" href="/public/apple-touch-icon.png" /> */}
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          cross_origin={true}
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap"
           rel="stylesheet"
