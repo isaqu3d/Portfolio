@@ -10,8 +10,6 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.0.10",
-    "@chakra-ui/react": "^2.3.4",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
     "@emotion/react": "^11.10.4",
