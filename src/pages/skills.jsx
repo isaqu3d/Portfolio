@@ -1,57 +1,53 @@
-import { Box, Container, Heading, SimpleGrid } from "@chakra-ui/react";
+import { SkillsCard } from "../components/SkillsCard";
+
 import GitHubCalendar from "react-github-calendar";
-import Section from "../components/Section";
-import SkillsCard from "../components/SkillsCard";
+import { Heading } from "../components/Heading";
+
+import { Motion } from "../components/Motion";
 import { SKILLS_CARD } from "../utils/skills-card";
 import { SKILLS_TOOLS } from "../utils/skills-tools";
 
-function SkillCardRender({ icon: Icon, color }) {
+function SkillCardRender({ icon: Icon, color, onClick }) {
   return (
-    <SkillsCard>
+    <SkillsCard onClick={onClick}>
       <Icon size={90} color={color} />
     </SkillsCard>
   );
 }
 
 export default function Skills() {
+  /* const [modalContent, setModalContent] = useState(); */
+
   return (
-    <>
-      <Container>
-        <Heading as="h3" variant="section-title" fontSize={20} mb={4}>
-          Habilidades
-        </Heading>
-        <Section>
-          <SimpleGrid columns={[2, 2, 4]} gap={6}>
-            {SKILLS_CARD.map((skills) => (
-              <SkillCardRender
-                icon={skills.icon}
-                key={skills.id}
-                color={skills.color}
-              />
-            ))}
-          </SimpleGrid>
-        </Section>
+    <Motion>
+      <div className="max-w-lg px-4">
+        <Heading>Habilidades</Heading>
 
-        <Heading as="h3" variant="section-title" fontSize={20} mb={4}>
-          Ferramentas
-        </Heading>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+          {SKILLS_CARD.map((skills) => (
+            <SkillCardRender
+              icon={skills.icon}
+              key={skills.id}
+              color={skills.color}
+            /> /* onClick={disclosure.onOpen} */
+          ))}
+        </div>
 
-        <Section>
-          <SimpleGrid columns={[2, 2, 4]} gap={6}>
-            {SKILLS_TOOLS.map((skills) => (
-              <SkillCardRender
-                icon={skills.icon}
-                key={skills.id}
-                color={skills.color}
-              />
-            ))}
-          </SimpleGrid>
-        </Section>
+        <Heading>Ferramentas</Heading>
 
-        <Heading as="h3" variant="section-title" fontSize={20}>
-          Commits
-        </Heading>
-        <Box>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+          {SKILLS_TOOLS.map((skills) => (
+            <SkillCardRender
+              icon={skills.icon}
+              key={skills.id}
+              color={skills.color}
+            />
+          ))}
+        </div>
+
+        <Heading>Commits</Heading>
+
+        <div>
           <GitHubCalendar
             username="x-speedblack-x"
             year={new Date().getFullYear()}
@@ -61,8 +57,8 @@ export default function Skills() {
             blockSize={14}
             blockMargin={5}
           />
-        </Box>
-      </Container>
-    </>
+        </div>
+      </div>
+    </Motion>
   );
 }

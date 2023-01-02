@@ -1,14 +1,13 @@
-import { Container } from "@chakra-ui/react";
 import { ListItemProject } from "../../components/Projects/ListItemProject";
 
+import { Motion } from "../../components/Motion";
 import HeaderItemProject from "../../components/Projects/HeaderItemProject";
 import ImageProject from "../../components/Projects/ImageProject";
-import Section from "../../components/Section";
 
 export default function eventplatform() {
   return (
-    <Container>
-      <Section>
+    <div className="max-w-md px-4">
+      <Motion>
         <HeaderItemProject
           title="Move.It - Pomodoro"
           badgeYear={2021}
@@ -30,7 +29,7 @@ export default function eventplatform() {
         <ImageProject src="/project/pomodoro_2.png" />
         <ImageProject src="/project/pomodoro_3.png" />
         <ImageProject src="/project/pomodoro_4.png" />
-      </Section>
-    </Container>
+      </Motion>
+    </div>
   );
 }
