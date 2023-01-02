@@ -1,21 +1,32 @@
 import { ChevronRightIcon } from "@chakra-ui/icons";
-import { Box, Heading, Link, useColorModeValue } from "@chakra-ui/react";
 import NextLink from "next/link";
+import useThemeData from "../../hook/useThemeData";
+import { Heading } from "../Heading";
 
-export default function Title({ children }) {
+export default function Title({ children, className }) {
+  const { theme } = useThemeData();
+
   return (
     <>
-      <Box>
+      <div className={className}>
         <NextLink href="/projects" passHref>
-          <Link color={useColorModeValue("teal.500", "pink.300")}>Projeto</Link>
+          <a
+            className={`${
+              theme
+                ? "text-teal-600 hover:underline"
+                : "text-pink-400 hover:underline"
+            }`}
+          >
+            Projeto
+          </a>
         </NextLink>
         <span>
           <ChevronRightIcon />
         </span>
-        <Heading display="inline-block" as="h3" fontSize={20} mb={4}>
+        <Heading className="inline-flex items-center text-xl mb-4 no-underline">
           {children}
         </Heading>
-      </Box>
+      </div>
     </>
   );
 }
