@@ -3,7 +3,7 @@ import { BiChevronRight } from "react-icons/bi";
 
 import Bio from "../components/Bio";
 import { ButtonLink } from "../components/ButtonLink";
-import CardText from "../components/CardText";
+import { CardTypeWriter } from "../components/CardTypeWriter";
 import { Heading } from "../components/Heading";
 import { Motion } from "../components/Motion";
 import { Paragraph } from "../components/Paragraph";
@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <Motion>
       <div className="max-w-lg px-4">
-        <CardText />
+        <CardTypeWriter />
 
         <div className="flex items-center flex-col lg:flex-row">
           <div className="flex-grow">
