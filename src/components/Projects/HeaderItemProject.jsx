@@ -1,21 +1,21 @@
-import { Badge, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
+import useThemeData from "../../hook/useThemeData";
 import { Paragraph } from "../Paragraph";
 import Title from "./Title";
 
 export default function HeaderItemProject({ title, badgeYear, description }) {
+  const { theme } = useThemeData();
   return (
     <>
       <Title>
         {title}
-
-        <Badge
-          ml={2}
-          color={useColorModeValue("whiteAlpha.800", "whiteAlpha.700")}
-          bg={useColorModeValue("teal.600", "gray.300")}
+        <span
+          className={`${
+            theme ? "bg-teal-600 text-white-100" : "bg-gray-300 text-white-100"
+          } ml-2 text-xs px-1`}
         >
           {badgeYear}
-        </Badge>
+        </span>
       </Title>
 
       <Paragraph>{description}</Paragraph>

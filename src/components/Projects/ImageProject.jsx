@@ -1,5 +1,3 @@
-import { Image } from "@chakra-ui/react";
-
 export default function ImageProject({ src, alt }) {
-  return <Image borderRadius={14} w="full" src={src} alt={alt} mb={4} />;
+  return <img className="rounded-[14px] w-full mb-4" src={src} alt={alt} />;
 }

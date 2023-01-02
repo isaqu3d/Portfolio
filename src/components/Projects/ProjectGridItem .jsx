@@ -1,34 +1,31 @@
-import {
-  Box,
-  LinkBox,
-  LinkOverlay,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
 import Image from "next/image";
 import NextLink from "next/link";
+import useThemeData from "../../hook/useThemeData";
 
 export default function ProjectGridItem({ children, id, title, thumbnail }) {
+  const { theme } = useThemeData();
   return (
     <>
-      <Box w="100%" textAlign="center">
+      <div className="w-full text-center">
         <NextLink href={`/projects/${id}`} passHref scroll={false}>
-          <LinkBox cursor="pointer">
+          <div className="cursor-pointer">
             <Image src={thumbnail} alt={title} />
 
-            <LinkOverlay href={`/projects/${id}`}>
-              <Text
-                mt={2}
-                fontSize={20}
-                color={useColorModeValue("teal.600", "pink.300")}
+            <a href={`/projects/${id}`}>
+              <p
+                className={`${
+                  theme ? "text-teal-600" : "text-pink-500"
+                } mt-2 text-xl`}
               >
                 {title}
-              </Text>
-            </LinkOverlay>
-            <Text fontSize={14}>{children}</Text>
-          </LinkBox>
+              </p>
+            </a>
+            <p className={`${theme ? "text-black" : "text-white-100"} text-sm`}>
+              {children}
+            </p>
+          </div>
         </NextLink>
-      </Box>
+      </div>
     </>
   );
 }

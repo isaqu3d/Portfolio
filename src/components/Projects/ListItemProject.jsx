@@ -1,4 +1,4 @@
-import { Link, List, ListItem, useColorModeValue } from "@chakra-ui/react";
+import useThemeData from "../../hook/useThemeData";
 import BadgeTitle from "./BadgeTitle";
 
 export const ListItemProject = ({
@@ -9,35 +9,44 @@ export const ListItemProject = ({
   target,
   description,
 }) => {
+  const { theme } = useThemeData();
   return (
-    <List ml={4} my={4}>
-      <ListItem>
+    <ul className="ml-4 my-4">
+      <div>
         <BadgeTitle>Website</BadgeTitle>
 
-        <Link
+        <a
           href={href}
           target={target}
-          color={useColorModeValue("teal.500", "pink.300")}
+          className={`${
+            theme
+              ? "text-teal-600 hover:underline"
+              : "text-pink-500 hover:underline"
+          }`}
         >
           {url}
-        </Link>
-      </ListItem>
+        </a>
+      </div>
 
-      <ListItem>
+      <li>
         <BadgeTitle>GitHub</BadgeTitle>
-        <Link
+        <a
           href={hrefGitHub}
           target={target}
-          color={useColorModeValue("teal.500", "pink.300")}
+          className={`${
+            theme
+              ? "text-teal-600 hover:underline"
+              : "text-pink-500 hover:underline"
+          }`}
         >
           {urlGitHub}
-        </Link>
-      </ListItem>
+        </a>
+      </li>
 
-      <ListItem>
+      <li>
         <BadgeTitle>Tech</BadgeTitle>
         <span>{description}</span>
-      </ListItem>
-    </List>
+      </li>
+    </ul>
   );
 };
