@@ -1,35 +1,25 @@
-import {
-  Box,
-  Button,
-  Center,
-  Container,
-  Divider,
-  Heading,
-  Image,
-  Text,
-} from "@chakra-ui/react";
 import NextLink from "next/link";
+import { Button } from "../components/Button";
+import { Heading } from "../components/Heading";
 
 export default function NotFound() {
   return (
-    <Container>
-      <Heading as="h1">Não encontrado</Heading>
-      <Text>A pagina que você está procurando não foi encontrada</Text>
-      <Center>
-        <Image
-          src="/404error.png"
-          width={150}
-          height={150}
-          alt="Imagem do error 404"
-        />
-      </Center>
+    <div className="max-w-md px-4 flex flex-col justify-center">
+      <Heading className="no-underline">Não encontrado</Heading>
+      <p>A pagina que você está procurando não foi encontrada</p>
+      <div className="flex justify-center mt-8">
+        <span className="text-6xl px-6 py-2 font-sans font-semibold text-white transition duration-200 ease-in-out delay-300 skew-x-12 bg-purple-600 border-purple-700 rounded shadow-lg shadow-purple-600/50 hover:skew-y-6 hover:border-purple-800 text-white-100">
+          404
+        </span>
+      </div>
 
-      <Divider my={6} />
-      <Box my={6} align="center">
+      <div className="w-full h-[1px] bg-gray-600 my-8"></div>
+
+      <div className="flex justify-center">
         <NextLink href="/" passHref>
-          <Button colorScheme="teal">Retorne para o inicio</Button>
+          <Button>Retorne ao inicio</Button>
         </NextLink>
-      </Box>
-    </Container>
+      </div>
+    </div>
   );
 }
