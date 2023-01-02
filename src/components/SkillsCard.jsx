@@ -1,22 +1,19 @@
-import { Box, useColorModeValue } from "@chakra-ui/react";
+import useThemeData from "../hook/useThemeData";
 
-export default function SkillsCard({ children }) {
+export function SkillsCard({ children }) {
+  const { theme } = useThemeData();
+
   return (
-    <Box
-      border="2px"
-      borderColor={useColorModeValue("teal.300", "purple.700")}
-      display="flex"
-      justifyContent="center"
-      px={4}
-      py={[2, 2, 0]}
-      opacity={[1, 1, 0.4]}
-      borderRadius={4}
-      _hover={{
-        borderColor: useColorModeValue("teal.400", "pink.400"),
-        opacity: 1,
-      }}
+    <div
+      className={`${
+        theme
+          ? "border-2 hover:border-teal-400 border-teal-200"
+          : "border-2 hover:border-pink-500 border-pink-400"
+      } flex justify-center px-4 py-2 sm:py-0 opacity-100 sm:opacity-40 rounded hover:opacity-100 border-2 hover:scale-105 scale-100"
+      
+   `}
     >
       {children}
-    </Box>
+    </div>
   );
 }
