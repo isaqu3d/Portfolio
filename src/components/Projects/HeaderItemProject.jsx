@@ -7,7 +7,7 @@ export default function HeaderItemProject({ title, badgeYear, description }) {
   const { theme } = useThemeData();
   return (
     <>
-      <Title>
+      <Title className="flex items-center">
         {title}
         <span
           className={`${
