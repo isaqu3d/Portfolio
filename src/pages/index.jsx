@@ -1,7 +1,8 @@
 import Image from "next/image";
-import NextLink from "next/link";
+import { BiChevronRight } from "react-icons/bi";
 
 import Bio from "../components/Bio";
+import { ButtonLink } from "../components/ButtonLink";
 import CardText from "../components/CardText";
 import { Heading } from "../components/Heading";
 import { Motion } from "../components/Motion";
@@ -47,11 +48,9 @@ export default function Home() {
         </Paragraph>
 
         <div className="flex justify-center">
-          <NextLink href="/projects">
-            <button className="flex items-center gap-3 bg-teal-200 hover:bg-teal-400 transition-colors text-black font-medium p-2 px-4 rounded-md">
-              Projetos seta
-            </button>
-          </NextLink>
+          <ButtonLink href="/projects">
+            Projetos <BiChevronRight />
+          </ButtonLink>
         </div>
 
         <div>
