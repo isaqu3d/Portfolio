@@ -36,7 +36,6 @@ export const SKILLS_CARD = [
   {
     id: "5",
     icon: SiNextdotjs,
-    color: "#000000",
   },
   {
     id: "6",
