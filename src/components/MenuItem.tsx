@@ -1,5 +1,4 @@
 import { Menu } from "@headlessui/react";
-import clsx from "clsx";
 import { default as NextLink } from "next/link";
 import { useRouter } from "next/router";
 import { BiMenu } from "react-icons/bi";
@@ -12,7 +11,7 @@ const LinkItem = ({ href, children, ...props }) => {
     <NextLink href={href} passHref scroll={false}>
       <a
         href={href}
-        className={clsx(active ? "text-teal-500 " : null)}
+        className={active ? "text-teal-500 " : "hover:underline"}
         {...props}
       >
         {children}
