@@ -24,7 +24,6 @@ export const SKILLS_TOOLS = [
   {
     id: 3,
     icon: SiLinux,
-    color: "#000",
   },
 
   {
