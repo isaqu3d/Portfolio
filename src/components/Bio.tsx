@@ -30,8 +30,8 @@ export default function Bio() {
       </BioSectionTwo>
 
       <BioSectionTwo>
-        <BioYearTwo>2022</BioYearTwo> Comecei a estudar focado e agora faço
-        parte do time de &quot;Dev Voluntário&quot; na Tech Pro Bem.
+        <BioYearTwo>2022</BioYearTwo> Comecei a estudar focado e fiz parte do
+        time de &quot;Dev Voluntário&quot; na Tech Pro Bem.
       </BioSectionTwo>
     </>
   );
