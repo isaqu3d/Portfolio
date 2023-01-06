@@ -61,7 +61,7 @@ export default function Navbar() {
           </div>
 
           <div className="flex flex-col xs:flex-row justify-end gap-2">
-            <ButtonTheme theme={theme} changeTheme={changeTheme} />
+            <ButtonTheme />
 
             <div>
               <MenuItem />
