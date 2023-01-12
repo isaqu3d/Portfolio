@@ -5,8 +5,6 @@ import useThemeData from "../hook/useThemeData";
 import { Heading } from "./Heading";
 
 const LinkItem = ({ href, children, ...props }) => {
-  /*   const router = useRouter();
-  const active = router.asPath === href; */
   const { theme } = useThemeData();
 
   return (
