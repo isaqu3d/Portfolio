@@ -45,9 +45,9 @@ export default function Home() {
           entusiasta da tecnologia e um apaixonado por programação. Atualmente
           estudo focado as seguintes Techs:
           <span className={`${theme ? "text-teal-500" : "text-pink-500"}`}>
-            {""} "ReactJS", "NextJS", "TypeScript", "TailwindCSS", "CSS-In-JS".
+            {""} "ReactJS", "NextJS", "TypeScript", "TailwindCSS", "CSS-In-JS"
           </span>
-          Eu pretendo me tornar um dev Full-Stack, e para isto, trabalho e
+          . Eu pretendo me tornar um dev Full-Stack, e para isto, trabalho e
           estudo muito para conseguir realizar essa meta. E então DEVs... Bora
           codar!
         </Paragraph>
