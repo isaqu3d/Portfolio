@@ -3,7 +3,6 @@ import { SkillsCard } from "../components/SkillsCard";
 import GitHubCalendar from "react-github-calendar";
 import { Heading } from "../components/Heading";
 
-import ModalMain from "../components/ModalMain";
 import { Motion } from "../components/Motion";
 import { SKILLS_CARD } from "../utils/skills-card";
 import { SKILLS_TOOLS } from "../utils/skills-tools";
@@ -22,7 +21,6 @@ export default function Skills() {
   return (
     <Motion>
       <div className="max-w-lg px-4">
-        <ModalMain />
         <Heading>Habilidades</Heading>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
