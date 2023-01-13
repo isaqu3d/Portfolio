@@ -22,8 +22,11 @@ const LinkItem = ({ href, children, ...props }) => {
 export function MenuItem() {
   return (
     <div className="md:hidden flex">
-      <Menu>
-        <Menu.Button className="border-[1.5px] border-gray-600 p-2 rounded-md text-xl">
+      <Menu as="nav" aria-label="open list menu">
+        <Menu.Button
+          aria-label="icon button"
+          className="border-[1.5px] border-gray-600 p-2 rounded-md text-xl"
+        >
           <BiMenu />
         </Menu.Button>
         <Menu.Items className="flex flex-col rounded-md absolute right-3 -bottom-32 bg-[#31384c] py-2 px-4  w-52 gap-[6px] text-white-100 animate-ToggleMenu">
