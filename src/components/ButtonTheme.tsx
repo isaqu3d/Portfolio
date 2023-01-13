@@ -8,6 +8,7 @@ export function ButtonTheme() {
   return (
     <button
       onClick={changeTheme}
+      aria-label="button changed dark mode and light mode"
       className={`${
         isDark
           ? "bg-purple-700 hover:bg-purple-800 text-white-100 animate-ButtonThemeFall"
