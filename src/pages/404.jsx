@@ -1,9 +1,14 @@
+import { NextSeo } from "next-seo";
 import { ButtonLink } from "../components/ButtonLink";
 import { Heading } from "../components/Heading";
 
 export default function NotFound() {
   return (
     <div className="max-w-md px-4 flex flex-col justify-center">
+      <NextSeo
+        title="Pagina não encontrada"
+        description="Pagina não encontrada, error 404"
+      />
       <Heading className="no-underline">Não encontrado</Heading>
       <p>A pagina que você está procurando não foi encontrada</p>
       <div className="flex justify-center mt-8">
