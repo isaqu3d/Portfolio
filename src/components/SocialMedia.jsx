@@ -13,9 +13,10 @@ const LinkItem = ({ href, children, ...props }) => {
         href={href}
         className={`${
           theme
-            ? "text-teal-700 hover:bg-teal-400/20 w-36 hover:underline hover:underline-offset-[6px] hover:decoration-1 hover:decoration-teal-600"
-            : "text-teal-200 hover:bg-teal-400/10 w-36 hover:underline hover:underline-offset-[6px] hover:decoration-1 hover:decoration-pink-500"
-        } flex items-center rounded-md p-2 ml-2 gap-2 w-36 font-semibold`}
+            ? "text-teal-700  hover:decoration-teal-600"
+            : "text-teal-200  hover:decoration-pink-500"
+        } flex items-center rounded-md p-2 ml-2 gap-2 w-36 font-semibold  hover:underline hover:underline-offset-[6px] hover:decoration-1 hover:bg-teal-400/20
+        `}
         {...props}
       >
         {children}
