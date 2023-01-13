@@ -1,7 +1,8 @@
+import { ReactNode } from "react";
 import useThemeData from "../hook/useThemeData";
 
 type ButtonProps = {
-  children: string;
+  children: ReactNode;
   className?: string;
   href: string;
 };

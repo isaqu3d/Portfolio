@@ -1,5 +1,7 @@
+import { ReactNode } from "react";
+
 type ParagraphProps = {
-  children: string;
+  children: ReactNode;
   className?: string;
 };
 
