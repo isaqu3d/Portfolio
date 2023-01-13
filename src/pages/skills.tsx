@@ -3,6 +3,7 @@ import { SkillsCard } from "../components/SkillsCard";
 import GitHubCalendar from "react-github-calendar";
 import { Heading } from "../components/Heading";
 
+import { NextSeo } from "next-seo";
 import { Motion } from "../components/Motion";
 import { SKILLS_CARD } from "../utils/skills-card";
 import { SKILLS_TOOLS } from "../utils/skills-tools";
@@ -16,10 +17,12 @@ function SkillCardRender({ icon: Icon, color }) {
 }
 
 export default function Skills() {
-  /* const [modalContent, setModalContent] = useState(); */
-
   return (
     <Motion>
+      <NextSeo
+        title="Habilidades - Isaque de Sousa"
+        description="Pagina das minhas habilidades e ferramentas que eu utilizo no meu dia a dia"
+      />
       <div className="max-w-lg px-4">
         <Heading>Habilidades</Heading>
 
