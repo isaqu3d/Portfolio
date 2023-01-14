@@ -16,9 +16,10 @@ export default function projects() {
         <Heading>Projetos</Heading>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <ProjectGridItem
-            id="eventplatform"
+            url="eventplatform"
             title="Plataforma de Evento"
             thumbnail={thumbEventPlatform}
+            alt="imagem do projeto da plataforma de evento"
           >
             Plataforma de videos de todos os tipos e gostos! 💻
           </ProjectGridItem>
@@ -26,7 +27,8 @@ export default function projects() {
           <ProjectGridItem
             title="Pomodoro"
             thumbnail={thumbPomodoro}
-            id="move.it"
+            url="move.it"
+            alt="imagem do projeto move.it"
           >
             Projeto para fazer você não ficar parado! 🏃‍♂️
           </ProjectGridItem>
