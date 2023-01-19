@@ -16,14 +16,14 @@ Creation of my portfolio personal 🚀
 - Next.js
 - Typescript
 - HeadlessUi
-- framer-motion
+- Framer-motion
 - TailwindCSS
 
 # 🤔 How to run
 
 Clone repository:
 
-```bash
+```sh
 git clone git@github.com:X-SpeedBlack-X/Portfolio.git
 ```
 
