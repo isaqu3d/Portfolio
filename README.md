@@ -1,34 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio
 
-## Getting Started
+Creation of my portfolio personal 🚀
 
-First, run the development server:
+![X-SpeedBlack-X](https://img.shields.io/badge/x--speedBlack--x-blue?style=for-the-badge&logo=react)
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+![HeadlesUi](https://img.shields.io/badge/headlesui-3E6693?style=for-the-badge&logo=headlessui&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Framer-motion](https://img.shields.io/badge/framer--motion-242420?style=for-the-badge&logo=framer&logoColor=white)
+![prs](https://img.shields.io/static/v1?label=&message=welcome&style=for-the-badge&color=24B36B&labelColor=000000)
+
+---
+
+# 🛠 Technologies used
+
+- Next.js
+- Typescript
+- HeadlessUi
+- framer-motion
+- TailwindCSS
+
+# 🤔 How to run
+
+Clone repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
+git clone git@github.com:X-SpeedBlack-X/Portfolio.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+At the root of the project, **Install dependencies** with the comamand:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+yarn
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Or
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```sh
+npm install
+```
 
-## Learn More
+# 🎨 Layout
 
-To learn more about Next.js, take a look at the following resources:
+<img src='./.github/main.png'>
+<img src='./.github/skills.png'>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# License 📚
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+[MIT license](LICENSE).
 
-## Deploy on Vercel
+Made by [Isaque de Sousa](https://github.com/X-SpeedBlack-X)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Give a ⭐️!
