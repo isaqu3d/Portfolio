@@ -11,16 +11,11 @@ export default function Layout({ children }) {
       } `}
     >
       <Navbar />
-      <main
-        style={{
-          paddingTop: "90px",
-          display: "flex",
-          justifyContent: "center",
-          minHeight: "100vh",
-        }}
-      >
+
+      <main className="flex justify-center pt-[90px] min-h-screen ">
         {children}
       </main>
+
       <Footer />
     </div>
   );
