@@ -4,6 +4,7 @@ import { BiChevronRight } from "react-icons/bi";
 import Bio from "../components/Bio";
 import { ButtonLink } from "../components/ButtonLink";
 import { CardTypeWriter } from "../components/CardTypeWriter";
+import { Container } from "../components/Container";
 import { Heading } from "../components/Heading";
 import { Motion } from "../components/Motion";
 import { Paragraph } from "../components/Paragraph";
@@ -13,8 +14,8 @@ import useThemeData from "../hook/useThemeData";
 export default function Home() {
   const { theme } = useThemeData();
   return (
-    <Motion>
-      <div className="max-w-lg px-4">
+    <Container>
+      <Motion>
         <CardTypeWriter />
 
         <div className="flex items-center flex-col lg:flex-row">
@@ -71,7 +72,7 @@ export default function Home() {
         <div>
           <SocialMedia />
         </div>
-      </div>
-    </Motion>
+      </Motion>
+    </Container>
   );
 }

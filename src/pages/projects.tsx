@@ -1,13 +1,14 @@
 import { NextSeo } from "next-seo";
 import thumbEventPlatform from "../../public/project/eventplatform.png";
 import thumbPomodoro from "../../public/project/move.it.png";
+import { Container } from "../components/Container";
 import { Heading } from "../components/Heading";
 import { Motion } from "../components/Motion";
 import ProjectGridItem from "../components/Projects/ProjectGridItem ";
 
 export default function projects() {
   return (
-    <div className="max-w-lg px-4 font-serif">
+    <Container>
       <NextSeo
         title="Projetos - Isaque de Sousa"
         description="Todos os meus projetos feito por mim"
@@ -34,6 +35,6 @@ export default function projects() {
           </ProjectGridItem>
         </div>
       </Motion>
-    </div>
+    </Container>
   );
 }
