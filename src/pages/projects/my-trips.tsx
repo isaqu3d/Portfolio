@@ -11,7 +11,7 @@ export default function myTrips() {
         <HeaderItemProject
           title="My trips - Minhas viagens"
           badgeYear={2022}
-          description="Seja bem-vindo ao projeto 'My Tips - Minhas viagens'.É projeto onde eu coloco todos os lugares que já fui ou que eu gostaria de ir um dia. Aqui você pode clicar nas localizaçoẽs e ver uma descrição e algumas imagens."
+          description="Seja bem-vindo ao projeto 'My Tips - Minhas viagens'. É um projeto onde eu coloco todos os lugares que já fui ou que eu gostaria de ir um dia. Aqui você pode clicar nas localizaçoẽs e ver uma descrição e algumas imagens."
         />
 
         <ListItemProject
