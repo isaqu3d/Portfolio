@@ -1,9 +1,12 @@
 import { NextSeo } from "next-seo";
-import thumbEventPlatform from "../../public/project/eventplatform.png";
-import thumbPomodoro from "../../public/project/move.it.png";
+
 import { Container } from "../components/Container";
 import { Heading } from "../components/Heading";
 import { Motion } from "../components/Motion";
+
+import thumbEventPlatform from "../../public/project/eventplatform.png";
+import thumbPomodoro from "../../public/project/move.it.png";
+import thumbMyTrips from "../../public/project/my-trips.png";
 import ProjectGridItem from "../components/Projects/ProjectGridItem ";
 
 export default function projects() {
@@ -32,6 +35,15 @@ export default function projects() {
             alt="imagem do projeto move.it"
           >
             Projeto para fazer você não ficar parado! 🏃‍♂️
+          </ProjectGridItem>
+
+          <ProjectGridItem
+            title="Minhas viagens"
+            thumbnail={thumbMyTrips}
+            url="my-trips"
+            alt="imagem do projeto minhas viagem"
+          >
+            Mapa de todos lugares que já foi ou que eu gostaria de ir. 🗺️
           </ProjectGridItem>
         </div>
       </Motion>
