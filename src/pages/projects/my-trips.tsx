@@ -11,14 +11,12 @@ export default function myTrips() {
         <HeaderItemProject
           title="My trips - Minhas viagens"
           badgeYear={2022}
-          description="Seja bem-vindo ao projeto de todas minhas viagens e lugares que já fiz.  Nesta plataforma vocês pode cadastrar
-          aulas/vídeos. Como por exemplo: Aulas de programação, intensivão de
-          aulas, Receitas de comidas, etc."
+          description="Seja bem-vindo ao projeto de todas minhas viagens e lugares que já fiz. Aqui você pode clicar nas localizaçoẽs e ver uma descrição e algumas imagens."
         />
 
         <ListItemProject
-          url="https://event-platform-livid.vercel.app/"
-          urlGitHub="https://github.com/X-SpeedBlack-X/event-platform"
+          url="https://isaque-my-trips.vercel.app/"
+          urlGitHub="https://github.com/X-SpeedBlack-X/My-Trips"
           description="NextJS, TypeScript, Graphql, Styled-Component, Next-Seo, Leaflet, MapBox."
           target="_blank"
         />
