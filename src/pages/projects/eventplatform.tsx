@@ -4,7 +4,7 @@ import { Motion } from "../../components/Motion";
 import HeaderItemProject from "../../components/Projects/HeaderItemProject";
 import ImageProject from "../../components/Projects/ImageProject";
 
-export default function eventplatform() {
+export default function eventPlatform() {
   return (
     <div className="max-w-md px-4">
       <Motion>
