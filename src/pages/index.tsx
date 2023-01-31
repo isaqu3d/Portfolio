@@ -18,7 +18,7 @@ export default function Home() {
       <Motion>
         <CardTypeWriter />
 
-        <div className="flex items-center flex-col lg:flex-row">
+        <div className="flex items-center flex-col lg:flex-row lg:gap-0 gap-4">
           <div className="flex-grow">
             <Heading className="text-4xl font-sans no-underline mb-0">
               Isaque de Sousa
