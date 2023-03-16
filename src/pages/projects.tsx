@@ -1,6 +1,5 @@
 import { NextSeo } from "next-seo";
 
-import { Container } from "../components/Container";
 import { Heading } from "../components/Heading";
 import { Motion } from "../components/Motion";
 
@@ -11,7 +10,7 @@ import ProjectGridItem from "../components/Projects/ProjectGridItem ";
 
 export default function projects() {
   return (
-    <Container>
+    <>
       <NextSeo
         title="Projetos - Isaque de Sousa"
         description="Todos os meus projetos feito por mim"
@@ -47,6 +46,6 @@ export default function projects() {
           </ProjectGridItem>
         </div>
       </Motion>
-    </Container>
+    </>
   );
 }
