@@ -7,7 +7,7 @@ export default function Layout({ children }) {
   return (
     <div
       className={`${
-        theme ? "bg-[#f0e7db] text-black" : " bg-[#202023] text-white-100"
+        theme ? "bg-white-300 text-black" : " bg-gray-900 text-white-100"
       } `}
     >
       <Navbar />
