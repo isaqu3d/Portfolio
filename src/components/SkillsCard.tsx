@@ -3,8 +3,6 @@ import useThemeData from "../hook/useThemeData";
 
 type SkillsCardProps = {
   children: ReactNode;
-
-  /*  onClick?: () => void; */
 };
 export function SkillsCard({ children }: SkillsCardProps) {
   const { theme } = useThemeData();
@@ -18,7 +16,6 @@ export function SkillsCard({ children }: SkillsCardProps) {
       } flex justify-center px-4 py-2 sm:py-0 opacity-100 sm:opacity-40 rounded hover:opacity-100 border-2 hover:scale-105 scale-100"
       
    `}
-      /* onClick={onClick} */
     >
       {children}
     </div>
