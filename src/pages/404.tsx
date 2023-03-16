@@ -4,7 +4,7 @@ import { Heading } from "../components/Heading";
 
 export default function NotFound() {
   return (
-    <div className="max-w-md px-4 flex flex-col justify-center">
+    <div className="flex flex-col justify-center h-full">
       <NextSeo
         title="Pagina não encontrada"
         description="Pagina não encontrada, error 404"
