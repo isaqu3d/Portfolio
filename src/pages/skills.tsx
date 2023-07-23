@@ -1,6 +1,5 @@
 import { NextSeo } from "next-seo";
 import GitHubCalendar from "react-github-calendar";
-import { Container } from "../components/Container";
 
 import { Heading } from "../components/Heading";
 import { Motion } from "../components/Motion";
@@ -17,19 +16,17 @@ function SkillCardRender({ icon: Icon, color }) {
 }
 
 export default function Skills() {
-  /*   const [showModal, setShowModal] = useState<string | undefined>(); */
-
   return (
     <>
       <NextSeo
         title="Habilidades - Isaque de Sousa"
         description="Pagina das minhas habilidades e ferramentas que eu utilizo no meu dia a dia"
       />
-      <Container>
+      <div>
         <Motion>
           <Heading>Habilidades</Heading>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
             {SKILLS_CARD.map((skills) => (
               <SkillCardRender
                 icon={skills.icon}
@@ -37,14 +34,10 @@ export default function Skills() {
                 color={skills.color}
               />
             ))}
-
-            {/*  {SKILLS_CARD.find((item) => item?.id === showModal?.id) ? (
-              <ModalContent item={showModal} />
-            ) : null} */}
           </div>
 
           <Heading>Ferramentas</Heading>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
             {SKILLS_TOOLS.map((skills) => (
               <SkillCardRender
                 icon={skills.icon}
@@ -66,7 +59,7 @@ export default function Skills() {
             />
           </div>
         </Motion>
-      </Container>
+      </div>
     </>
   );
 }
