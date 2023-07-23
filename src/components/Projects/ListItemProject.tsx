@@ -1,5 +1,5 @@
-import useThemeData from "../../hook/useThemeData";
-import BadgeTitle from "./BadgeTitle";
+import BadgeTitle from "@components/Projects/BadgeTitle";
+import useThemeData from "@hook/useThemeData";
 
 type ListItemProjectProps = {
   url: string;

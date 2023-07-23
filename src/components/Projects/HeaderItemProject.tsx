@@ -1,6 +1,6 @@
-import useThemeData from "../../hook/useThemeData";
-import { Paragraph } from "../Paragraph";
-import Title from "./Title";
+import { Paragraph } from "@components/Paragraph";
+import Title from "@components/Projects/Title";
+import useThemeData from "@hook/useThemeData";
 
 export default function HeaderItemProject({ title, badgeYear, description }) {
   const { theme } = useThemeData();

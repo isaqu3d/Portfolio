@@ -1,8 +1,8 @@
+import useThemeData from "@hook/useThemeData";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 import { IoLogoGithub } from "react-icons/io5";
 
-import useThemeData from "../hook/useThemeData";
 import { ButtonTheme } from "./ButtonTheme";
 import Logo from "./Logo";
 import { MenuItem } from "./MenuItem";

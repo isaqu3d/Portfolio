@@ -1,6 +1,5 @@
+import useThemeData from "@hook/useThemeData";
 import { ReactNode } from "react";
-
-import useThemeData from "../hook/useThemeData";
 
 type ButtonProps = {
   children: ReactNode;
@@ -15,9 +14,9 @@ export function ButtonLink({ children, className, href }: ButtonProps) {
       href={href}
       className={`${
         theme
-          ? " bg-teal-400 hover:bg-teal-600 text-white-100 "
-          : " bg-teal-200 hover:bg-teal-400 text-black"
-      } ${className} flex items-center transition-colors gap-2 font-medium py-2 px-4 rounded-md`}
+          ? " bg-teal-400 text-white-100 hover:bg-teal-600 "
+          : " bg-teal-200 text-black hover:bg-teal-400"
+      } ${className} flex items-center gap-2 rounded-md py-2 px-4 font-medium transition-colors`}
     >
       {children}
     </a>

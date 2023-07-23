@@ -1,7 +1,7 @@
-import { Motion } from "../../components/Motion";
-import HeaderItemProject from "../../components/Projects/HeaderItemProject";
-import ImageProject from "../../components/Projects/ImageProject";
-import { ListItemProject } from "../../components/Projects/ListItemProject";
+import { Motion } from "@components/Motion";
+import HeaderItemProject from "@components/Projects/HeaderItemProject";
+import ImageProject from "@components/Projects/ImageProject";
+import { ListItemProject } from "@components/Projects/ListItemProject";
 
 export default function eventplatform() {
   return (
@@ -10,8 +10,8 @@ export default function eventplatform() {
         <HeaderItemProject
           title="Move.It - Pomodoro"
           badgeYear={2021}
-          description=" Seja bem-vindo ao projeto Move.it. Esse projeto é um aplicação de um
-          pomodoro para melhorar seus estudos, pois, quando o tempo chega ao fim
+          description="Seja bem-vindo ao projeto Move.it. Esse projeto é um aplicação de um
+          pomodoro para melhorar seus  estudos, pois, quando o tempo chega ao fim
           e lança um desafio para você fazer. E depois de completar o desafio
           você ganha XP para upar de level, e podendo iniciar o Pomodoro
           novamente."

@@ -1,9 +1,7 @@
+import useThemeData from "@hook/useThemeData";
 import NextLink from "next/link";
 import { ReactNode } from "react";
 import { BiChevronRight } from "react-icons/bi";
-
-import useThemeData from "../../hook/useThemeData";
-import { Heading } from "../Heading";
 
 type TitleProps = {
   children: ReactNode;
@@ -30,8 +28,10 @@ export default function Title({ children, className }: TitleProps) {
         <span>
           <BiChevronRight />
         </span>
-        <Heading>{children}</Heading>{" "}
-        {/* className="inline-flex items-center text-xl mb-4 no-underline" */}
+
+        <h1 className="inline-flex items-center text-xl font-bold">
+          {children}
+        </h1>
       </div>
     </>
   );

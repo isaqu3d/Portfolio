@@ -1,7 +1,6 @@
+import useThemeData from "@hook/useThemeData";
 import NextLink from "next/link";
 import { ReactNode } from "react";
-
-import useThemeData from "../hook/useThemeData";
 
 interface LinkItemProps {
   href: string;

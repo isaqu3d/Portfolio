@@ -1,14 +1,13 @@
+import Bio from "@components/Bio";
+import { ButtonLink } from "@components/ButtonLink";
+import { CardTypeWriter } from "@components/CardTypeWriter";
+import { Heading } from "@components/Heading";
+import { Motion } from "@components/Motion";
+import { Paragraph } from "@components/Paragraph";
+import { SocialMedia } from "@components/SocialMedia";
+import useThemeData from "@hook/useThemeData";
 import Image from "next/image";
 import { BiChevronRight } from "react-icons/bi";
-
-import Bio from "../components/Bio";
-import { ButtonLink } from "../components/ButtonLink";
-import { CardTypeWriter } from "../components/CardTypeWriter";
-import { Heading } from "../components/Heading";
-import { Motion } from "../components/Motion";
-import { Paragraph } from "../components/Paragraph";
-import { SocialMedia } from "../components/SocialMedia";
-import useThemeData from "../hook/useThemeData";
 
 export default function Home() {
   const { theme } = useThemeData();

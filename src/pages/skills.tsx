@@ -1,11 +1,10 @@
+import { Heading } from "@components/Heading";
+import { Motion } from "@components/Motion";
+import { SkillsCard } from "@components/SkillsCard";
+import { SKILLS_CARD } from "@utils/skills-card";
+import { SKILLS_TOOLS } from "@utils/skills-tools";
 import { NextSeo } from "next-seo";
 import GitHubCalendar from "react-github-calendar";
-
-import { Heading } from "../components/Heading";
-import { Motion } from "../components/Motion";
-import { SkillsCard } from "../components/SkillsCard";
-import { SKILLS_CARD } from "../utils/skills-card";
-import { SKILLS_TOOLS } from "../utils/skills-tools";
 
 function SkillCardRender({ icon: Icon, color }) {
   return (

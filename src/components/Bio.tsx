@@ -1,5 +1,5 @@
-import useThemeData from "../hook/useThemeData";
-import { Heading } from "./Heading";
+import { Heading } from "@components/Heading";
+import useThemeData from "@hook/useThemeData";
 
 export const BioSectionTwo = ({ children }) => {
   const { theme } = useThemeData();
@@ -13,7 +13,7 @@ export const BioSectionTwo = ({ children }) => {
 };
 
 export const BioYearTwo = ({ children }) => {
-  return <span className="font-bold mr-4">{children}</span>;
+  return <span className="mr-4 font-bold">{children}</span>;
 };
 
 export default function Bio() {

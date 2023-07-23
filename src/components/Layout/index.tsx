@@ -1,6 +1,6 @@
-import useThemeData from "../../hook/useThemeData";
-import Footer from "../Footer";
-import Navbar from "../Navbar";
+import Footer from "@components/Footer";
+import Navbar from "@components/Navbar";
+import useThemeData from "@hook/useThemeData";
 
 export default function Layout({ children }) {
   const { theme } = useThemeData();
@@ -12,7 +12,7 @@ export default function Layout({ children }) {
     >
       <Navbar />
 
-      <main className="flex justify-center pt-[100px] min-h-screen">
+      <main className="flex min-h-screen justify-center pt-[100px]">
         {children}
       </main>
 

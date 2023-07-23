@@ -1,6 +1,6 @@
+import useThemeData from "@hook/useThemeData";
 import { ReactNode } from "react";
 
-import useThemeData from "../../hook/useThemeData";
 type BadgeTitleProps = {
   children: ReactNode;
 };

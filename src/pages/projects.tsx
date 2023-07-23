@@ -1,8 +1,8 @@
+import thumbEventPlatform from "@public/project/eventplatform.png";
+import thumbPomodoro from "@public/project/move.it.png";
+import thumbMyTrips from "@public/project/my-trips.png";
 import { NextSeo } from "next-seo";
 
-import thumbEventPlatform from "../../public/project/eventplatform.png";
-import thumbPomodoro from "../../public/project/move.it.png";
-import thumbMyTrips from "../../public/project/my-trips.png";
 import { Heading } from "../components/Heading";
 import { Motion } from "../components/Motion";
 import ProjectGridItem from "../components/Projects/ProjectGridItem ";

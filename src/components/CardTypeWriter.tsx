@@ -1,5 +1,5 @@
-import useThemeData from "../hook/useThemeData";
-import { Typewriter } from "./TypeWriter";
+import { Typewriter } from "@components/TypeWriter";
+import useThemeData from "@hook/useThemeData";
 
 export function CardTypeWriter() {
   const { theme } = useThemeData();
@@ -10,7 +10,7 @@ export function CardTypeWriter() {
           theme
             ? "bg-white-100 bg-opacity-40  text-black"
             : "bg-gray-600 text-white-300"
-        }  flex justify-center items-center  shadow-xl rounded-lg mb-4 p-1 text-center h-12`}
+        }  mb-4 flex h-12  items-center justify-center rounded-lg p-1 text-center shadow-xl`}
       >
         <Typewriter />
       </div>
