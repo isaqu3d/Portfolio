@@ -8,48 +8,49 @@ import {
   SiVercel,
   SiVisualstudiocode,
 } from "react-icons/si";
+import { v4 as uuidv4 } from "uuid";
 
 export const SKILLS_TOOLS = [
   {
-    id: 1,
+    id: uuidv4(),
     icon: SiVisualstudiocode,
     color: "#23A7F2",
   },
 
   {
-    id: 2,
+    id: uuidv4(),
     icon: SiVercel,
   },
 
   {
-    id: 3,
+    id: uuidv4(),
     icon: SiLinux,
   },
 
   {
-    id: 4,
+    id: uuidv4(),
     icon: SiInsomnia,
     color: "#4d00c8",
   },
 
   {
-    id: 5,
+    id: uuidv4(),
     icon: SiPostman,
     color: "#fb7505",
   },
   {
-    id: 6,
+    id: uuidv4(),
     icon: SiGithub,
   },
 
   {
-    id: 7,
+    id: uuidv4(),
     icon: SiNotion,
   },
 
   {
     icon: SiSpotify,
-    id: 8,
+    id: uuidv4(),
     color: "#1DB954",
   },
 ];

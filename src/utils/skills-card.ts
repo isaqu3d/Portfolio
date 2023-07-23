@@ -11,59 +11,64 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
+import { v4 as uuidv4 } from "uuid";
 
 export const SKILLS_CARD = [
   {
-    id: "1",
+    id: uuidv4(),
     icon: SiHtml5,
     color: "#f06529",
   },
   {
-    id: "2",
+    id: uuidv4(),
     icon: SiCss3,
     color: "#2965f1",
   },
   {
-    id: "3",
+    id: uuidv4(),
     icon: SiJavascript,
     color: "#F0DB4F",
   },
+
   {
-    id: "4",
-    icon: SiReact,
-    color: "#61dafb",
-  },
-  {
-    id: "5",
-    icon: SiNextdotjs,
-  },
-  {
-    id: "6",
+    id: uuidv4(),
     icon: SiTypescript,
     color: "#007acc",
   },
+
   {
-    id: "7",
+    id: uuidv4(),
+    icon: SiReact,
+    color: "#61dafb",
+  },
+
+  {
+    id: uuidv4(),
+    icon: SiNextdotjs,
+  },
+
+  {
+    id: uuidv4(),
     icon: SiNodedotjs,
     color: "#3c873a",
   },
   {
-    id: "8",
+    id: uuidv4(),
     icon: SiTailwindcss,
     color: "#38BDF8",
   },
   {
-    id: "9",
+    id: uuidv4(),
     icon: SiStyledcomponents,
     color: "#dea336",
   },
   {
-    id: "10",
+    id: uuidv4(),
     icon: SiChakraui,
     color: "#46C8C1",
   },
   {
-    id: "11",
+    id: uuidv4(),
     icon: SiGit,
     color: "#f34f29",
   },
