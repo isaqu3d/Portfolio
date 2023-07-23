@@ -16,33 +16,30 @@ export default function projects() {
       />
       <Motion>
         <Heading>Projetos</Heading>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           <ProjectGridItem
             url="eventplatform"
             title="Plataforma de Evento"
             thumbnail={thumbEventPlatform}
             alt="imagem do projeto da plataforma de evento"
-          >
-            Plataforma de videos de todos os tipos e gostos! 💻
-          </ProjectGridItem>
+            description="Plataforma de videos de todos os tipos e gostos! 💻"
+          />
 
           <ProjectGridItem
             title="Pomodoro"
             thumbnail={thumbPomodoro}
             url="move.it"
             alt="imagem do projeto move.it"
-          >
-            Projeto para fazer você não ficar parado! 🏃‍♂️
-          </ProjectGridItem>
+            description="Projeto para fazer você não ficar parado! 🏃‍♂️"
+          />
 
           <ProjectGridItem
             title="Minhas viagens"
+            description="Mapa de todos lugares que já foi ou que eu gostaria de ir. 🗺️"
             thumbnail={thumbMyTrips}
             url="my-trips"
             alt="imagem do projeto minhas viagem"
-          >
-            Mapa de todos lugares que já foi ou que eu gostaria de ir. 🗺️
-          </ProjectGridItem>
+          />
         </div>
       </Motion>
     </>
