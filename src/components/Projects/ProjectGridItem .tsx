@@ -1,13 +1,14 @@
 import Image from "next/image";
 import NextLink from "next/link";
 import { ReactNode } from "react";
+
 import useThemeData from "../../hook/useThemeData";
 
 type ProjectGridItemProps = {
   children: ReactNode;
   url: string;
   title: string;
-  thumbnail: any;
+  thumbnail: string;
   alt: string;
 };
 export default function ProjectGridItem({

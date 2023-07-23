@@ -1,10 +1,12 @@
 import NextLink from "next/link";
+import { ReactNode } from "react";
 import { BiChevronRight } from "react-icons/bi";
+
 import useThemeData from "../../hook/useThemeData";
 import { Heading } from "../Heading";
 
 type TitleProps = {
-  children: any;
+  children: ReactNode;
   className?: string;
 };
 
@@ -25,9 +27,11 @@ export default function Title({ children, className }: TitleProps) {
             Projeto
           </a>
         </NextLink>
+
         <span>
           <BiChevronRight />
         </span>
+
         <Heading className="inline-flex items-center text-xl mb-4 no-underline">
           {children}
         </Heading>

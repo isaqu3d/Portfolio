@@ -16,7 +16,7 @@ export const ListItemProject = ({
 }: ListItemProjectProps) => {
   const { theme } = useThemeData();
   return (
-    <ul className="ml-4 my-4">
+    <ul className="my-4 ml-4">
       <div>
         <BadgeTitle>Website</BadgeTitle>
 
