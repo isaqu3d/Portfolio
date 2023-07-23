@@ -12,7 +12,7 @@ export default function Layout({ children }) {
     >
       <Navbar />
 
-      <main className="flex justify-center pt-[90px] min-h-screen ">
+      <main className="flex justify-center pt-[100px] min-h-screen">
         {children}
       </main>
 

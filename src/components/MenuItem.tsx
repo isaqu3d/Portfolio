@@ -1,5 +1,5 @@
 import { Menu } from "@headlessui/react";
-import { default as NextLink } from "next/link";
+import NextLink from "next/link";
 import { useRouter } from "next/router";
 import { BiMenu } from "react-icons/bi";
 
@@ -21,15 +21,15 @@ const LinkItem = ({ href, children, ...props }) => {
 };
 export function MenuItem() {
   return (
-    <div className="md:hidden flex">
+    <div className="flex md:hidden">
       <Menu as="nav" aria-label="open list menu">
         <Menu.Button
           aria-label="icon button"
-          className="border-[1.5px] border-gray-600 p-2 rounded-md text-xl"
+          className="rounded-md border-[1.5px] border-gray-600 p-2 text-xl"
         >
           <BiMenu />
         </Menu.Button>
-        <Menu.Items className="flex flex-col rounded-md absolute right-3 -bottom-32 bg-[#31384c] py-2 px-4  w-52 gap-[6px] text-white-100 animate-ToggleMenu">
+        <Menu.Items className="absolute right-3 -bottom-32 flex w-52 animate-ToggleMenu flex-col gap-[6px] rounded-md  bg-[#31384c] py-2 px-4 text-white-100">
           <Menu.Item>
             <LinkItem href="/">Sobre mim</LinkItem>
           </Menu.Item>
