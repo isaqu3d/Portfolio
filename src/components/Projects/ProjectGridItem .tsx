@@ -1,24 +1,25 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import NextLink from "next/link";
-import { ReactNode } from "react";
 
 import useThemeData from "../../hook/useThemeData";
 
 type ProjectGridItemProps = {
-  children: ReactNode;
-  url: string;
   title: string;
-  thumbnail: string;
+  description: string;
+  thumbnail: StaticImageData;
+  url: string;
   alt: string;
 };
+
 export default function ProjectGridItem({
-  children,
-  url,
   title,
+  description,
   thumbnail,
+  url,
   alt,
 }: ProjectGridItemProps) {
   const { theme } = useThemeData();
+
   return (
     <>
       <div className="w-full text-center">
@@ -37,7 +38,7 @@ export default function ProjectGridItem({
             </a>
 
             <p className={`${theme ? "text-black" : "text-white-100"} text-sm`}>
-              {children}
+              {description}
             </p>
           </div>
         </NextLink>
