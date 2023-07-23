@@ -1,7 +1,12 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": ["next/core-web-vitals", "@rocketseat/eslint-config/react"],
   "rules": {
     "react/no-unescaped-entities": "off",
-    "@next/next/no-img-element": "off"
-  }
+    "@next/next/no-img-element": "off",
+    "@typescript-eslint/no-explicit-any": "error",
+    "prettier/prettier": "off",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
+  },
+  "plugins": ["simple-import-sort"]
 }
