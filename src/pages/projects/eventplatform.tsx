@@ -1,8 +1,7 @@
-import { ListItemProject } from "../../components/Projects/ListItemProject";
-
 import { Motion } from "../../components/Motion";
 import HeaderItemProject from "../../components/Projects/HeaderItemProject";
 import ImageProject from "../../components/Projects/ImageProject";
+import { ListItemProject } from "../../components/Projects/ListItemProject";
 
 export default function eventPlatform() {
   return (
