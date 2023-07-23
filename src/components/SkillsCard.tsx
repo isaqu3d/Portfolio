@@ -1,9 +1,11 @@
 import { ReactNode } from "react";
+
 import useThemeData from "../hook/useThemeData";
 
 type SkillsCardProps = {
   children: ReactNode;
 };
+
 export function SkillsCard({ children }: SkillsCardProps) {
   const { theme } = useThemeData();
 
