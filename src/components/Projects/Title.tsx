@@ -27,14 +27,11 @@ export default function Title({ children, className }: TitleProps) {
             Projeto
           </a>
         </NextLink>
-
         <span>
           <BiChevronRight />
         </span>
-
-        <Heading className="inline-flex items-center text-xl mb-4 no-underline">
-          {children}
-        </Heading>
+        <Heading>{children}</Heading>{" "}
+        {/* className="inline-flex items-center text-xl mb-4 no-underline" */}
       </div>
     </>
   );

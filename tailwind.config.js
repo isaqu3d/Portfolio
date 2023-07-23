@@ -43,7 +43,7 @@ module.exports = {
       },
 
       fontFamily: {
-        sans: ['"M PLUS Rounded 1c"', "sans-serif"],
+        sansMPlus: ['"M PLUS Rounded 1c"', "sans-serif"],
         serif: ["sans-serif"],
       },
 
@@ -64,17 +64,17 @@ module.exports = {
 
         ButtonThemeFall2: {
           "0%": { transform: "translateY(-50%)", opacity: "0" },
-        },
-        "100%": {
-          transform: "translateY(0deg)",
-          opacity: "1",
+          "100%": {
+            transform: "translateY(0deg)",
+            opacity: "1",
+          },
         },
 
         ToggleMenu: {
           "0%": { opacity: "0.1" },
-        },
-        "100%": {
-          opacity: "1",
+          "100%": {
+            opacity: "1",
+          },
         },
       },
     },
