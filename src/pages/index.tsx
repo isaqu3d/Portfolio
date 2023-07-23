@@ -1,4 +1,5 @@
 import Image from "next/image";
+import NextLink from "next/link";
 import { BiChevronRight } from "react-icons/bi";
 
 import Bio from "../components/Bio";
@@ -17,17 +18,17 @@ export default function Home() {
       <Motion>
         <CardTypeWriter />
 
-        <div className="flex items-center flex-col lg:flex-row lg:gap-0 gap-4">
+        <div className="flex flex-col items-center gap-4 lg:flex-row lg:gap-0">
           <div className="flex-grow">
-            <Heading className="text-4xl font-sans no-underline mb-0">
+            <h1 className="font-sansMPlus text-4xl font-bold sm:text-center lg:text-start">
               Isaque de Sousa
-            </Heading>
+            </h1>
 
             <p>Entusiasta Digital ( Code / Desenvolvedor / Remoto )</p>
           </div>
 
           <div>
-            <div className="border-white-200 border-2 rounded-full w-[100px] h-[100px] inline-block overflow-hidden">
+            <div className="inline-block h-[100px] w-[100px] overflow-hidden rounded-full border-2 border-white-200">
               <Image
                 src="/profile.jpeg"
                 alt="Imagem de perfil"
@@ -56,6 +57,17 @@ export default function Home() {
           <ButtonLink href="/projects">
             Projetos <BiChevronRight />
           </ButtonLink>
+
+          <NextLink
+            href="/projects"
+            className={`${
+              theme
+                ? " bg-teal-400 text-white-100 hover:bg-teal-600 "
+                : " bg-teal-200 text-black hover:bg-teal-400"
+            } flex items-center gap-2 rounded-md py-2 px-4 font-medium transition-colors`}
+          >
+            Projetos
+          </NextLink>
         </div>
 
         <div>

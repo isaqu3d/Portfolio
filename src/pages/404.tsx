@@ -1,4 +1,5 @@
 import { NextSeo } from "next-seo";
+
 import { ButtonLink } from "../components/ButtonLink";
 import { Heading } from "../components/Heading";
 
