@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-next-chakra",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -17,13 +17,13 @@
     "cz-conventional-changelog": "^3.3.0",
     "framer-motion": "^7.3.6",
     "husky": "^8.0.1",
-    "next": "12.3.1",
+    "next": "^13.4.12",
     "next-seo": "^5.15.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-github-calendar": "^3.3.4",
     "react-icons": "^4.4.0",
-    "typewriter-effect": "^2.19.0",
+    "typewriter-effect": "^2.20.1",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
