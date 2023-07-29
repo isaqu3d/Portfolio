@@ -1,15 +1,31 @@
 {
   "compilerOptions": {
     "paths": {
-      "baseUrl": ["./src"],
-      "@components/*": ["./src/components/*"],
-      "@hook/*": ["./src/hook/*"],
-      "@utils/*": ["./src/utils/*"],
-      "@context/*": ["./src/context/*"],
-      "@public/*": ["./public/*"]
+      "baseUrl": [
+        "./src"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@hook/*": [
+        "./src/hook/*"
+      ],
+      "@utils/*": [
+        "./src/utils/*"
+      ],
+      "@context/*": [
+        "./src/context/*"
+      ],
+      "@public/*": [
+        "./public/*"
+      ]
     },
     "target": "ES6",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -21,8 +37,22 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "strictNullChecks": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
