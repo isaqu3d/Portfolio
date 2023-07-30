@@ -41,7 +41,9 @@ export default function Navbar() {
     <>
       <header
         className={`${
-          theme ? "bg-white-100/10" : "bg-gray-900/10"
+          theme
+            ? "bg-white-100/30"
+            : "border-b-[1px] border-gray-600 bg-gray-900/20"
         }  fixed z-50 flex w-full justify-center backdrop-blur-sm`}
       >
         <nav className="flex max-w-screen-md flex-1 justify-between p-2">
