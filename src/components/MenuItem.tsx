@@ -1,21 +1,22 @@
+"use client";
+
 import { Menu } from "@headlessui/react";
 import NextLink from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import { BiMenu } from "react-icons/bi";
 
-const LinkItem = ({ href, children, ...props }) => {
-  const router = useRouter();
-  const active = router.asPath === href;
+const LinkItem = ({ href, children }) => {
+  const router = usePathname();
+  const active = router === href;
 
   return (
-    <NextLink href={href} passHref scroll={false}>
-      <a
-        href={href}
-        className={active ? "text-teal-500 " : "hover:underline"}
-        {...props}
-      >
-        {children}
-      </a>
+    <NextLink
+      href={href}
+      passHref
+      scroll={false}
+      className={active ? "text-teal-500 " : "hover:underline"}
+    >
+      {children}
     </NextLink>
   );
 };
