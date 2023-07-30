@@ -3,9 +3,16 @@
 import { Menu } from "@headlessui/react";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
+import { ReactNode } from "react";
 import { BiMenu } from "react-icons/bi";
 
-const LinkItem = ({ href, children }) => {
+interface LinkItemProps {
+  href: string;
+  target?: string;
+  children: ReactNode;
+}
+
+const LinkItem = ({ href, children }: LinkItemProps) => {
   const router = usePathname();
   const active = router === href;
 
