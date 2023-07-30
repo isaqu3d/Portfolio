@@ -1,28 +1,36 @@
+"use client";
+
 import useThemeData from "@hook/useThemeData";
 import NextLink from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import { IoLogoGithub } from "react-icons/io5";
 
+import { ReactNode } from "react";
 import { ButtonTheme } from "./ButtonTheme";
 import Logo from "./Logo";
 import { MenuItem } from "./MenuItem";
 
-const LinkItem = ({ href, children, ...props }) => {
-  const router = useRouter();
-  const active = router.asPath === href;
+interface LinkItemProps {
+  href: string;
+  target?: string;
+  children: ReactNode;
+}
+
+const LinkItem = ({ href, target, children }: LinkItemProps) => {
+  const router = usePathname();
+  const active = router === href;
 
   return (
-    <NextLink href={href} passHref scroll={false}>
-      <a
-        href={href}
-        className={`${
-          active ? "rounded-md bg-teal-400 p-2 text-black" : "hover:underline"
-        } 
-        `}
-        {...props}
-      >
-        {children}
-      </a>
+    <NextLink
+      href={href}
+      target={target}
+      passHref
+      scroll={false}
+      className={`${
+        active ? "rounded-md bg-teal-400 p-2 text-black" : "hover:underline"
+      }`}
+    >
+      {children}
     </NextLink>
   );
 };
@@ -49,10 +57,12 @@ export default function Navbar() {
             } hidden flex-grow items-center gap-4 md:flex `}
           >
             <LinkItem href="/projects">Projetos</LinkItem>
+
             <LinkItem href="/skills">Habilidades</LinkItem>
+
             <LinkItem
               target="_blank"
-              href="https://github.com/X-SpeedBlack-X/portfolio-chakra"
+              href="https://github.com/X-SpeedBlack-X/Portfolio"
             >
               <div className="flex items-center justify-center gap-1">
                 <IoLogoGithub />
