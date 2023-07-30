@@ -1,8 +1,10 @@
-import { useRouter } from "next/router";
+"use client";
+
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 export function Scroll({ children }) {
-  const location = useRouter();
+  const location = usePathname();
 
   useEffect(() => {
     window.scrollTo(0, 0);
