@@ -1,9 +1,13 @@
+"use client";
+
 import Footer from "@components/Footer";
 import Navbar from "@components/Navbar";
 import useThemeData from "@hook/useThemeData";
 
 export default function Layout({ children }) {
-  const { theme } = useThemeData();
+  const themeData = useThemeData();
+  const { theme } = themeData || { theme: "" };
+
   return (
     <div
       className={`${
