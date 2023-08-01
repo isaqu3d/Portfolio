@@ -1,3 +1,5 @@
+"use client";
+
 import useThemeData from "@hook/useThemeData";
 import { ReactNode } from "react";
 
@@ -6,6 +8,7 @@ type BadgeTitleProps = {
 };
 export default function BadgeTitle({ children }: BadgeTitleProps) {
   const { theme } = useThemeData();
+
   return (
     <>
       <span
