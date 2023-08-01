@@ -1,3 +1,5 @@
+"use client";
+
 import useThemeData from "@hook/useThemeData";
 import { ReactNode } from "react";
 
@@ -12,9 +14,9 @@ export function SkillsCard({ children }: SkillsCardProps) {
     <div
       className={`${
         theme
-          ? "border-2 border-teal-200 hover:border-teal-400"
+          ? "border-2 border-teal-400 hover:border-teal-600"
           : "border-2 border-pink-400 hover:border-pink-500"
-      } scale-100" flex justify-center rounded border-2 px-4 py-2 opacity-100 hover:scale-105 hover:opacity-100 sm:py-0 sm:opacity-40
+      } flex scale-100 justify-center rounded border-2 p-4 opacity-100 hover:scale-110 hover:opacity-100 sm:opacity-40 
       
    `}
     >
