@@ -1,6 +1,5 @@
-import { Typewriter } from "@components/TypeWriter";
 import useThemeData from "@hook/useThemeData";
-
+import { Typewriter } from "./TypeWriter";
 export function CardTypeWriter() {
   const { theme } = useThemeData();
   return (
