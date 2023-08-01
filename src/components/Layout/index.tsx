@@ -5,13 +5,12 @@ import Navbar from "@components/Navbar";
 import useThemeData from "@hook/useThemeData";
 
 export default function Layout({ children }) {
-  const themeData = useThemeData();
-  const { theme } = themeData || { theme: "" };
+  const { theme } = useThemeData();
 
   return (
     <div
       className={`${
-        theme ? "bg-white-300 text-black" : " bg-gray-900 text-white-100"
+        theme ? "bg-white-200 text-black" : " bg-gray-900 text-white-100"
       } `}
     >
       <Navbar />
