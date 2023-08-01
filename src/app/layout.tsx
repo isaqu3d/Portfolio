@@ -1,28 +1,30 @@
-"use client";
-
 import "../styles/global.css";
 
 import Layout from "@components/Layout";
 import { Scroll } from "@components/Scroll";
 import { ThemeProvider } from "@context/ThemeContext";
-import { NextSeo } from "next-seo";
 import { ReactNode } from "react";
 
-import seo from "../../nextseo.config";
+import { Metadata } from "next";
+import Head from "./head";
 
-/* export const metadata: Metadata = {
-  title: "title",
-  description: "Welcome to Next.js",
-}; */ // resolver isso do metadata com use client
+export const metadata: Metadata = {
+  title: {
+    default: "Home | Isaque de Sousa",
+    template: "%s | Isaque de Sousa",
+  },
+  description:
+    "Seja bem-vindo ao meu portfolio, Sou Isaque de Sousa e venha me conhecer melhor.",
+};
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <Scroll>
-        <NextSeo {...seo} />
         <ThemeProvider>
           <html lang="pt-br">
             <body>
+              <Head />
               <Layout>
                 <main className="max-w-lg px-4">{children}</main>
               </Layout>
