@@ -3,13 +3,8 @@ import useThemeData from "@hook/useThemeData";
 
 export const BioSectionTwo = ({ children }) => {
   const { theme } = useThemeData();
-  return (
-    <div
-      className={`${theme ? "text-black" : "text-white-100"} pl-14 -indent-14`}
-    >
-      {children}
-    </div>
-  );
+
+  return <div className="pl-14 -indent-14">{children}</div>;
 };
 
 export const BioYearTwo = ({ children }) => {
