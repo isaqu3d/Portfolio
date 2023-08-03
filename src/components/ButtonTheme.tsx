@@ -1,3 +1,4 @@
+"use client";
 import useThemeData from "@hook/useThemeData";
 import { FiSun } from "react-icons/fi";
 import { RiMoonFill } from "react-icons/ri";
