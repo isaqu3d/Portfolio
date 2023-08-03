@@ -14,17 +14,18 @@ export default function Title({ children, className }: TitleProps) {
   return (
     <>
       <div className={className}>
-        <NextLink href="/projects" passHref>
-          <a
-            className={`${
-              theme
-                ? "text-teal-600 hover:underline"
-                : "text-pink-400 hover:underline"
-            }`}
-          >
-            Projeto
-          </a>
+        <NextLink
+          href="/projects"
+          passHref
+          className={`${
+            theme
+              ? "text-teal-600 hover:underline"
+              : "text-pink-400 hover:underline"
+          }`}
+        >
+          Projeto
         </NextLink>
+
         <span>
           <BiChevronRight />
         </span>
