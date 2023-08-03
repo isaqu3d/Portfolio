@@ -1,33 +1,31 @@
 "use client";
 
 import { Menu } from "@headlessui/react";
+import useThemeData from "@hook/useThemeData";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
-import { ReactNode } from "react";
 import { BiMenu } from "react-icons/bi";
+import { v4 as uuidv4 } from "uuid";
 
-interface LinkItemProps {
-  href: string;
-  target?: string;
-  children: ReactNode;
-}
+const LINKS_ITEMS = [
+  {
+    id: uuidv4(),
+    name: "Sobre mim",
+    href: "/",
+  },
+  { id: uuidv4(), name: "Projetos", href: "/projects" },
+  { id: uuidv4(), name: "Habilidades", href: "/skills" },
+  {
+    id: uuidv4(),
+    name: "Código",
+    href: "https://github.com/X-SpeedBlack-X/Portfolio",
+  },
+];
 
-const LinkItem = ({ href, children }: LinkItemProps) => {
-  const router = usePathname();
-  const active = router === href;
-
-  return (
-    <NextLink
-      href={href}
-      passHref
-      scroll={false}
-      className={active ? "text-teal-500 " : "hover:underline"}
-    >
-      {children}
-    </NextLink>
-  );
-};
 export function MenuItem() {
+  const { theme } = useThemeData();
+  const router = usePathname();
+
   return (
     <div className="flex md:hidden">
       <Menu as="nav" aria-label="open list menu">
@@ -37,26 +35,26 @@ export function MenuItem() {
         >
           <BiMenu />
         </Menu.Button>
-        <Menu.Items className="absolute right-3 -bottom-32 flex w-52 animate-ToggleMenu flex-col gap-[6px] rounded-md  bg-[#31384c] py-2 px-4 text-white-100">
-          <Menu.Item>
-            <LinkItem href="/">Sobre mim</LinkItem>
-          </Menu.Item>
 
-          <Menu.Item>
-            <LinkItem href="/projects">Projetos</LinkItem>
-          </Menu.Item>
-
-          <Menu.Item>
-            <LinkItem href="/skills">Habilidades</LinkItem>
-          </Menu.Item>
-          <Menu.Item>
-            <LinkItem
-              href="https://github.com/X-SpeedBlack-X/portfolio-chakra"
-              target="_blank"
-            >
-              Código
-            </LinkItem>
-          </Menu.Item>
+        <Menu.Items
+          as="nav"
+          className={`${
+            theme ? "bg-white-100" : "bg-[#31384c]"
+          } absolute right-3 -bottom-32 flex w-52 animate-ToggleMenu flex-col gap-[6px] rounded-md py-2 px-4 font-sansMPlus`}
+        >
+          {LINKS_ITEMS.map((link) => (
+            <Menu.Item key={link.id}>
+              <NextLink href={link.href}>
+                <p
+                  className={
+                    router === link.href ? "text-teal-400" : "hover:underline"
+                  }
+                >
+                  {link.name}
+                </p>
+              </NextLink>
+            </Menu.Item>
+          ))}
         </Menu.Items>
       </Menu>
     </div>
