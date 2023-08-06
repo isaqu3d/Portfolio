@@ -1,7 +1,7 @@
 import { Motion } from "@components/Motion";
 import HeaderItemProject from "@components/Projects/HeaderItemProject";
 import ImageProject from "@components/Projects/ImageProject";
-import { ListItemProject } from "@components/Projects/ListItemProject";
+import { ProjectDescription } from "@components/Projects/ProjectDescription";
 
 import { Metadata } from "next";
 
@@ -24,7 +24,7 @@ export default function MoveIt() {
           novamente."
         />
 
-        <ListItemProject
+        <ProjectDescription
           url="https://nlw-moveit-six.vercel.app/"
           urlGitHub="https://github.com/X-SpeedBlack-X/nlw-move.it"
           description="NextJS, TypeScript"

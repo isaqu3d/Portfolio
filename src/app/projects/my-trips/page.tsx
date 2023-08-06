@@ -1,7 +1,7 @@
 import { Motion } from "@components/Motion";
 import HeaderItemProject from "@components/Projects/HeaderItemProject";
 import ImageProject from "@components/Projects/ImageProject";
-import { ListItemProject } from "@components/Projects/ListItemProject";
+import { ProjectDescription } from "@components/Projects/ProjectDescription";
 
 import { Metadata } from "next";
 
@@ -21,7 +21,7 @@ export default function myTrips() {
           description="Seja bem-vindo ao projeto 'My Trips - Minhas viagens'. É um projeto onde eu coloco todos os lugares que já fui ou que eu gostaria de ir um dia. Aqui você pode clicar nas localizações e ver uma descrição e algumas imagens."
         />
 
-        <ListItemProject
+        <ProjectDescription
           url="https://isaque-my-trips.vercel.app/"
           urlGitHub="https://github.com/X-SpeedBlack-X/My-Trips"
           description="NextJS, TypeScript, Graphql, Styled-Component, Next-Seo, Leaflet, MapBox."
