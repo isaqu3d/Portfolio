@@ -19,7 +19,7 @@ export default function Projects() {
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           <ProjectGridItem
-            url="eventplatform"
+            url="event-platform"
             title="Plataforma de Evento"
             thumbnail={thumbEventPlatform}
             alt="imagem do projeto da plataforma de evento"
