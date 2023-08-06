@@ -43,7 +43,7 @@ export function ProjectGridItem({
   return (
     <>
       <div className="w-full text-center">
-        <NextLink href={`/projects/${url}`} passHref scroll={false}>
+        <NextLink href={`/projects/${url}`} passHref scroll>
           <div>
             <Image src={thumbnail} alt={alt} />
 
