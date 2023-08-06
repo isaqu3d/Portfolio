@@ -25,7 +25,7 @@ const LinkItem = ({ href, target, children }: LinkItemProps) => {
       href={href}
       target={target}
       passHref
-      scroll={false}
+      scroll
       className={`${
         active ? "rounded-md bg-teal-400 p-2 text-black" : "hover:underline"
       }`}
