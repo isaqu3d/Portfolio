@@ -9,7 +9,7 @@ export default function Logo() {
       <span
         className={`${
           theme ? " text-gray-600 " : "text-white-100"
-        } group inline-flex h-8 items-center p-3 font-sansMPlus text-base font-semibold tracking-tighter`}
+        } group inline-flex h-8 items-center p-3 font-sansMPlus text-lg font-semibold tracking-tighter`}
       >
         <RiCodeSSlashLine className="transition-all group-hover:rotate-[30deg]" />
         <h1>Isaque de Sousa</h1>
