@@ -9,6 +9,7 @@ import { ReactNode } from "react";
 import { ButtonTheme } from "./ButtonTheme";
 import Logo from "./Logo";
 import { MenuItem } from "./MenuItem";
+import { MotionHeader } from "./Motion";
 
 interface LinkItemProps {
   href: string;
@@ -39,27 +40,21 @@ export default function Navbar() {
   const { theme } = useThemeData();
   return (
     <>
-      <header
+      <MotionHeader
         className={`${
           theme
             ? "bg-white-100/30"
-            : "border-b-[1px] border-gray-600 bg-gray-900/20"
+            : "border-b-[1px] border-gray-600 bg-gray-900/30"
         }  fixed z-50 flex w-full justify-center backdrop-blur-sm`}
       >
         <nav className="flex max-w-screen-md flex-1 justify-between p-2">
           <div className="mr-5 flex items-center">
-            <h1>
-              <Logo />
-            </h1>
+            <Logo />
           </div>
 
-          <div
-            className={`${
-              theme ? " text-gray-600 " : "text-white-100"
-            } hidden flex-grow items-center gap-4 md:flex `}
-          >
+          <div className="hidden flex-grow items-center gap-4 md:flex">
             <LinkItem href="/projects">Projetos</LinkItem>
-
+            <LinkItem href="/work-experience">Experiência</LinkItem>
             <LinkItem href="/skills">Habilidades</LinkItem>
 
             <LinkItem
@@ -81,7 +76,7 @@ export default function Navbar() {
             </div>
           </div>
         </nav>
-      </header>
+      </MotionHeader>
     </>
   );
 }
