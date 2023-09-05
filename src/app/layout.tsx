@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <body>
           <ThemeProvider>
             <Layout>
-              <main className="max-w-lg px-4">{children}</main>
+              <main>{children}</main>
             </Layout>
           </ThemeProvider>
         </body>
