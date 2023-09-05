@@ -19,6 +19,7 @@
     "@sanity/vision": "^3.14.5",
     "commitizen": "^4.2.5",
     "cz-conventional-changelog": "^3.3.0",
+    "date-fns": "^2.30.0",
     "framer-motion": "^7.3.6",
     "husky": "^8.0.1",
     "next": "^13.4.12",
@@ -28,12 +29,13 @@
     "react-github-calendar": "^3.3.4",
     "react-icons": "^4.4.0",
     "sanity": "^3.14.5",
-    "styled-components": "5.2",
+    "styled-components": "^5.3.11",
     "typewriter-effect": "^2.20.1",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.1.0",
+    "@tailwindcss/typography": "^0.5.9",
     "@types/react": "18.0.26",
     "@types/uuid": "^9.0.2",
     "autoprefixer": "^10.4.13",
