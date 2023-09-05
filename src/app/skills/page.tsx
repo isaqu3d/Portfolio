@@ -22,7 +22,7 @@ function SkillCardRender({ icon: Icon, color }) {
 
 export default function Skills() {
   return (
-    <>
+    <div className="max-w-xl px-4">
       <Motion>
         <div>
           <Heading>Habilidades</Heading>
@@ -50,11 +50,8 @@ export default function Skills() {
           </div>
         </div>
 
-        <div>
-          <Heading>Commits</Heading>
-          <GithubCalendar />
-        </div>
+        <GithubCalendar />
       </Motion>
-    </>
+    </div>
   );
 }
