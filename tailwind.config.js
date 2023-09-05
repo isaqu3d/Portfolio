@@ -23,14 +23,11 @@ module.exports = {
         teal: {
           200: "#81e6d9",
           400: "#38B2AC",
-
           600: "#2c7a7b",
         },
-        green: {
-          400: "#9ae6b4",
-        },
+
         pink: {
-          500: "#ff63c3",
+          600: "#ff63c3",
         },
         yellow: {
           300: "#ffd379",
@@ -44,7 +41,7 @@ module.exports = {
 
       fontFamily: {
         sansMPlus: ['"M PLUS Rounded 1c"', "sans-serif"],
-        serif: ["sans-serif"],
+        serif: ["-apple-system", "sans-serif"],
       },
 
       animation: {
@@ -80,5 +77,5 @@ module.exports = {
     },
   },
 
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
