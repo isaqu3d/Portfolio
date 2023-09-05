@@ -43,7 +43,7 @@ export default defineType({
       title: "LinkGithub",
     },
 
-    { name: "tech", title: "Tech", type: "string" },
+    { name: "tech", title: "Tech", type: "array", of: [{ type: "string" }] },
     {
       name: "thumbnail",
       title: "thumbnail",
