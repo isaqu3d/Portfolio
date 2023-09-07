@@ -1,48 +1,58 @@
 import { Heading } from "@components/Heading";
-import { Motion } from "@components/Motion";
-import { ProjectGridItem } from "@components/Projects/ProjectGridItem ";
-import thumbEventPlatform from "@public/project/eventplatform.png";
-import thumbPomodoro from "@public/project/move.it.png";
-import thumbMyTrips from "@public/project/my-trips.png";
+import { MotionTitle } from "@components/Motion";
 import { Metadata } from "next";
+import { groq } from "next-sanity";
+import Image from "next/image";
+import NextLink from "next/link";
+import builderImage from "../../lib/imageSanity";
+import client from "../../lib/sanityClient";
 
 export const metadata: Metadata = {
   title: "Projetos",
   description: "Venha olhar alguns projetos que eu fiz com ❤️",
 };
 
-export default function Projects() {
+export default async function Projects() {
+  const projects = await client.fetch(groq`*[_type == "project"] {
+    _id,
+    name, 
+    description,
+    "slug": slug.current,
+    thumbnail
+  }`);
+
+  function urlFor(source) {
+    return builderImage.image(source);
+  }
+
   return (
-    <>
-      <Motion>
+    <div className="max-w-xl px-4">
+      <MotionTitle>
         <Heading>Projetos</Heading>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          <ProjectGridItem
-            url="event-platform"
-            title="Plataforma de Evento"
-            thumbnail={thumbEventPlatform}
-            alt="imagem do projeto da plataforma de evento"
-            description="Plataforma de videos de todos os tipos e gostos! 💻"
-          />
-
-          <ProjectGridItem
-            title="Pomodoro"
-            thumbnail={thumbPomodoro}
-            url="move.it"
-            alt="imagem do projeto move.it"
-            description="Projeto para fazer você não ficar parado! 🏃‍♂️"
-          />
-
-          <ProjectGridItem
-            title="Minhas viagens"
-            description="Mapa de todos lugares que já foi ou que eu gostaria de ir. 🗺️"
-            thumbnail={thumbMyTrips}
-            url="my-trips"
-            alt="imagem do projeto minhas viagem"
-          />
+          {projects.map((project) => (
+            <div className="w-full text-center" key={project._id}>
+              <NextLink href={`projects/${project.slug}`}>
+                <Image
+                  src={urlFor(project.thumbnail)
+                    .width(720)
+                    .height(420)
+                    .quality(90)
+                    .url()}
+                  alt={project.name}
+                  width={720}
+                  height={420}
+                  quality={90}
+                  className="rounded-lg shadow-md shadow-gray-600 transition-all hover:scale-110"
+                />
+                <h1 className="mt-2 text-xl">{project.name}</h1>
+                <p className="text-sm">{project.description}</p>
+              </NextLink>
+            </div>
+          ))}
         </div>
-      </Motion>
-    </>
+      </MotionTitle>
+    </div>
   );
 }
