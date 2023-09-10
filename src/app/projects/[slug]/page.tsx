@@ -8,8 +8,8 @@ import { PortableText } from "@portabletext/react";
 import { groq } from "next-sanity";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import builderImage from "../../../lib/imageSanity";
 import client from "../../../lib/sanityClient";
+import { urlFor } from "../../../lib/urlSanity";
 
 export async function generateStaticParams() {
   const projects = await client.fetch(groq`*[_type == "project"]`);
@@ -31,10 +31,6 @@ export default async function Slug({ params: { slug } }) {
     return notFound();
   }
 
-  function urlFor(source: ImageData) {
-    return builderImage.image(source);
-  }
-
   return (
     <MotionTitle className="max-w-xl px-4">
       <div className="mb-4 flex items-center gap-2 md:flex-row">
@@ -42,6 +38,7 @@ export default async function Slug({ params: { slug } }) {
 
         <h1 className="text-base font-bold md:text-xl">{project.name}</h1>
         <Badge>{project.badge}</Badge>
+        <TechBadge badgeVariantsColors="badgeGray" name={project.badge} />
       </div>
 
       <div className="text-justify indent-5">
@@ -69,7 +66,11 @@ export default async function Slug({ params: { slug } }) {
 
           <div className="mt-2 flex flex-wrap justify-center gap-x-[6px] gap-y-2 sm:justify-start md:mt-0 lg:max-w-[350px]">
             {project.tech?.map((badge, i) => (
-              <TechBadge name={badge} key={`${i}-${badge}`} />
+              <TechBadge
+                badgeVariantsColors="badgeTech"
+                name={badge}
+                key={`${i}-${badge}`}
+              />
             ))}
           </div>
         </div>

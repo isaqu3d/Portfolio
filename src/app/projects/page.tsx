@@ -4,8 +4,8 @@ import { Metadata } from "next";
 import { groq } from "next-sanity";
 import Image from "next/image";
 import NextLink from "next/link";
-import builderImage from "../../lib/imageSanity";
 import client from "../../lib/sanityClient";
+import { urlFor } from "../../lib/urlSanity";
 
 export const metadata: Metadata = {
   title: "Projetos",
@@ -20,10 +20,6 @@ export default async function Projects() {
     "slug": slug.current,
     thumbnail
   }`);
-
-  function urlFor(source) {
-    return builderImage.image(source);
-  }
 
   return (
     <div className="max-w-xl px-4">
