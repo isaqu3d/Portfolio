@@ -37,7 +37,7 @@ export default async function Slug({ params: { slug } }) {
 
         <h1 className="text-base font-bold md:text-xl">{project.name}</h1>
         <TechBadge name={project.badge} />
-        <TechBadge badgeVariantsColors="badgeGray" name={project.badge} />
+        <TechBadge name={project.badge} />
       </div>
 
       <div className="text-justify indent-5">
