@@ -1,7 +1,6 @@
 import { LinkSanity } from "@components/LinkSanity";
 import { MotionTitle } from "@components/Motion";
 import { NextLinkColor } from "@components/NextLinkColor";
-import { Badge } from "@components/Projects/Badge";
 import { BadgeTitle } from "@components/Projects/BadgeTitle";
 import { TechBadge } from "@components/TechBadge";
 import { PortableText } from "@portabletext/react";
@@ -37,7 +36,7 @@ export default async function Slug({ params: { slug } }) {
         <NextLinkColor />
 
         <h1 className="text-base font-bold md:text-xl">{project.name}</h1>
-        <Badge>{project.badge}</Badge>
+        <TechBadge name={project.badge} />
         <TechBadge badgeVariantsColors="badgeGray" name={project.badge} />
       </div>
 
