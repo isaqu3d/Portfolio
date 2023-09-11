@@ -1,7 +1,7 @@
 import { LinkSanity } from "@components/LinkSanity";
 import { MotionTitle } from "@components/Motion";
 import { NextLinkColor } from "@components/NextLinkColor";
-import { BadgeTitle } from "@components/Projects/BadgeTitle";
+
 import { TechBadge } from "@components/TechBadge";
 import { PortableText } from "@portabletext/react";
 import { groq } from "next-sanity";
@@ -46,7 +46,7 @@ export default async function Slug({ params: { slug } }) {
 
       <div className="my-3 flex flex-col gap-2">
         <div className="flex flex-col items-center gap-2 sm:flex-row">
-          <BadgeTitle>Website</BadgeTitle>
+          <p>Website</p>
 
           <LinkSanity href={project.linkWebsite} target="__blank">
             {project.linkWebsite}
@@ -54,14 +54,14 @@ export default async function Slug({ params: { slug } }) {
         </div>
 
         <div className="flex flex-col items-center gap-2 sm:flex-row">
-          <BadgeTitle>Github</BadgeTitle>
+          <p>Github</p>
           <LinkSanity href={project.linkGithub} target="__blank">
             {project.linkGithub}
           </LinkSanity>
         </div>
 
         <div className="flex flex-col items-center sm:flex-row">
-          <BadgeTitle>Tech</BadgeTitle>
+          <p>Tech</p>
 
           <div className="mt-2 flex flex-wrap justify-center gap-x-[6px] gap-y-2 sm:justify-start md:mt-0 lg:max-w-[350px]">
             {project.tech?.map((badge, i) => (
