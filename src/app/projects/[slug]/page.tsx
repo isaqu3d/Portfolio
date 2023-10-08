@@ -36,8 +36,7 @@ export default async function Slug({ params: { slug } }) {
         <NextLinkColor />
 
         <h1 className="text-base font-bold md:text-xl">{project.name}</h1>
-        <TechBadge name={project.badge} />
-        <TechBadge name={project.badge} />
+        <TechBadge name={project.badge} color="badgeYear" />
       </div>
 
       <div className="text-justify indent-5">
@@ -45,31 +44,27 @@ export default async function Slug({ params: { slug } }) {
       </div>
 
       <div className="my-3 flex flex-col gap-2">
-        <div className="flex flex-col items-center gap-2 sm:flex-row">
-          <p>Website</p>
+        <div className="flex flex-col items-center gap-2 md:flex-row">
+          <p>Website:</p>
 
           <LinkSanity href={project.linkWebsite} target="__blank">
             {project.linkWebsite}
           </LinkSanity>
         </div>
 
-        <div className="flex flex-col items-center gap-2 sm:flex-row">
-          <p>Github</p>
+        <div className="flex flex-col items-center gap-2 md:flex-row">
+          <p>Github:</p>
           <LinkSanity href={project.linkGithub} target="__blank">
             {project.linkGithub}
           </LinkSanity>
         </div>
 
-        <div className="flex flex-col items-center sm:flex-row">
-          <p>Tech</p>
+        <div className="flex flex-col items-center gap-2 md:flex-row">
+          <p>Tech:</p>
 
           <div className="mt-2 flex flex-wrap justify-center gap-x-[6px] gap-y-2 sm:justify-start md:mt-0 lg:max-w-[350px]">
             {project.tech?.map((badge, i) => (
-              <TechBadge
-                badgeVariantsColors="badgeTech"
-                name={badge}
-                key={`${i}-${badge}`}
-              />
+              <TechBadge name={badge} key={`${i}-${badge}`} size="sm" />
             ))}
           </div>
         </div>
