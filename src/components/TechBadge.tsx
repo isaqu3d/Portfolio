@@ -45,7 +45,7 @@ export function TechBadge({
   const { theme } = useThemeData();
   const isDark = theme === "dark";
 
-  const colorTheme = isDark ? "badgeTeal" : "badgePink";
+  const colorTheme = isDark ? "badgePink" : "badgeTeal";
 
   return (
     <motion.span
