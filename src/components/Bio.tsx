@@ -1,9 +1,6 @@
 import { Heading } from "@components/Heading";
-import useThemeData from "@hook/useThemeData";
 
 export const BioSectionTwo = ({ children }) => {
-  const { theme } = useThemeData();
-
   return <div className="pl-14 -indent-14">{children}</div>;
 };
 
