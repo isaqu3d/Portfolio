@@ -3,7 +3,7 @@ import formatDate from "@utils/format-date";
 import Image from "next/image";
 import { WorkExperienceProps } from "../types/workExperience";
 import { LinkSanity } from "./LinkSanity";
-import { MotionBadge, MotionSection } from "./Motion";
+import { MotionSection } from "./Motion";
 import { ProgressBarExperience } from "./ProgressBarExperience";
 import { TechBadge } from "./TechBadge";
 
@@ -53,11 +53,15 @@ export async function ExperienceItem({ experience }: ExperienceItemProps) {
               Tecnologias
             </p>
 
-            <MotionBadge className="mb-8 flex flex-wrap gap-x-2 gap-y-3  lg:max-w-[350px]">
-              {experience.technologies.map((techName, i) => (
-                <TechBadge key={`tech-${techName}-${i}`} name={techName} />
+            <div className="mb-8 flex flex-wrap gap-x-2 gap-y-4 lg:max-w-[350px]">
+              {experience.technologies.map((techName, index) => (
+                <TechBadge
+                  key={`tech-${techName}-${index}`}
+                  name={techName}
+                  size="sm"
+                />
               ))}
-            </MotionBadge>
+            </div>
           </div>
         </div>
       </section>
