@@ -59,10 +59,10 @@ export default async function Slug({ params: { slug } }) {
           </LinkSanity>
         </div>
 
-        <div className="flex flex-col items-center gap-2 md:flex-row">
+        <div className="flex flex-col items-center gap-2 md:flex-row md:items-start">
           <p>Tech:</p>
 
-          <div className="mt-2 flex flex-wrap justify-center gap-x-[6px] gap-y-2 sm:justify-start md:mt-0 lg:max-w-[350px]">
+          <div className="mt-2 flex flex-wrap justify-center gap-x-[6px] gap-y-4 md:mt-0 md:justify-start lg:max-w-[350px]">
             {project.tech?.map((badge, i) => (
               <TechBadge name={badge} key={`${i}-${badge}`} size="sm" />
             ))}
