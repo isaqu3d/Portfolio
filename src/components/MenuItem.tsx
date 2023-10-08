@@ -24,7 +24,7 @@ const LINKS_ITEMS = [
 ];
 
 export function MenuItem() {
-  const { theme } = useThemeData();
+  const { isDark } = useThemeData();
   const router = usePathname();
 
   return (
@@ -40,7 +40,7 @@ export function MenuItem() {
         <Menu.Items
           as="nav"
           className={`${
-            theme ? "bg-white-100" : "bg-[#31384c]"
+            isDark ? "bg-white-100" : "bg-[#31384c]"
           } absolute right-3 -bottom-32 flex w-52 animate-ToggleMenu flex-col gap-[6px] rounded-md py-2 px-4 font-sansMPlus`}
         >
           {LINKS_ITEMS.map((link) => (
