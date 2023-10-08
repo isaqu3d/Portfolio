@@ -9,6 +9,7 @@ import { SocialMedia } from "@components/SocialMedia";
 import useThemeData from "@hook/useThemeData";
 import Image from "next/image";
 import { BiChevronRight } from "react-icons/bi";
+import { MdOutlineWorkOutline } from "react-icons/md";
 
 export default function Home() {
   const { theme } = useThemeData();
@@ -55,11 +56,9 @@ export default function Home() {
             codar!
           </p>
 
-          <div className="flex justify-center">
-            <ButtonLink href="/projects">
-              Projetos <BiChevronRight />
-            </ButtonLink>
-          </div>
+          <ButtonLink href="/projects">
+            Projetos <BiChevronRight />
+          </ButtonLink>
         </MotionTitle>
 
         <MotionSection>
@@ -69,6 +68,10 @@ export default function Home() {
           <p className="inset-5 text-justify">
             Musica, Jogar, Codar, Ler, Aprender.
           </p>
+
+          <ButtonLink href="work-experience">
+            Experiências <MdOutlineWorkOutline />
+          </ButtonLink>
 
           <SocialMedia />
         </MotionSection>
