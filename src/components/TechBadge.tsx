@@ -32,14 +32,13 @@ type TechBadgeProps = ComponentProps<typeof motion.span> &
   VariantProps<typeof badgeColors> & {
     name: string;
     color?: string;
-    size: string;
+    size?: string;
   };
 
 export function TechBadge({
   name,
   color,
   size,
-
   className,
   ...props
 }: TechBadgeProps) {
