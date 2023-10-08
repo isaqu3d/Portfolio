@@ -4,8 +4,7 @@ import { FiSun } from "react-icons/fi";
 import { RiMoonFill } from "react-icons/ri";
 
 export function ButtonTheme() {
-  const { theme, changeTheme } = useThemeData();
-  const isDark = theme === "dark";
+  const { isDark, changeTheme } = useThemeData();
 
   return (
     <button
