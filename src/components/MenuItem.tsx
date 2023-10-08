@@ -24,7 +24,8 @@ const LINKS_ITEMS = [
 ];
 
 export function MenuItem() {
-  const { isDark } = useThemeData();
+  const { theme } = useThemeData();
+  const isDark = theme === "dark";
   const router = usePathname();
 
   return (
