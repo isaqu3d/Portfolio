@@ -1,42 +1,59 @@
 "use client";
+import useThemeData from "@hook/useThemeData";
+
 import { motion } from "framer-motion";
 import { ComponentProps } from "react";
 import { tv, VariantProps } from "tailwind-variants";
 
-const badges = tv({
-  base: "font-bold px-1 text-xs",
-
+const badgeColors = tv({
+  base: "font-bold hover:cursor-default rounded-md transition-all text-sm text-white-100",
   variants: {
-    badgeVariantsColors: {
-      badgeTech:
-        "hover: cursor-default rounded-lg bg-teal-600 py-1 px-3 text-sm text-white-100 transition-all hover:scale-105 hover:bg-teal-500 font-normal",
-      badgeGreen: "bg-teal-600 text-white-100",
-      badgeGray: "bg-gray-300 text-white-100",
+    color: {
+      badgeYear: "bg-gray-300",
+      badgeTeal: "bg-teal-600 hover:bg-teal-800",
+      badgePink: "bg-pink-700 hover:bg-pink-800",
     },
 
-    defaultVariants: {
-      size: "badgeTech",
+    size: {
+      default: "text-xs py-1 px-3",
+      sm: "text-sm py-2 px-3",
+      md: "text-base py-2 px-3",
     },
+  },
+
+  defaultVariants: {
+    size: "default",
+    color: "badgeYear",
   },
 });
 
-/* "bg-teal-600 text-white-100" : "bg-gray-300 text-white-100"
-      } px-1 text-xs font-bold */
-
 type TechBadgeProps = ComponentProps<typeof motion.span> &
-  VariantProps<typeof badges> & {
+  VariantProps<typeof badgeColors> & {
     name: string;
+    color?: string;
+    size: string;
   };
 
 export function TechBadge({
   name,
-  badgeVariantsColors,
+  color,
+  size,
+
   className,
   ...props
 }: TechBadgeProps) {
+  const { theme } = useThemeData();
+  const isDark = theme === "dark";
+
+  const colorTheme = isDark ? "badgeTeal" : "badgePink";
+
   return (
     <motion.span
-      className={badges({ badgeVariantsColors, className })}
+      className={badgeColors({
+        color: color || colorTheme,
+        size,
+        className,
+      })}
       {...props}
     >
       {name}
