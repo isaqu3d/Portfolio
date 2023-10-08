@@ -5,8 +5,9 @@ import { useContext } from "react";
 
 const useThemeData = () => {
   const { theme, changeTheme } = useContext(ThemeContext) || { theme: "" };
+  const isDark = theme === "dark";
 
-  return { theme, changeTheme };
+  return { changeTheme, isDark };
 };
 
 export default useThemeData;
