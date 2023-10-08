@@ -1,9 +1,10 @@
 "use client";
-import useThemeData from "@hook/useThemeData";
 
+import useThemeData from "@hook/useThemeData";
 import { motion } from "framer-motion";
 import { ComponentProps } from "react";
 import { tv, VariantProps } from "tailwind-variants";
+import { MotionBadge } from "./Motion";
 
 const badgeColors = tv({
   base: "font-bold hover:cursor-default rounded-md transition-all text-sm text-white-100",
@@ -48,15 +49,17 @@ export function TechBadge({
   const colorTheme = isDark ? "badgePink" : "badgeTeal";
 
   return (
-    <motion.span
-      className={badgeColors({
-        color: color || colorTheme,
-        size,
-        className,
-      })}
-      {...props}
-    >
-      {name}
-    </motion.span>
+    <MotionBadge>
+      <motion.span
+        className={badgeColors({
+          color: color || colorTheme,
+          size,
+          className,
+        })}
+        {...props}
+      >
+        {name}
+      </motion.span>
+    </MotionBadge>
   );
 }
