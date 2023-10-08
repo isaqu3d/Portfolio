@@ -23,8 +23,8 @@ export function LinkSanity({
       href={href}
       className={`${
         theme
-          ? "text-teal-60 hover:text-teal-500"
-          : " text-pink-60 hover:text-pink-700"
+          ? "text-teal-600 hover:text-teal-500"
+          : "text-pink-600 hover:text-pink-700"
       }  transition-colors`}
       target={target}
       {...props}
