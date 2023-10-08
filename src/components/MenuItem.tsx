@@ -14,6 +14,7 @@ const LINKS_ITEMS = [
     href: "/",
   },
   { id: uuidv4(), name: "Projetos", href: "/projects" },
+  { id: uuidv4(), name: "Experiência", href: "/work-experience" },
   { id: uuidv4(), name: "Habilidades", href: "/skills" },
   {
     id: uuidv4(),
@@ -27,7 +28,7 @@ export function MenuItem() {
   const router = usePathname();
 
   return (
-    <div className="flex md:hidden">
+    <main className="flex md:hidden">
       <Menu as="nav" aria-label="open list menu">
         <Menu.Button
           aria-label="icon button"
@@ -57,6 +58,6 @@ export function MenuItem() {
           ))}
         </Menu.Items>
       </Menu>
-    </div>
+    </main>
   );
 }
