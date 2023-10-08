@@ -9,7 +9,8 @@ interface LinkItemProps {
 }
 
 export function LinkItem({ href, children, target }: LinkItemProps) {
-  const { isDark } = useThemeData();
+  const { theme } = useThemeData();
+  const isDark = theme === "dark";
 
   return (
     <NextLink
