@@ -14,7 +14,7 @@ export function NextLinkColor() {
           theme
             ? "text-teal-600 hover:underline"
             : "text-pink-400 hover:underline"
-        } text-xs md:text-base`}
+        } text-sm md:text-base`}
       >
         Projeto
       </NextLink>
