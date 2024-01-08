@@ -20,7 +20,7 @@ export default defineType({
     {
       name: "companyLogo",
       title: "CompanyLogo",
-      type: "url",
+      type: "image",
     },
 
     {
