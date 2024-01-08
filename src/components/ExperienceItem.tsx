@@ -17,14 +17,14 @@ export async function ExperienceItem({ experience }: ExperienceItemProps) {
     <MotionSection>
       <section className="grid grid-cols-[40px,1fr] gap-4 md:gap-10">
         <div className="flex flex-col items-center gap-4">
-          <div className="rounded-full border border-gray-500 p-0.5">
+          <div className="rounded-full border border-gray-500 p-[2px]">
             <Image
               src={urlFor(experience.companyLogo).url()}
               alt={experience.companyName}
-              width={40}
-              height={40}
+              width={50}
+              height={50}
               quality={90}
-              className="h-10 w-10 rounded-full bg-cover object-cover"
+              className="rounded-full"
             />
           </div>
 
