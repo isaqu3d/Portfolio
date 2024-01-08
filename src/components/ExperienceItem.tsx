@@ -19,15 +19,12 @@ export async function ExperienceItem({ experience }: ExperienceItemProps) {
         <div className="flex flex-col items-center gap-4">
           <div className="rounded-full border border-gray-500 p-0.5">
             <Image
-              src={urlFor(experience.companyLogo)
-                .width(40)
-                .height(40)
-                .quality(90)
-                .url()}
+              src={urlFor(experience.companyLogo).url()}
               alt={experience.companyName}
               width={40}
               height={40}
-              className="rounded-full"
+              quality={90}
+              className="h-10 w-10 rounded-full bg-cover object-cover"
             />
           </div>
 
