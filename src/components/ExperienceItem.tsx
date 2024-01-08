@@ -1,6 +1,7 @@
 import { PortableText } from "@portabletext/react";
 import formatDate from "@utils/format-date";
 import Image from "next/image";
+import { urlFor } from "../lib/urlSanity";
 import { WorkExperienceProps } from "../types/workExperience";
 import { LinkSanity } from "./LinkSanity";
 import { MotionSection } from "./Motion";
@@ -18,7 +19,11 @@ export async function ExperienceItem({ experience }: ExperienceItemProps) {
         <div className="flex flex-col items-center gap-4">
           <div className="rounded-full border border-gray-500 p-0.5">
             <Image
-              src={experience.companyLogo}
+              src={urlFor(experience.companyLogo)
+                .width(40)
+                .height(40)
+                .quality(90)
+                .url()}
               alt={experience.companyName}
               width={40}
               height={40}
