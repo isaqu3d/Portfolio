@@ -7,7 +7,7 @@ export function GithubCalendar() {
     <>
       <Heading>Commits</Heading>
       <GitHubCalendar
-        username="x-speedblack-x"
+        username="isaqu3d"
         year={new Date().getFullYear()}
         color="#cd5ff8"
         hideColorLegend
