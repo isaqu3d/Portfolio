@@ -19,7 +19,7 @@ const LINKS_ITEMS = [
   {
     id: uuidv4(),
     name: "Código",
-    href: "https://github.com/X-SpeedBlack-X/Portfolio",
+    href: "https://github.com/isaqu3d/Portfolio",
   },
 ];
 
