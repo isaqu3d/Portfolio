@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const colors = require("tailwindcss/colors");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{ts,tsx}"],
@@ -26,10 +29,13 @@ module.exports = {
         pink: {
           600: "#ff63c3",
         },
+
         yellow: {
           300: "#ffd379",
           500: "#ff985e",
         },
+        muted: colors.neutral[900],
+        border: colors.neutral[800],
       },
 
       screens: {
