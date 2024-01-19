@@ -39,7 +39,11 @@ export default defineType({
       name: "technologies",
       title: "Technologies",
       type: "array",
-      of: [{ type: "string" }],
+      of: [
+        {
+          type: "technology",
+        },
+      ],
     },
 
     {
