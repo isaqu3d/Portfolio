@@ -24,7 +24,7 @@ Creation of my portfolio personal 🚀
 Clone repository:
 
 ```sh
-git clone git@github.com:X-SpeedBlack-X/Portfolio.git
+git clone git@github.com:isaqu3d/Portfolio.git
 ```
 
 At the root of the project, **Install dependencies** with the comamand:
