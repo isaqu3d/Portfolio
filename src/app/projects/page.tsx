@@ -2,7 +2,7 @@ import { Heading } from "@components/Heading";
 import { MotionTitle } from "@components/Motion";
 import { Metadata } from "next";
 import { groq } from "next-sanity";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import NextLink from "next/link";
 import client from "../../lib/sanityClient";
 import { urlFor } from "../../lib/urlSanity";
@@ -10,6 +10,14 @@ import { urlFor } from "../../lib/urlSanity";
 export const metadata: Metadata = {
   title: "Projetos",
   description: "Venha olhar alguns projetos que eu fiz com ❤️",
+};
+
+export type ProjectsProps = {
+  _id: string;
+  name: string;
+  description: string;
+  slug: string;
+  thumbnail: StaticImageData;
 };
 
 export default async function Projects() {
@@ -27,7 +35,7 @@ export default async function Projects() {
         <Heading>Projetos</Heading>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {projects.map((project) => (
+          {projects?.map((project: ProjectsProps) => (
             <div className="w-full text-center" key={project._id}>
               <NextLink href={`projects/${project.slug}`}>
                 <Image
