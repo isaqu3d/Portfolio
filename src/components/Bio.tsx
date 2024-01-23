@@ -1,10 +1,11 @@
 import { Heading } from "@components/Heading";
+import { ReactNode } from "react";
 
-export const BioSectionTwo = ({ children }) => {
+export const BioSectionTwo = ({ children }: { children: ReactNode }) => {
   return <div className="pl-14 -indent-14">{children}</div>;
 };
 
-export const BioYearTwo = ({ children }) => {
+export const BioYearTwo = ({ children }: { children: ReactNode }) => {
   return <span className="mr-4 font-bold">{children}</span>;
 };
 
