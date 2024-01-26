@@ -6,6 +6,7 @@ import { WorkExperienceProps } from "../types/workExperience";
 import { LinkSanity } from "./LinkSanity";
 import { MotionSection } from "./Motion";
 import { ProgressBarExperience } from "./ProgressBarExperience";
+import { Technology } from "./Technology";
 
 type ExperienceItemProps = {
   experience: WorkExperienceProps;
@@ -56,10 +57,7 @@ export async function ExperienceItem({ experience }: ExperienceItemProps) {
 
             <div className="mb-8 flex flex-wrap gap-x-2 gap-y-4 lg:max-w-[350px]">
               {experience.technologies.map((technology) => (
-                <li
-                  key={technology._id}
-                  className="relative flex items-center gap-2 overflow-hidden rounded-lg border border-border/50 bg-zinc-800 px-3 py-2 text-zinc-200"
-                >
+                <Technology key={technology._id}>
                   {technology.image ? (
                     <Image
                       src={urlFor(technology.image)?.url()}
@@ -70,8 +68,7 @@ export async function ExperienceItem({ experience }: ExperienceItemProps) {
                     />
                   ) : null}
                   <p>{technology.name}</p>
-                  <div className="via-10% absolute right-0 top-0 h-px w-80 bg-gradient-to-l from-transparent via-white-100/30 to-transparent" />
-                </li>
+                </Technology>
               ))}
             </div>
           </div>
