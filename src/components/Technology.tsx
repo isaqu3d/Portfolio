@@ -8,10 +8,10 @@ export function Technology({ children }: { children: ReactNode }) {
 
   return (
     <li
-      className={`relative flex items-center gap-2 overflow-hidden rounded-lg border  px-3 py-2  transition hover:scale-105  ${
+      className={`relative flex items-center gap-2 overflow-hidden rounded-lg px-3 py-2  transition hover:scale-105  ${
         theme
-          ? "bg-[#dbc7ab] text-zinc-900 hover:bg-[#cfc1b0]"
-          : "bg-zinc-800 text-zinc-200 hover:bg-gray-600"
+          ? " bg-[#dbc7ab] text-zinc-900 hover:bg-[#cfc1b0]"
+          : " bg-zinc-800 text-zinc-200 hover:bg-gray-600"
       }`}
     >
       {children}
