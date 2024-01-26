@@ -6,17 +6,8 @@ import { TechBadge } from "@components/TechBadge";
 import { PortableText } from "@portabletext/react";
 import { groq } from "next-sanity";
 import Image from "next/image";
-import { notFound } from "next/navigation";
 import client from "../../../lib/sanityClient";
 import { urlFor } from "../../../lib/urlSanity";
-
-export async function generateStaticParams() {
-  const projects = await client.fetch(groq`*[_type == "project"]`);
-
-  return projects.map((project) => ({
-    slug: project.slug.current,
-  }));
-}
 
 export default async function Slug({ params: { slug } }) {
   const [project] = await client.fetch(
@@ -25,10 +16,6 @@ export default async function Slug({ params: { slug } }) {
       slug,
     },
   );
-
-  if (!project) {
-    return notFound();
-  }
 
   return (
     <MotionTitle className="max-w-xl px-4">
