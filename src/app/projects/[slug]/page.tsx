@@ -3,6 +3,7 @@ import { MotionTitle } from "@components/Motion";
 import { NextLinkColor } from "@components/NextLinkColor";
 
 import { TechBadge } from "@components/TechBadge";
+import { Technology } from "@components/Technology";
 import { PortableText } from "@portabletext/react";
 import { groq } from "next-sanity";
 import Image from "next/image";
@@ -51,10 +52,7 @@ export default async function Slug({ params: { slug } }) {
 
           <div className="mt-2 flex flex-wrap justify-center gap-x-[6px] gap-y-4 md:mt-0 md:justify-start lg:max-w-[550px]">
             {project.technologies?.map((technology) => (
-              <li
-                key={technology._id}
-                className="relative flex items-center gap-2 overflow-hidden rounded-lg border border-border/50 bg-zinc-800 px-3 py-2 text-zinc-200 transition hover:scale-105 hover:bg-gray-600"
-              >
+              <Technology key={technology._id}>
                 {technology.image ? (
                   <Image
                     src={urlFor(technology.image)?.url()}
@@ -65,8 +63,7 @@ export default async function Slug({ params: { slug } }) {
                   />
                 ) : null}
                 <p>{technology.name}</p>
-                <div className="via-10% absolute right-0 top-0 h-px w-80 bg-gradient-to-l from-transparent via-white-100/30 to-transparent" />
-              </li>
+              </Technology>
             ))}
           </div>
         </div>
