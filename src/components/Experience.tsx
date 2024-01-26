@@ -21,7 +21,7 @@ export async function Experience() {
           <div className="w-full lg:w-[250px]">
             <Heading>Experiência</Heading>
             <p className="text-gray-500">
-              Todas minhas experiências profissional detalhadas para você!
+              Todas minhas experiências profissionais detalhadas para você!
             </p>
           </div>
         </MotionTitle>
