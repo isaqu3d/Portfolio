@@ -17,3 +17,7 @@ body::-webkit-scrollbar-thumb {
   background-color: #525252;
   outline: 1px solid black;
 }
+
+::selection {
+  @apply bg-teal-500/10 text-teal-400;
+}
