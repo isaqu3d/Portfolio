@@ -9,6 +9,34 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+
+        primary: {
+          DEFAULT: "var(--primary)",
+          30: "var(--primary-30)",
+          60: "var(--primary-60)",
+          70: "var(--primary-70)",
+        },
+        secondary: "var(--secondary)",
+        background: {
+          DEFAULT: "var(--background)",
+          80: "var(--background-80)",
+        },
+        foreground: "var(--foreground)",
+        decoration: {
+          DEFAULT: "var(--decoration)",
+          muted: "var(--decoration-muted)",
+        },
+        muted: {
+          DEFAULT: "var(--muted)",
+          80: "var(--muted-80)",
+        },
+        border: {
+          DEFAULT: "var(--border)",
+          foreground: "var(--border-foreground)",
+        },
+
         gray: {
           300: "#525252",
           600: "#313134",
@@ -34,8 +62,6 @@ module.exports = {
           300: "#ffd379",
           500: "#ff985e",
         },
-        muted: colors.neutral[900],
-        border: colors.neutral[800],
       },
 
       screens: {
