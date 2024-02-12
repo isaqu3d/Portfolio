@@ -2,11 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply font-serif;
+@layer base {
+  :root {
+    --primary: rgba(0, 0, 0);
+    --primary-30: rgba(0, 0, 0, 0.3);
+    --primary-60: rgba(0, 0, 0, 0.6);
+    --primary-70: rgba(0, 0, 0, 0.7);
+
+    --secondary: rgba(17, 17, 17);
+
+    --background: rgba(253, 253, 252);
+    --background-80: rgba(253, 253, 252, 0.3);
+
+    --foreground: rgba(99, 99, 94);
+
+    --decoration: rgba(188, 187, 181);
+    --decoration-muted: rgba(163, 163, 163);
+
+    --muted: rgba(229, 229, 229);
+    --muted-80: rgba(233, 233, 233);
+
+    --border: rgba(212, 212, 212);
+    --border-foreground: rgba(212, 212, 212, 0.7);
+  }
 }
-body::-webkit-scrollbar {
-  width: 8px;
+
+@layer base {
+  html {
+    @apply scroll-smooth font-serif leading-[2];
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-700;
+  }
+
+  ::selection {
+    @apply bg-teal-500/10 text-teal-400;
+  }
 }
 
 body::-webkit-scrollbar-track {
@@ -15,9 +51,4 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background-color: #525252;
-  outline: 1px solid black;
-}
-
-::selection {
-  @apply bg-teal-500/10 text-teal-400;
 }
