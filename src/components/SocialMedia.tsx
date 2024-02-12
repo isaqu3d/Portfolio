@@ -1,5 +1,5 @@
-import { Heading } from "@components/Heading";
-import { LinkItem } from "@components/LinkItem";
+import { Heading } from "@/components/Heading";
+import { LinkItem } from "@/components/LinkItem";
 import { IoLogoGithub, IoLogoInstagram, IoLogoLinkedin } from "react-icons/io5";
 
 export function SocialMedia() {

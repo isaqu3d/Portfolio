@@ -1,4 +1,4 @@
-import { Heading } from "@components/Heading";
+import { Heading } from "@/components/Heading";
 import { ReactNode } from "react";
 
 export const BioSectionTwo = ({ children }: { children: ReactNode }) => {

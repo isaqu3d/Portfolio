@@ -1,4 +1,4 @@
-import useThemeData from "@hook/useThemeData";
+import useThemeData from "@/hook/useThemeData";
 import NextLink from "next/link";
 import { ReactNode } from "react";
 

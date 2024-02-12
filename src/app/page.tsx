@@ -1,21 +1,32 @@
 "use client";
 
-import Bio from "@components/Bio";
-import { ButtonLink } from "@components/ButtonLink";
-import { CardTypeWriter } from "@components/CardTypeWriter";
-import { Heading } from "@components/Heading";
-import { MotionSection, MotionTitle } from "@components/Motion";
-import { SocialMedia } from "@components/SocialMedia";
-import useThemeData from "@hook/useThemeData";
+import Bio from "@/components/Bio";
+import { ButtonLink } from "@/components/ButtonLink";
+import { CardTypeWriter } from "@/components/CardTypeWriter";
+import { Heading } from "@/components/Heading";
+import { MotionSection, MotionTitle } from "@/components/Motion";
+import { SocialMedia } from "@/components/SocialMedia";
+import useThemeData from "@/hook/useThemeData";
 import Image from "next/image";
 import { BiChevronRight } from "react-icons/bi";
 import { MdOutlineWorkOutline } from "react-icons/md";
 
+export type HomeProps = {
+  _id: string;
+  about: string;
+  bio: string;
+};
+
+type Home = {
+  home: HomeProps;
+};
+
 export default function Home() {
+  // const [home] = await client.fetch(groq`*[_type == "home"]`);
   const { theme } = useThemeData();
 
   return (
-    <div className="max-w-xl px-4">
+    <div className="max-w-2xl px-4">
       <MotionTitle>
         <CardTypeWriter />
         <header className="flex flex-col items-center gap-4 lg:flex-row lg:gap-0">
@@ -28,7 +39,7 @@ export default function Home() {
           </div>
 
           <div>
-            <div className="inline-block h-[100px] w-[100px] overflow-hidden rounded-full border-2 border-white-200">
+            <div className="border-white-200 inline-block h-[100px] w-[100px] overflow-hidden rounded-full border-2">
               <Image
                 src="/profile.jpeg"
                 alt="Imagem de perfil"
@@ -74,6 +85,8 @@ export default function Home() {
           </ButtonLink>
 
           <SocialMedia />
+
+          {/* <FormSubmit /> */}
         </MotionSection>
       </main>
     </div>

@@ -1,7 +1,7 @@
 "use client";
 
+import useThemeData from "@/hook/useThemeData";
 import { Menu } from "@headlessui/react";
-import useThemeData from "@hook/useThemeData";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 import { BiMenu } from "react-icons/bi";
@@ -42,7 +42,7 @@ export function MenuItem() {
           as="nav"
           className={`${
             isDark ? "bg-white-100" : "bg-[#31384c]"
-          } absolute right-3 -bottom-32 flex w-52 animate-ToggleMenu flex-col gap-[6px] rounded-md py-2 px-4 font-sansMPlus`}
+          } absolute right-3 -bottom-40 flex w-52 animate-ToggleMenu flex-col gap-[6px] rounded-md py-2 px-4 font-sansMPlus`}
         >
           {LINKS_ITEMS.map((link) => (
             <Menu.Item key={link.id}>

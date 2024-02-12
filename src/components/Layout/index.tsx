@@ -1,8 +1,9 @@
 "use client";
 
-import Footer from "@components/Footer";
-import Navbar from "@components/Navbar";
-import useThemeData from "@hook/useThemeData";
+import useThemeData from "@/hook/useThemeData";
+import { Command } from "../Command/Command";
+import Footer from "../Footer";
+import Navbar from "../Navbar";
 
 export default function Layout({ children }) {
   const { theme } = useThemeData();
@@ -16,6 +17,7 @@ export default function Layout({ children }) {
       <Navbar />
 
       <main className="flex min-h-screen justify-center pt-[100px]">
+        <Command />
         {children}
       </main>
 

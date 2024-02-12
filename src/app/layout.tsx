@@ -1,7 +1,7 @@
 import "../styles/global.css";
 
-import Layout from "@components/Layout";
-import { ThemeProvider } from "@context/ThemeContext";
+import Layout from "@/components/Layout";
+import { ThemeProvider } from "@/context/ThemeContext";
 import { ReactNode } from "react";
 
 import { Metadata } from "next";
