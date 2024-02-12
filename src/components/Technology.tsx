@@ -1,6 +1,6 @@
 "use client";
 
-import useThemeData from "@hook/useThemeData";
+import useThemeData from "@/hook/useThemeData";
 import { ReactNode } from "react";
 
 export function Technology({ children }: { children: ReactNode }) {

@@ -1,5 +1,5 @@
-import { Heading } from "@components/Heading";
-import { MotionTitle } from "@components/Motion";
+import { Heading } from "@/components/Heading";
+import { MotionTitle } from "@/components/Motion";
 import { Metadata } from "next";
 import { groq } from "next-sanity";
 import Image, { StaticImageData } from "next/image";

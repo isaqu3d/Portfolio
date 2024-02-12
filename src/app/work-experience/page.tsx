@@ -1,4 +1,4 @@
-import { Experience } from "@components/Experience";
+import { Experience } from "@/components/Experience";
 import { groq } from "next-sanity";
 import client from "../../lib/sanityClient";
 

@@ -1,5 +1,5 @@
+import formatDate from "@/utils/format-date";
 import { PortableText } from "@portabletext/react";
-import formatDate from "@utils/format-date";
 import Image from "next/image";
 import { urlFor } from "../lib/urlSanity";
 import { WorkExperienceProps } from "../types/workExperience";
