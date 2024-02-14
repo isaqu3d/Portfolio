@@ -17,7 +17,9 @@ export default function Layout({ children }) {
       <Navbar />
 
       <main className="flex min-h-screen justify-center pt-[100px]">
-        <Command />
+        <div className="hidden lg:flex">
+          <Command />
+        </div>
         {children}
       </main>
 
