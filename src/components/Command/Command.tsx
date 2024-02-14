@@ -1,13 +1,10 @@
 "use client";
 
-import { useCallback, useContext, useEffect, useState } from "react";
-
 import ThemeContext from "@/context/ThemeContext";
 import useThemeData from "@/hook/useThemeData";
-
 import { usePathname, useRouter } from "next/navigation";
+import { useCallback, useContext, useEffect, useState } from "react";
 import { FiInstagram, FiLinkedin, FiSun } from "react-icons/fi";
-import { MdLaptopMac } from "react-icons/md";
 import { RiCommandFill, RiMoonFill } from "react-icons/ri";
 import { SiGithub } from "react-icons/si";
 import {
@@ -52,7 +49,7 @@ export function Command() {
     return () => document.removeEventListener("keydown", down);
   }, [setShowCommandMenu]);
 
-  const { setThemeContext } = useContext(ThemeContext); // Use o useContext para acessar o contexto
+  const { setThemeContext } = useContext(ThemeContext) || {};
 
   const handleThemeChange = useCallback(
     (theme: string) => {
@@ -78,11 +75,6 @@ export function Command() {
           name: "Escuro",
           icon: <RiMoonFill />,
           onSelect: () => handleThemeChange(""),
-        },
-        {
-          name: "Sistema",
-          icon: <MdLaptopMac />,
-          onSelect: () => handleThemeChange("system"),
         },
       ],
     },
