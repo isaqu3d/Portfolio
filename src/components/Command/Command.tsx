@@ -1,0 +1,137 @@
+"use client";
+
+import { useCallback, useContext, useEffect, useState } from "react";
+
+import ThemeContext from "@/context/ThemeContext";
+import useThemeData from "@/hook/useThemeData";
+
+import { usePathname, useRouter } from "next/navigation";
+import { FiInstagram, FiLinkedin, FiSun } from "react-icons/fi";
+import { MdLaptopMac } from "react-icons/md";
+import { RiCommandFill, RiMoonFill } from "react-icons/ri";
+import { SiGithub } from "react-icons/si";
+import {
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "./components/CommandMenu";
+
+type Groups = Array<{
+  heading: string;
+  actions: Array<{
+    name: string;
+    icon: JSX.Element;
+    onSelect: () => void | Promise<void | boolean>;
+  }>;
+}>;
+
+export function Command() {
+  const [showCommandMenu, setShowCommandMenu] = useState(false);
+
+  const { changeTheme } = useThemeData();
+
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const openLink = useCallback((url: string) => {
+    window.open(url, "_blank");
+  }, []);
+
+  useEffect(() => {
+    function down(e: KeyboardEvent) {
+      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        setShowCommandMenu((prevState) => !prevState);
+      }
+    }
+
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down);
+  }, [setShowCommandMenu]);
+
+  const { setThemeContext } = useContext(ThemeContext); // Use o useContext para acessar o contexto
+
+  const handleThemeChange = useCallback(
+    (theme: string) => {
+      changeTheme(theme);
+
+      if (setThemeContext) {
+        setThemeContext(theme);
+      }
+    },
+    [changeTheme, setThemeContext],
+  );
+
+  const groups: Groups = [
+    {
+      heading: "Tema",
+      actions: [
+        {
+          name: "Claro",
+          icon: <FiSun />,
+          onSelect: () => handleThemeChange("dark"),
+        },
+        {
+          name: "Escuro",
+          icon: <RiMoonFill />,
+          onSelect: () => handleThemeChange(""),
+        },
+        {
+          name: "Sistema",
+          icon: <MdLaptopMac />,
+          onSelect: () => handleThemeChange("system"),
+        },
+      ],
+    },
+    {
+      heading: "Rede Socias",
+      actions: [
+        {
+          name: "GitHub",
+          icon: <SiGithub />,
+          onSelect: () => openLink("https://github.com/isaqu3d"),
+        },
+        {
+          name: "LinkedIn",
+          icon: <FiLinkedin />,
+          onSelect: () => openLink("https://linkedin.com/in/isaque-de-sousa"),
+        },
+        {
+          name: "Instagram",
+          icon: <FiInstagram />,
+          onSelect: () => openLink("https://instagram.com/_isaque.s_"),
+        },
+      ],
+    },
+  ];
+
+  return (
+    <div className="fixed bottom-4 left-2 z-[49] lg:left-4">
+      <button
+        onClick={() => setShowCommandMenu(true)}
+        className="h-12 w-12 rounded-full dark:hover:bg-primary"
+      >
+        <RiCommandFill className="h-5 w-5" />
+      </button>
+      <CommandDialog open={showCommandMenu} onOpenChange={setShowCommandMenu}>
+        <CommandInput placeholder={`${"search"} ↵`} />
+        <CommandList>
+          <CommandEmpty>{"search-empty"}</CommandEmpty>
+          {groups.map((group) => (
+            <CommandGroup key={group.heading} heading={group.heading}>
+              {group.actions.map((action) => (
+                <CommandItem key={action.name} onSelect={action.onSelect}>
+                  {action.icon}
+                  {action.name}
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          ))}
+        </CommandList>
+      </CommandDialog>
+    </div>
+  );
+}
