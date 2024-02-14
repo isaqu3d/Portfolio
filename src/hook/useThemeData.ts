@@ -4,9 +4,12 @@ import ThemeContext from "@/context/ThemeContext";
 import { useContext } from "react";
 
 const useThemeData = () => {
-  const { theme, changeTheme } = useContext(ThemeContext) || { theme: "" };
+  const context = useContext(ThemeContext);
+  const theme = context?.theme || "";
+  const changeTheme = context?.changeTheme || null;
+  const setThemeContext = context?.setThemeContext || null;
 
-  return { changeTheme, theme };
+  return { theme, changeTheme, setThemeContext };
 };
 
 export default useThemeData;
