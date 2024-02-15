@@ -1,6 +1,6 @@
 "use client";
 
-import useThemeData from "@hook/useThemeData";
+import useThemeData from "@/hook/useThemeData";
 import { motion } from "framer-motion";
 import { ComponentProps } from "react";
 import { tv, VariantProps } from "tailwind-variants";

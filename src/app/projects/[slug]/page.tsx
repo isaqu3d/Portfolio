@@ -1,9 +1,9 @@
-import { LinkSanity } from "@components/LinkSanity";
-import { MotionTitle } from "@components/Motion";
-import { NextLinkColor } from "@components/NextLinkColor";
+import { LinkSanity } from "@/components/LinkSanity";
+import { MotionTitle } from "@/components/Motion";
+import { NextLinkColor } from "@/components/NextLinkColor";
 
-import { TechBadge } from "@components/TechBadge";
-import { Technology } from "@components/Technology";
+import { TechBadge } from "@/components/TechBadge";
+import { Technology } from "@/components/Technology";
 import { PortableText } from "@portabletext/react";
 import { groq } from "next-sanity";
 import Image from "next/image";

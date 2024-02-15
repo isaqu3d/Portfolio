@@ -1,6 +1,6 @@
 "use client";
 
-import useThemeData from "@hook/useThemeData";
+import useThemeData from "@/hook/useThemeData";
 import NextLink from "next/link";
 import { BiChevronRight } from "react-icons/bi";
 
