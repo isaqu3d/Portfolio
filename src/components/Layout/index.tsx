@@ -11,7 +11,7 @@ export default function Layout({ children }) {
   return (
     <div
       className={`${
-        theme ? "bg-white-200 text-black" : " bg-gray-900 text-white-100"
+        theme ? "bg-white-100 text-black" : " bg-gray-900 text-white-100"
       } `}
     >
       <Navbar />
