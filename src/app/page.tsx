@@ -11,6 +11,8 @@ import Image from "next/image";
 import { BiChevronRight } from "react-icons/bi";
 import { MdOutlineWorkOutline } from "react-icons/md";
 
+import { GlobeIcon } from "@radix-ui/react-icons/dist";
+
 export type HomeProps = {
   _id: string;
   about: string;
@@ -22,7 +24,6 @@ type Home = {
 };
 
 export default function Home() {
-  // const [home] = await client.fetch(groq`*[_type == "home"]`);
   const { theme } = useThemeData();
 
   return (
@@ -34,18 +35,26 @@ export default function Home() {
             <h1 className="font-sansMPlus text-4xl font-bold sm:text-center lg:text-start">
               Isaque de Sousa
             </h1>
-
-            <p>Entusiasta Digital ( Code / Desenvolvedor / Remoto )</p>
+            <p className="flex items-center justify-center gap-2 text-zinc-400 lg:justify-start">
+              <span>
+                <GlobeIcon className="h-4 w-4 text-green-600" />
+              </span>
+              Fortaleza - Ceará, Brasil.
+            </p>
           </div>
 
-          <div>
-            <div className="border-white-200 inline-block h-[100px] w-[100px] overflow-hidden rounded-full border-2">
+          <div className="relative">
+            <div className="inline-block h-[100px] w-[100px] overflow-hidden rounded-full ">
               <Image
                 src="/profile.jpeg"
                 alt="Imagem de perfil"
                 width={100}
                 height={100}
               />
+            </div>
+
+            <div className="absolute top-[85px] right-3 h-4 w-4 rounded-full bg-green-600">
+              <div className=" h-4 w-4 animate-ping rounded-full bg-green-700" />
             </div>
           </div>
         </header>
