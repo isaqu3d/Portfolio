@@ -1,10 +1,9 @@
 "use client";
 
-import ThemeContext from "@/context/ThemeContext";
-import useThemeData from "@/hook/useThemeData";
-import { usePathname, useRouter } from "next/navigation";
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+import { useCallback, useEffect, useState } from "react";
 import { FiInstagram, FiLinkedin, FiSun } from "react-icons/fi";
+import { MdLaptopMac } from "react-icons/md";
 import { RiCommandFill, RiMoonFill } from "react-icons/ri";
 import { SiGithub } from "react-icons/si";
 import {
@@ -27,11 +26,7 @@ type Groups = Array<{
 
 export function Command() {
   const [showCommandMenu, setShowCommandMenu] = useState(false);
-
-  const { changeTheme } = useThemeData();
-
-  const router = useRouter();
-  const pathname = usePathname();
+  const { setTheme } = useTheme();
 
   const openLink = useCallback((url: string) => {
     window.open(url, "_blank");
@@ -49,19 +44,6 @@ export function Command() {
     return () => document.removeEventListener("keydown", down);
   }, [setShowCommandMenu]);
 
-  const { setThemeContext } = useContext(ThemeContext) || {};
-
-  const handleThemeChange = useCallback(
-    (theme: string) => {
-      changeTheme(theme);
-
-      if (setThemeContext) {
-        setThemeContext(theme);
-      }
-    },
-    [changeTheme, setThemeContext],
-  );
-
   const groups: Groups = [
     {
       heading: "Tema",
@@ -69,12 +51,17 @@ export function Command() {
         {
           name: "Claro",
           icon: <FiSun />,
-          onSelect: () => handleThemeChange("dark"),
+          onSelect: () => setTheme("dark"),
         },
         {
           name: "Escuro",
           icon: <RiMoonFill />,
-          onSelect: () => handleThemeChange(""),
+          onSelect: () => setTheme("light"),
+        },
+        {
+          name: "Sistema",
+          icon: <MdLaptopMac />,
+          onSelect: () => setTheme("system"),
         },
       ],
     },
