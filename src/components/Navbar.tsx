@@ -26,8 +26,8 @@ const LinkItem = ({ href, target, children }: LinkItemProps) => {
       href={href}
       target={target}
       className={`${
-        active ? "rounded-md bg-teal-400 p-2 text-black" : "hover:underline"
-      }`}
+        active ? "rounded-md bg-teal-400 text-black" : "hover:underline"
+      }  p-2`}
     >
       {children}
     </NextLink>
