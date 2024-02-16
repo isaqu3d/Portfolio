@@ -1,10 +1,9 @@
 "use client";
 
-import NextLink from "next/link";
+import NextLink, { LinkProps } from "next/link";
 import { usePathname } from "next/navigation";
 import { IoLogoGithub } from "react-icons/io5";
 
-import useThemeData from "@/hook/useThemeData";
 import { ReactNode } from "react";
 import { ButtonTheme } from "./ButtonTheme";
 
@@ -12,7 +11,7 @@ import Logo from "./Logo";
 import { MenuItem } from "./MenuItem";
 import { MotionHeader } from "./Motion";
 
-interface LinkItemProps {
+interface LinkItemProps extends LinkProps {
   href: string;
   target?: string;
   children: ReactNode;
@@ -26,8 +25,6 @@ const LinkItem = ({ href, target, children }: LinkItemProps) => {
     <NextLink
       href={href}
       target={target}
-      passHref
-      scroll
       className={`${
         active ? "rounded-md bg-teal-400 p-2 text-black" : "hover:underline"
       }`}
@@ -38,16 +35,9 @@ const LinkItem = ({ href, target, children }: LinkItemProps) => {
 };
 
 export default function Navbar() {
-  const { theme } = useThemeData();
   return (
     <>
-      <MotionHeader
-        className={`${
-          theme
-            ? "border-zinc-400 bg-white-100/30"
-            : "border-gray-600 bg-gray-900/30"
-        }  fixed z-50 flex w-full justify-center border-b-[1px] backdrop-blur-sm`}
-      >
+      <MotionHeader className="fixed z-50 flex w-full justify-center border-b-[1px] border-gray-600 bg-gray-900/30 backdrop-blur-sm dark:border-zinc-400 dark:bg-white-100/30">
         <nav className="flex max-w-screen-md flex-1 justify-between p-2">
           <div className="mr-5 flex items-center">
             <Logo />

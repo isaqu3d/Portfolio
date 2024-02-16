@@ -9,11 +9,7 @@ export default function Layout({ children }) {
   const { theme } = useThemeData();
 
   return (
-    <div
-      className={`${
-        theme ? "bg-white-100 text-black" : " bg-gray-900 text-white-100"
-      } `}
-    >
+    <div className="bg-gray-900 text-white-100 dark:bg-white-100 dark:text-black">
       <Navbar />
 
       <main className="flex min-h-screen justify-center pt-[100px]">

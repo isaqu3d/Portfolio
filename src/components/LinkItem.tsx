@@ -1,4 +1,3 @@
-import useThemeData from "@/hook/useThemeData";
 import NextLink from "next/link";
 import { ReactNode } from "react";
 
@@ -9,18 +8,10 @@ interface LinkItemProps {
 }
 
 export function LinkItem({ href, children, target }: LinkItemProps) {
-  const { theme } = useThemeData();
-  const isDark = theme === "dark";
-
   return (
     <NextLink
       href={href}
-      className={`${
-        isDark
-          ? "text-teal-600  hover:decoration-teal-600"
-          : "text-teal-200  hover:decoration-pink-500"
-      } ml-2 flex w-36 items-center gap-2 rounded-md p-2 font-semibold hover:bg-teal-400/20 hover:underline hover:decoration-1 hover:underline-offset-[6px]
-`}
+      className=" ml-2 flex w-36  items-center gap-2 rounded-md p-2 font-semibold text-teal-200 hover:bg-teal-400/20 hover:underline hover:decoration-pink-500 hover:decoration-1 hover:underline-offset-[6px] dark:text-teal-600 dark:hover:decoration-teal-600"
       target={target}
     >
       {children}
