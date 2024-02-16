@@ -1,6 +1,6 @@
 "use client";
 
-import { Skeleton } from "@/components/skeleton";
+import { Skeleton } from "@/components/Skeleton";
 import useThemeData from "@/hook/useThemeData";
 
 export default function ProjectLoading() {
@@ -8,26 +8,43 @@ export default function ProjectLoading() {
 
   return (
     <div
-      className={`${
-        theme ? "bg-slate-200" : "bg-gray-600 "
-      } w-96 space-y-5 rounded-2xl p-4`}
+      className="isolate
+   overflow-hidden
+   shadow-xl shadow-black/5
+   before:border-t before:border-rose-100/10"
     >
-      <Skeleton
-        className={`${theme ? "bg-slate-300" : "bg-zinc-700 "} h-24 rounded-lg`}
-      />
-      <div className="space-y-3">
+      <div
+        className={`${
+          theme ? "bg-slate-200" : "bg-zinc-800 "
+        } w-96 space-y-5 rounded-2xl p-4`}
+      >
         <Skeleton
-          className={`${theme ? "bg-slate-300" : "bg-gray-700"} h-3 rounded-lg`}
+          className={`${
+            theme ? "bg-slate-300" : "bg-zinc-700"
+          } h-24 rounded-lg`}
         />
-        <Skeleton
-          className={`${theme ? "bg-slate-300" : "bg-gray-700"} h-3 rounded-lg`}
-        />
-        <Skeleton
-          className={`${theme ? "bg-slate-300" : "bg-gray-700"} h-3 rounded-lg`}
-        />
-        <Skeleton
-          className={`${theme ? "bg-slate-300" : "bg-gray-600"} h-3 rounded-lg`}
-        />
+        <div className="space-y-3">
+          <Skeleton
+            className={`${
+              theme ? "bg-slate-300" : "bg-rose-100/10"
+            } h-3 w-3/5 rounded-lg`}
+          />
+          <Skeleton
+            className={`${
+              theme ? "bg-slate-300" : "bg-rose-100/20"
+            } h-3 w-4/5 rounded-lg`}
+          />
+          <Skeleton
+            className={`${
+              theme ? "bg-slate-300" : "bg-rose-100/20"
+            } h-3 w-2/5 rounded-lg`}
+          />
+          <Skeleton
+            className={`${
+              theme ? "bg-slate-300" : " bg-rose-100/10"
+            } h-3 w-3/5 rounded-lg`}
+          />
+        </div>
       </div>
     </div>
   );
