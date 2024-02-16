@@ -1,9 +1,9 @@
 import "../styles/global.css";
 
 import Layout from "@/components/Layout";
-import { ThemeProvider } from "@/context/ThemeContext";
 import { ReactNode } from "react";
 
+import { ThemeProvider } from "@/components/Theme/theme-provider";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -32,7 +32,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           />
         </head>
         <body>
-          <ThemeProvider>
+          <ThemeProvider attribute="class" defaultTheme="system">
             <Layout>
               <main>{children}</main>
             </Layout>
