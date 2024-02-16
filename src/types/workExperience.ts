@@ -1,7 +1,4 @@
-import {
-  StaticImageData,
-  StaticImport,
-} from "next/dist/shared/lib/get-img-props";
+import { StaticImageData } from "next/dist/shared/lib/get-img-props";
 import { TypedObject } from "sanity";
 
 type Technology = {
@@ -14,7 +11,7 @@ export type WorkExperienceProps = {
   _id: string;
   companyName: string;
   companyUrl: string;
-  companyLogo: string | StaticImport;
+  companyLogo: StaticImageData | StaticImageData[];
   role: string;
   startDate: string;
   endDate: string;
