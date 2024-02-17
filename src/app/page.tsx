@@ -1,16 +1,16 @@
 "use client";
 
 import Bio from "@/components/Bio";
-import { ButtonLink } from "@/components/ButtonLink";
 import { CardTypeWriter } from "@/components/CardTypeWriter";
 import { Heading } from "@/components/Heading";
 import { MotionSection, MotionTitle } from "@/components/Motion";
 import { SocialMedia } from "@/components/SocialMedia";
-import useThemeData from "@/hook/useThemeData";
 import Image from "next/image";
 import { BiChevronRight } from "react-icons/bi";
 import { MdOutlineWorkOutline } from "react-icons/md";
 
+import { Button } from "@/components/Button";
+import { SendEmail } from "@/components/SendEmail";
 import { GlobeIcon } from "@radix-ui/react-icons/dist";
 
 export type HomeProps = {
@@ -24,12 +24,11 @@ type Home = {
 };
 
 export default function Home() {
-  const { theme } = useThemeData();
-
   return (
     <div className="max-w-2xl px-4">
       <MotionTitle>
         <CardTypeWriter />
+
         <header className="flex flex-col items-center gap-4 lg:flex-row lg:gap-0">
           <div className="flex-grow">
             <h1 className="font-sansMPlus text-4xl font-bold sm:text-center lg:text-start">
@@ -68,7 +67,7 @@ export default function Home() {
             Fala DEVs, Sou um desenvolvedor Web e Mobile Junior. Sou um grande
             entusiasta da tecnologia e um apaixonado por programação. Atualmente
             estudo focado as seguintes Techs:
-            <span className={`${theme ? "text-teal-600" : "text-pink-500"}`}>
+            <span className=" text-pink-500 dark:text-teal-600">
               {""} "ReactJS", "NextJS", "TypeScript", "TailwindCSS", "CSS-In-JS"
             </span>
             . Eu pretendo me tornar um dev Full-Stack, e para isto, trabalho e
@@ -76,9 +75,11 @@ export default function Home() {
             codar!
           </p>
 
-          <ButtonLink href="/projects">
-            Projetos <BiChevronRight />
-          </ButtonLink>
+          <div className="my-2 flex items-center justify-center">
+            <Button href="/projects" variant="teal" size="textMd">
+              Projetos <BiChevronRight />
+            </Button>
+          </div>
         </MotionTitle>
 
         <MotionSection>
@@ -89,13 +90,15 @@ export default function Home() {
             Musica, Jogar, Codar, Ler, Aprender.
           </p>
 
-          <ButtonLink href="work-experience">
-            Experiências <MdOutlineWorkOutline />
-          </ButtonLink>
+          <div className="my-2 flex items-center justify-center">
+            <Button href="work-experience" size="textMd" variant="teal">
+              Experiências <MdOutlineWorkOutline />
+            </Button>
+          </div>
 
           <SocialMedia />
 
-          {/* <FormSubmit /> */}
+          <SendEmail />
         </MotionSection>
       </main>
     </div>

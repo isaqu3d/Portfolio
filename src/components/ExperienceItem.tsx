@@ -3,7 +3,7 @@ import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { urlFor } from "../lib/urlSanity";
 import { WorkExperienceProps } from "../types/workExperience";
-import { LinkSanity } from "./LinkSanity";
+import { Button } from "./Button";
 import { MotionSection } from "./Motion";
 import { ProgressBarExperience } from "./ProgressBarExperience";
 import { Technology } from "./Technology";
@@ -19,7 +19,7 @@ export async function ExperienceItem({ experience }: ExperienceItemProps) {
         <div className="flex flex-col items-center gap-4">
           <div className="rounded-full border border-gray-500 p-[2px]">
             <Image
-              src={urlFor(experience.companyLogo).url()}
+              src={urlFor(experience.companyLogo)?.url()}
               alt={experience.companyName}
               width={50}
               height={50}
@@ -33,10 +33,14 @@ export async function ExperienceItem({ experience }: ExperienceItemProps) {
 
         <div>
           <div className="flex flex-col gap-2">
-            <LinkSanity href={experience.companyUrl} target="_blank">
-              <span className="text-base lg:text-xl">@</span>{" "}
-              {experience.companyName}
-            </LinkSanity>
+            <Button
+              variant="link"
+              href={experience.companyUrl}
+              target="_blank"
+              className="lg:text-md text-base"
+            >
+              <span>@</span> {experience.companyName}
+            </Button>
             <h2 className="text-gray-400">{experience.role}</h2>
             <span>
               {formatDate(experience.startDate)} -{" "}
