@@ -1,6 +1,5 @@
 "use client";
 
-import useThemeData from "@/hook/useThemeData";
 import { Menu } from "@headlessui/react";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
@@ -24,8 +23,6 @@ const LINKS_ITEMS = [
 ];
 
 export function MenuItem() {
-  const { theme } = useThemeData();
-  const isDark = theme === "dark";
   const router = usePathname();
 
   return (
@@ -40,9 +37,7 @@ export function MenuItem() {
 
         <Menu.Items
           as="nav"
-          className={`${
-            isDark ? "bg-white-100" : "bg-[#31384c]"
-          } absolute right-3 -bottom-40 flex w-52 animate-ToggleMenu flex-col gap-[6px] rounded-md py-2 px-4 font-sansMPlus`}
+          className="absolute right-3 -bottom-40 flex w-52 animate-ToggleMenu flex-col gap-[6px] rounded-md bg-[#31384c] py-2 px-4 font-sansMPlus dark:bg-white-100"
         >
           {LINKS_ITEMS.map((link) => (
             <Menu.Item key={link.id}>
