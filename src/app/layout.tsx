@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </head>
         <body>
           <ThemeProvider attribute="class" defaultTheme="system">
-            <Toaster />
+            <Toaster richColors />
             <Layout>
               <main>{children}</main>
             </Layout>
