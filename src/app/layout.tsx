@@ -5,6 +5,7 @@ import { ReactNode } from "react";
 
 import { ThemeProvider } from "@/components/Theme/theme-provider";
 import { Metadata } from "next";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: {
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </head>
         <body>
           <ThemeProvider attribute="class" defaultTheme="system">
+            <Toaster />
             <Layout>
               <main>{children}</main>
             </Layout>
