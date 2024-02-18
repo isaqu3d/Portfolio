@@ -3,14 +3,15 @@
 import Bio from "@/components/Bio";
 import { CardTypeWriter } from "@/components/CardTypeWriter";
 import { Heading } from "@/components/Heading";
-import { MotionSection, MotionTitle } from "@/components/Motion";
+import { MotionSection, MotionSlide } from "@/components/Motion";
 import { SocialMedia } from "@/components/SocialMedia";
 import Image from "next/image";
 import { BiChevronRight } from "react-icons/bi";
 import { MdOutlineWorkOutline } from "react-icons/md";
 
 import { Button } from "@/components/Button";
-import { SendEmail } from "@/components/SendEmail";
+
+import { FormSendEmail } from "@/components/EmailSend/FormSendEmail";
 import { GlobeIcon } from "@radix-ui/react-icons/dist";
 
 export type HomeProps = {
@@ -26,7 +27,7 @@ type Home = {
 export default function Home() {
   return (
     <div className="max-w-2xl px-4">
-      <MotionTitle>
+      <MotionSlide>
         <CardTypeWriter />
 
         <header className="flex flex-col items-center gap-4 lg:flex-row lg:gap-0">
@@ -57,10 +58,10 @@ export default function Home() {
             </div>
           </div>
         </header>
-      </MotionTitle>
+      </MotionSlide>
 
       <main>
-        <MotionTitle>
+        <MotionSlide>
           <Heading>Sobre mim</Heading>
 
           <p className="inset-5 text-justify">
@@ -80,7 +81,7 @@ export default function Home() {
               Projetos <BiChevronRight />
             </Button>
           </div>
-        </MotionTitle>
+        </MotionSlide>
 
         <MotionSection>
           <Bio />
@@ -98,7 +99,7 @@ export default function Home() {
 
           <SocialMedia />
 
-          <SendEmail />
+          <FormSendEmail />
         </MotionSection>
       </main>
     </div>
