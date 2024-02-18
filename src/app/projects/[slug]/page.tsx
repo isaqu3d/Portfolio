@@ -1,7 +1,8 @@
-import { LinkSanity } from "@/components/LinkSanity";
-import { MotionTitle } from "@/components/Motion";
-import { NextLinkColor } from "@/components/NextLinkColor";
+import { MotionSlide } from "@/components/Motion";
+import NextLink from "next/link";
+import { BiChevronRight } from "react-icons/bi";
 
+import { Button } from "@/components/Button";
 import { TechBadge } from "@/components/TechBadge";
 import { Technology } from "@/components/Technology";
 import { PortableText } from "@portabletext/react";
@@ -10,7 +11,11 @@ import Image from "next/image";
 import client from "../../../lib/sanityClient";
 import { urlFor } from "../../../lib/urlSanity";
 
-export default async function Slug({ params: { slug } }) {
+export default async function Slug({
+  params: { slug },
+}: {
+  params: { slug: string };
+}) {
   const [project] = await client.fetch(
     groq`*[_type == "project" && slug.current == $slug]`,
     {
@@ -19,9 +24,17 @@ export default async function Slug({ params: { slug } }) {
   );
 
   return (
-    <MotionTitle className="max-w-xl px-4">
+    <MotionSlide className="max-w-xl px-4">
       <div className="mb-4 flex items-center gap-2 md:flex-row">
-        <NextLinkColor />
+        <NextLink
+          href="/projects"
+          className="flex items-center text-sm text-pink-400 hover:underline dark:text-teal-600 dark:hover:underline md:text-base"
+        >
+          Projeto
+          <span className="text-white-100 dark:text-black">
+            <BiChevronRight />
+          </span>
+        </NextLink>
 
         <h1 className="text-base font-bold md:text-xl">{project.name}</h1>
         <TechBadge name={project.badge} color="badgeYear" />
@@ -35,16 +48,26 @@ export default async function Slug({ params: { slug } }) {
         <div className="flex flex-col items-center gap-2 md:flex-row">
           <p>Website:</p>
 
-          <LinkSanity href={project.linkWebsite} target="__blank">
+          <Button
+            variant="link"
+            size="textMd"
+            href={project.linkWebsite}
+            target="__blank"
+          >
             {project.linkWebsite}
-          </LinkSanity>
+          </Button>
         </div>
 
         <div className="flex flex-col items-center gap-2 md:flex-row">
           <p>Github:</p>
-          <LinkSanity href={project.linkGithub} target="__blank">
+          <Button
+            variant="link"
+            size="textMd"
+            href={project.linkGithub}
+            target="__blank"
+          >
             {project.linkGithub}
-          </LinkSanity>
+          </Button>
         </div>
 
         <div className="flex flex-col items-center gap-2 md:flex-row md:items-start">
@@ -82,6 +105,6 @@ export default async function Slug({ params: { slug } }) {
           />
         ))}
       </div>
-    </MotionTitle>
+    </MotionSlide>
   );
 }
