@@ -5,6 +5,7 @@ import { ComponentProps, ReactNode } from "react";
 type TechBadgeProps = ComponentProps<typeof motion.span> & {
   children: ReactNode;
 };
+
 export const MotionHeader = ({ children, ...props }: TechBadgeProps) => {
   return (
     <motion.header
@@ -17,6 +18,7 @@ export const MotionHeader = ({ children, ...props }: TechBadgeProps) => {
     </motion.header>
   );
 };
+
 export const MotionSection = ({ children, ...props }: TechBadgeProps) => {
   return (
     <motion.section
@@ -31,7 +33,7 @@ export const MotionSection = ({ children, ...props }: TechBadgeProps) => {
   );
 };
 
-export const MotionTitle = ({ children, ...props }: TechBadgeProps) => {
+export const MotionSlide = ({ children, ...props }: TechBadgeProps) => {
   return (
     <motion.section
       initial={{ opacity: 0, x: -120 }}
@@ -59,7 +61,7 @@ export const MotionBadge = ({ children, ...props }: TechBadgeProps) => {
   );
 };
 
-export const Motion = ({ children }) => {
+export const Motion = ({ children }: TechBadgeProps) => {
   return (
     <motion.div
       initial={{ y: 60, opacity: 0 }}
