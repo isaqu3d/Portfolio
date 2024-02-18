@@ -1,5 +1,5 @@
 import { Heading } from "@/components/Heading";
-import { MotionTitle } from "@/components/Motion";
+import { MotionSlide } from "@/components/Motion";
 import { Metadata } from "next";
 import { groq } from "next-sanity";
 import Image, { StaticImageData } from "next/image";
@@ -31,7 +31,7 @@ export default async function Projects() {
 
   return (
     <div className="max-w-xl px-4">
-      <MotionTitle>
+      <MotionSlide>
         <Heading>Projetos</Heading>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -56,7 +56,7 @@ export default async function Projects() {
             </div>
           ))}
         </div>
-      </MotionTitle>
+      </MotionSlide>
     </div>
   );
 }
