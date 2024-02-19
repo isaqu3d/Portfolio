@@ -3,8 +3,8 @@ import NextLink from "next/link";
 import { BiChevronRight } from "react-icons/bi";
 
 import { Button } from "@/components/Button";
-import { TechBadge } from "@/components/TechBadge";
 import { Technology } from "@/components/Technology";
+import { Badge } from "@/components/ui/badge";
 import { PortableText } from "@portabletext/react";
 import { groq } from "next-sanity";
 import Image from "next/image";
@@ -28,7 +28,7 @@ export default async function Slug({
       <div className="mb-4 flex items-center gap-2 md:flex-row">
         <NextLink
           href="/projects"
-          className="flex items-center text-sm text-pink-400 hover:underline dark:text-teal-600 dark:hover:underline md:text-base"
+          className="flex items-center text-sm text-pink-400 hover:underline md:text-base dark:text-teal-600 dark:hover:underline"
         >
           Projeto
           <span className="text-white-100 dark:text-black">
@@ -37,7 +37,7 @@ export default async function Slug({
         </NextLink>
 
         <h1 className="text-base font-bold md:text-xl">{project.name}</h1>
-        <TechBadge name={project.badge} color="badgeYear" />
+        <Badge variant="darkMode">{project.badge}</Badge>
       </div>
 
       <div className="text-justify indent-5">
