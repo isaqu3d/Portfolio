@@ -2,11 +2,11 @@
 
 import { motion } from "framer-motion";
 import { ComponentProps, ReactNode } from "react";
-type TechBadgeProps = ComponentProps<typeof motion.span> & {
+type motionProps = ComponentProps<typeof motion.span> & {
   children: ReactNode;
 };
 
-export const MotionHeader = ({ children, ...props }: TechBadgeProps) => {
+export const MotionHeader = ({ children, ...props }: motionProps) => {
   return (
     <motion.header
       initial={{ top: -100 }}
@@ -19,7 +19,7 @@ export const MotionHeader = ({ children, ...props }: TechBadgeProps) => {
   );
 };
 
-export const MotionSection = ({ children, ...props }: TechBadgeProps) => {
+export const MotionSection = ({ children, ...props }: motionProps) => {
   return (
     <motion.section
       initial={{ opacity: 0, y: 50 }}
@@ -33,7 +33,7 @@ export const MotionSection = ({ children, ...props }: TechBadgeProps) => {
   );
 };
 
-export const MotionSlide = ({ children, ...props }: TechBadgeProps) => {
+export const MotionSlide = ({ children, ...props }: motionProps) => {
   return (
     <motion.section
       initial={{ opacity: 0, x: -120 }}
@@ -47,7 +47,7 @@ export const MotionSlide = ({ children, ...props }: TechBadgeProps) => {
   );
 };
 
-export const MotionBadge = ({ children, ...props }: TechBadgeProps) => {
+export const MotionBadge = ({ children, ...props }: motionProps) => {
   return (
     <motion.span
       initial={{ opacity: 0, scale: 0 }}
@@ -61,7 +61,7 @@ export const MotionBadge = ({ children, ...props }: TechBadgeProps) => {
   );
 };
 
-export const Motion = ({ children }: TechBadgeProps) => {
+export const Motion = ({ children }: motionProps) => {
   return (
     <motion.div
       initial={{ y: 60, opacity: 0 }}
