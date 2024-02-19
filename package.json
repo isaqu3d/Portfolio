@@ -8,8 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix --max-warnings=0",
-    "prepare": "husky install",
-    "email:dev": "email dev --dir src/react-email-starter/emails"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@commitlint/cli": "^17.1.2",
