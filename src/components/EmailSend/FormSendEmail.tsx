@@ -4,32 +4,49 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
 
-const EmailFormSchema = z.object({
-  name: z.string(),
-  email: z.string().email(),
+const emailFormSchema = z.object({
+  name: z
+    .string({
+      required_error: "Digite seu nome",
+    })
+    .min(5, { message: "Seu nome deve ter pelo menos 5 caracteres." })
+    .transform((name) => {
+      return name
+        .trim()
+        .split(" ")
+        .map((word) => word[0].toLocaleUpperCase().concat(word.substring(1)))
+        .join(" ");
+    }),
+  email: z
+    .string({
+      required_error: "Digite seu email",
+    })
+    .email("Email inválido"),
   message: z
-    .string()
-    .min(6, { message: "Message must be at least 6 characters." }),
+    .string({
+      required_error: "Digita alguma mensagem",
+    })
+    .min(12, { message: "A mensagem deve ter pelo menos 12 caracteres." }),
 });
 
-type ContactFormInput = z.infer<typeof EmailFormSchema>;
+type SendEmailFormData = z.infer<typeof emailFormSchema>;
 
 export const FormSendEmail = () => {
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm<ContactFormInput>({
-    resolver: zodResolver(EmailFormSchema),
+  } = useForm<SendEmailFormData>({
+    resolver: zodResolver(emailFormSchema),
   });
 
-  const sendEmail = async (formData: ContactFormInput) => {
+  const sendEmail = async (formData: SendEmailFormData) => {
     try {
       await fetch("/api/send", {
         method: "POST",
         body: JSON.stringify(formData),
       }).then(() => {
-        toast.success("E-mail enviado");
+        toast.success("E-mail enviado com sucesso");
       });
     } catch (error) {
       toast.error("Erro ao enviar este e-mail!");
@@ -45,12 +62,15 @@ export const FormSendEmail = () => {
               <input
                 className="text-primary/60 w-full appearance-none rounded-lg border border-[#262626] bg-[#171717] p-3 text-sm outline-none transition duration-300 placeholder:text-neutral-500 focus:ring-1 focus:ring-[#262626] data-[invalid]:border-red-500 dark:border-zinc-400 dark:bg-[#e5e5e5] dark:focus:ring-1 dark:focus:ring-zinc-400"
                 type="text"
-                autoComplete="off"
                 required
+                autoComplete="off"
                 placeholder="Nome"
                 {...register("name")}
               />
             </Form.Control>
+            {errors.name?.message && (
+              <p className="my-1 text-sm text-red-400">{errors.name.message}</p>
+            )}
           </Form.Field>
 
           <Form.Field name="question" className="w-full">
@@ -64,6 +84,11 @@ export const FormSendEmail = () => {
                 {...register("email")}
               />
             </Form.Control>
+            {errors.email?.message && (
+              <p className="my-1 text-sm text-red-400">
+                {errors.email.message}
+              </p>
+            )}
           </Form.Field>
         </div>
 
@@ -77,6 +102,9 @@ export const FormSendEmail = () => {
               {...register("message")}
             />
           </Form.Control>
+          {errors.message?.message && (
+            <p className="text-sm text-red-400">{errors.message.message}</p>
+          )}
         </Form.Field>
         <Form.Submit asChild>
           <button
