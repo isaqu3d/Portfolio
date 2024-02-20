@@ -13,7 +13,7 @@ const LINKS_ITEMS = [
     href: "/",
   },
   { id: uuidv4(), name: "Projetos", href: "/projects" },
-  { id: uuidv4(), name: "Experiência", href: "/work-experience" },
+  { id: uuidv4(), name: "Experiência", href: "/work-experiences" },
   { id: uuidv4(), name: "Habilidades", href: "/skills" },
   {
     id: uuidv4(),
@@ -37,7 +37,7 @@ export function MenuItem() {
 
         <Menu.Items
           as="nav"
-          className="absolute right-3 -bottom-40 flex w-52 animate-ToggleMenu flex-col gap-[6px] rounded-md bg-[#31384c] py-2 px-4 font-sansMPlus dark:bg-white-100"
+          className="absolute -bottom-40 right-3 flex w-52 animate-ToggleMenu flex-col gap-[6px] rounded-md bg-[#31384c] px-4 py-2 font-sansMPlus dark:bg-white-100"
         >
           {LINKS_ITEMS.map((link) => (
             <Menu.Item key={link.id}>
