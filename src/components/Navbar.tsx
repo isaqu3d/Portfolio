@@ -45,7 +45,7 @@ export default function Navbar() {
 
           <div className="hidden flex-grow items-center gap-4 md:flex">
             <LinkItem href="/projects">Projetos</LinkItem>
-            <LinkItem href="/work-experience">Experiência</LinkItem>
+            <LinkItem href="/work-experiences">Experiências</LinkItem>
             <LinkItem href="/skills">Habilidades</LinkItem>
 
             <LinkItem
