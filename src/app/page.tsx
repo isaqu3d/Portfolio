@@ -43,19 +43,13 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="relative">
-            <div className="inline-block h-[100px] w-[100px] overflow-hidden rounded-full ">
-              <Image
-                src="/profile.jpeg"
-                alt="Imagem de perfil"
-                width={100}
-                height={100}
-              />
-            </div>
-
-            <div className="absolute top-[85px] right-3 h-4 w-4 rounded-full bg-green-600">
-              <div className=" h-4 w-4 animate-ping rounded-full bg-green-700" />
-            </div>
+          <div className="inline-block h-[100px] w-[100px] overflow-hidden rounded-full ">
+            <Image
+              src="/profile.jpeg"
+              alt="Imagem de perfil"
+              width={100}
+              height={100}
+            />
           </div>
         </header>
       </MotionSlide>
