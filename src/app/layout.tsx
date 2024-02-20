@@ -8,12 +8,26 @@ import { Metadata } from "next";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
+  authors: [{ name: "Isaque de Sousa" }],
+  category: "developer",
+  creator: "Isaque de Sousa",
   title: {
     default: "Home | Isaque de Sousa",
     template: "%s | Isaque de Sousa",
   },
   description:
-    "Seja bem-vindo ao meu portfolio, Sou Isaque de Sousa e venha me conhecer melhor.",
+    "Seja bem-vindo ao meu portfolio. Sou desenvolvedor web e sou apaixonado por criar sites e soluções de UI rápidos e fáceis de usar. Estou sempre ansioso para aprender novas habilidades e melhorar meus conhecimentos na area!",
+  keywords: [
+    "Isaque de Sousa",
+    "Desenvolvedor Web",
+    "Desenvolvedor Front-end",
+    "Desenvolvedor FullStack",
+    "Web Developer",
+    "Front-end Developer",
+    "FullStack Developer",
+    "Brazil",
+    "Next.js",
+  ],
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
