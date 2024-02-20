@@ -3,7 +3,6 @@
 import { useTheme } from "next-themes";
 import { useCallback, useEffect, useState } from "react";
 import { FiInstagram, FiLinkedin, FiSun } from "react-icons/fi";
-import { MdLaptopMac } from "react-icons/md";
 import { RiCommandFill, RiMoonFill } from "react-icons/ri";
 import { SiGithub } from "react-icons/si";
 import {
@@ -58,15 +57,10 @@ export function Command() {
           icon: <RiMoonFill />,
           onSelect: () => setTheme("light"),
         },
-        {
-          name: "Sistema",
-          icon: <MdLaptopMac />,
-          onSelect: () => setTheme("system"),
-        },
       ],
     },
     {
-      heading: "Rede Socias",
+      heading: "Rede Sociais",
       actions: [
         {
           name: "GitHub",
