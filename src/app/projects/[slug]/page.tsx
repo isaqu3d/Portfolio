@@ -45,7 +45,7 @@ export default async function Slug({
       </div>
 
       <div className="my-3 flex flex-col gap-2">
-        <div className="flex flex-col items-center gap-2 md:flex-row">
+        <div className="flex flex-col items-center gap-0 md:flex-row md:gap-2">
           <p>Website:</p>
 
           <Button
@@ -58,7 +58,7 @@ export default async function Slug({
           </Button>
         </div>
 
-        <div className="flex flex-col items-center gap-2 md:flex-row">
+        <div className="flex flex-col items-center gap-0 md:flex-row md:gap-2">
           <p>Github:</p>
           <Button
             variant="link"
@@ -70,7 +70,7 @@ export default async function Slug({
           </Button>
         </div>
 
-        <div className="flex flex-col items-center gap-2 md:flex-row md:items-start">
+        <div className="flex flex-col items-center gap-0 md:flex-row md:items-start md:gap-2">
           <p>Tech:</p>
 
           <div className="mt-2 flex flex-wrap justify-center gap-x-[6px] gap-y-4 md:mt-0 md:justify-start lg:max-w-[550px]">
