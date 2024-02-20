@@ -28,7 +28,7 @@ export default async function Slug({
       <div className="mb-4 flex items-center gap-2 md:flex-row">
         <NextLink
           href="/projects"
-          className="flex items-center text-sm text-pink-400 hover:underline md:text-base dark:text-teal-600 dark:hover:underline"
+          className="flex items-center text-sm text-pink-400 hover:underline dark:text-teal-600 dark:hover:underline md:text-base"
         >
           Projeto
           <span className="text-white-100 dark:text-black">
@@ -80,12 +80,12 @@ export default async function Slug({
                   <Image
                     src={urlFor(technology.image)?.url()}
                     alt={technology.name ?? ""}
-                    width={16}
-                    height={16}
+                    width={14}
+                    height={14}
                     quality={90}
                   />
                 ) : null}
-                <p>{technology.name}</p>
+                <p className="text-sm">{technology.name}</p>
               </Technology>
             ))}
           </div>

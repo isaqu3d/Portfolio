@@ -71,7 +71,7 @@ export async function ExperienceItem({ experience }: ExperienceItemProps) {
                       quality={90}
                     />
                   ) : null}
-                  <p>{technology.name}</p>
+                  <p className="text-sm">{technology.name}</p>
                 </Technology>
               ))}
             </div>
