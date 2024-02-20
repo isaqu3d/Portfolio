@@ -91,7 +91,7 @@ export function Command() {
     <div className="fixed bottom-4 left-2 z-[49] lg:left-4">
       <button
         onClick={() => setShowCommandMenu(true)}
-        className="flex h-12 w-12 items-center justify-center rounded-full transition hover:bg-background hover:text-black  dark:hover:bg-primary dark:hover:text-white-100"
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-background text-black transition hover:bg-background-80 dark:bg-background dark:text-white-100 dark:hover:bg-background-80"
       >
         <RiCommandFill className="h-5 w-5" />
       </button>
