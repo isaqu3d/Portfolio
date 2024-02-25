@@ -37,7 +37,7 @@ export async function ExperienceItem({ experience }: ExperienceItemProps) {
               variant="link"
               href={experience.companyUrl}
               target="_blank"
-              className="lg:text-md text-base"
+              className="lg:text-md w-max text-base"
             >
               <span>@</span> {experience.companyName}
             </Button>
