@@ -13,7 +13,7 @@ const LINKS_ITEMS = [
     href: "/",
   },
   { id: uuidv4(), name: "Projetos", href: "/projects" },
-  { id: uuidv4(), name: "Experiência", href: "/work-experiences" },
+  { id: uuidv4(), name: "Experiências", href: "/work-experiences" },
   { id: uuidv4(), name: "Habilidades", href: "/skills" },
   {
     id: uuidv4(),
