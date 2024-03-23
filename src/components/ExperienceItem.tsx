@@ -34,7 +34,7 @@ export async function ExperienceItem({ experience }: ExperienceItemProps) {
         <div>
           <div className="flex flex-col gap-2">
             <Button
-              variant="link"
+              variant="pink"
               href={experience.companyUrl}
               target="_blank"
               className="lg:text-md w-max text-base"
