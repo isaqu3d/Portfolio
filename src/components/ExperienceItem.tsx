@@ -41,15 +41,17 @@ export async function ExperienceItem({ experience }: ExperienceItemProps) {
             >
               <span>@</span> {experience.companyName}
             </Button>
-            <h2 className="text-gray-400">{experience.role}</h2>
-            <span>
+            <h2 className="font-medium text-gray-100 dark:text-gray-700">
+              {experience.role}
+            </h2>
+            <span className="text-gray-300 dark:text-gray-400">
               {formatDate(experience.startDate)} -{" "}
               {experience.endDate
                 ? formatDate(experience.endDate)
                 : "No momento"}
             </span>
 
-            <article className="prose text-gray-400">
+            <article className="prose text-gray-500">
               <PortableText value={experience.description} />
             </article>
           </div>
