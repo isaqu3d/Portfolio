@@ -12,7 +12,7 @@ const badgeVariants = cva(
         secondary:
           "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
         darkMode:
-          "dark:bg-pink-700 text-white-100 border dark:border-zinc-700 border-zinc-400 bg-teal-600",
+          "dark:bg-pink-700 text-white-100 dark:border-zinc-700 border-0 bg-teal-600",
       },
     },
     defaultVariants: {
