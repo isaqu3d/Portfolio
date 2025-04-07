@@ -1,3 +1,5 @@
+"use client";
+
 import { Typewriter } from "./TypeWriter";
 export function CardTypeWriter() {
   return (
