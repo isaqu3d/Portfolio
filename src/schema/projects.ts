@@ -32,15 +32,15 @@ export default defineType({
     },
 
     {
-      name: "linkWebsite",
+      name: "link_website",
       type: "url",
-      title: "LinkWebsite",
+      title: "Link_website",
     },
 
     {
-      name: "linkGithub",
+      name: "link_github",
       type: "url",
-      title: "LinkGithub",
+      title: "Link_Github",
     },
 
     {
