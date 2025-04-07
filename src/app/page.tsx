@@ -1,7 +1,4 @@
-"use client";
-
 import Bio from "@/components/Bio";
-import { CardTypeWriter } from "@/components/CardTypeWriter";
 import { Heading } from "@/components/Heading";
 import { MotionSection, MotionSlide } from "@/components/Motion";
 import { SocialMedia } from "@/components/SocialMedia";
@@ -11,12 +8,15 @@ import { MdOutlineWorkOutline } from "react-icons/md";
 
 import { Button } from "@/components/Button";
 
-import { FormSendEmail } from "@/components/EmailSend/FormSendEmail";
+import { CardTypeWriter } from "@/components/CardTypeWriter";
+import client from "@/lib/sanityClient";
+import { PortableText } from "@portabletext/react";
 import { GlobeIcon } from "@radix-ui/react-icons/dist";
+import { groq } from "next-sanity";
 
 export type HomeProps = {
   _id: string;
-  about: string;
+  summary: string;
   bio: string;
 };
 
@@ -24,7 +24,8 @@ type Home = {
   home: HomeProps;
 };
 
-export default function Home() {
+export default async function Home() {
+  const [home] = await client.fetch(groq`*[_type == "home"]`);
   return (
     <div className="max-w-2xl px-4">
       <MotionSlide>
@@ -58,17 +59,9 @@ export default function Home() {
         <MotionSlide>
           <Heading>Sobre mim</Heading>
 
-          <p className="inset-5 text-justify">
-            Fala DEVs, Sou um desenvolvedor Web e Mobile Junior. Sou um grande
-            entusiasta da tecnologia e um apaixonado por programação. Atualmente
-            estudo focado as seguintes Techs:
-            <span className=" text-pink-500 dark:text-teal-600">
-              {""} "ReactJS", "NextJS", "TypeScript", "TailwindCSS", "CSS-In-JS"
-            </span>
-            . Eu pretendo me tornar um dev Full-Stack, e para isto, trabalho e
-            estudo muito para conseguir realizar essa meta. E então DEVs... Bora
-            codar!
-          </p>
+          <article className="inset-5 text-justify">
+            <PortableText value={home.summary} />
+          </article>
 
           <div className="my-2 flex items-center justify-center">
             <Button href="/projects" variant="teal" size="textMd">
@@ -92,8 +85,6 @@ export default function Home() {
           </div>
 
           <SocialMedia />
-
-          <FormSendEmail />
         </MotionSection>
       </main>
     </div>
