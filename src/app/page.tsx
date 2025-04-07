@@ -86,7 +86,7 @@ export default function Home() {
           </p>
 
           <div className="my-2 flex items-center justify-center">
-            <Button href="work-experience" size="textMd" variant="teal">
+            <Button href="work-experiences" size="textMd" variant="teal">
               Experiências <MdOutlineWorkOutline />
             </Button>
           </div>
