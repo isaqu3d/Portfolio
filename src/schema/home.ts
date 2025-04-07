@@ -6,14 +6,8 @@ export default defineType({
   type: "document",
   fields: [
     {
-      name: "about_me",
-      title: "About Me",
-      type: "blockContent",
-    },
-
-    {
-      name: "bio",
-      title: "Bio",
+      name: "summary",
+      title: "Summary",
       type: "blockContent",
     },
   ],
