@@ -9,7 +9,7 @@ import { urlFor } from "../../lib/urlSanity";
 
 export const metadata: Metadata = {
   title: "Projetos",
-  description: "Venha olhar alguns projetos que eu fiz com ❤️",
+  description: "Projetos desenvolvidos por mim.",
 };
 
 export type ProjectsProps = {

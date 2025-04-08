@@ -9,14 +9,14 @@ import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   authors: [{ name: "Isaque de Sousa" }],
-  category: "developer",
+  category: "Developer",
   creator: "Isaque de Sousa",
   title: {
     default: "Home | Isaque de Sousa",
     template: "%s | Isaque de Sousa",
   },
   description:
-    "Seja bem-vindo ao meu portfolio. Sou desenvolvedor web e sou apaixonado por criar sites e soluções de UI rápidos e fáceis de usar. Estou sempre ansioso para aprender novas habilidades e melhorar meus conhecimentos na area!",
+    "Olá, sou Isaque! Sou um Desenvolvedor Front-end com paixão por transformar ideias em realidade digitais. Venho explorando, aprimorando e estudando cada vez mais esse fascinante mundo da tecnologia. Tenho aprimorado meus conhecimentos em tecnologias como: ReactJS, NextJS, TailwindCSS, TypeScript, Sanity, NestJS ,PostgreSQL e Docker.",
   keywords: [
     "Isaque de Sousa",
     "Desenvolvedor Web",
