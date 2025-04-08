@@ -1,31 +1,33 @@
 import { Heading } from "@/components/Heading";
-import { ReactNode } from "react";
+import client from "@/lib/sanityClient";
+import { groq } from "next-sanity";
 
-export const BioSectionTwo = ({ children }: { children: ReactNode }) => {
-  return <div className="pl-14 -indent-14">{children}</div>;
-};
+export default async function Bio() {
+  const [home] = await client.fetch(groq`
+  *[_type == "home"]{
+    biography
+  }
+`);
 
-export const BioYearTwo = ({ children }: { children: ReactNode }) => {
-  return <span className="mr-4 font-bold">{children}</span>;
-};
+  const biography = home?.biography ?? [];
 
-export default function Bio() {
   return (
     <>
       <Heading>Bio</Heading>
-      <BioSectionTwo>
-        <BioYearTwo>2002</BioYearTwo> Nasci em Fortaleza - CE, Brasil.
-      </BioSectionTwo>
-
-      <BioSectionTwo>
-        <BioYearTwo>2020</BioYearTwo> Comecei a conhecer a área de programação e
-        cada vez mais estou me apaixonando pela área.
-      </BioSectionTwo>
-
-      <BioSectionTwo>
-        <BioYearTwo>2022</BioYearTwo> Comecei a estudar focado e fiz parte do
-        time de &quot;Dev Voluntário&quot; na Tech Pro Bem.
-      </BioSectionTwo>
+      <div>
+        {biography.length > 0 ? (
+          biography.map(
+            (item: { _key: string; year: number; description: string }) => (
+              <div key={item._key} className="pl-14 -indent-14">
+                <span className="mr-4 font-bold">{item.year}</span>{" "}
+                {item.description}
+              </div>
+            ),
+          )
+        ) : (
+          <div>Nenhuma biografia encontrada.</div>
+        )}
+      </div>
     </>
   );
 }
