@@ -1,17 +1,15 @@
-"use client";
-
 import { GithubCalendar } from "@/components/GithubCalendar";
 import { Heading } from "@/components/Heading";
 import { Motion } from "@/components/Motion";
 import { SkillsCard } from "@/components/SkillsCard";
 import { SKILLS_CARD } from "@/utils/skills-card";
 import { SKILLS_TOOLS } from "@/utils/skills-tools";
+import { Metadata } from "next";
 
-/* export const metadata: Metadata = {
+export const metadata: Metadata = {
   title: "Habilidades",
-  description:
-    "Aqui estão as tecnologias que eu uso atualmente e alguns ferramentas",
-}; */
+  description: "Habilidades e ferramentas que utilizo no meu dia a dia.",
+};
 
 function SkillCardRender({ icon: Icon, color }) {
   return (
