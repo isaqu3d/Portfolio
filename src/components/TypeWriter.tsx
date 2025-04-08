@@ -8,7 +8,7 @@ export function Typewriter() {
           "< Olá, Seja bem-vindo ao meu portfolio",
           "< Entusiasta da tecnologia",
           "< Sou Desenvolvedor Web e Mobile",
-          "< Front-end Junior",
+          "< Front-end",
         ],
         autoStart: true,
         loop: true,
