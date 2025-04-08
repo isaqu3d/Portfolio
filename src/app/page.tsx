@@ -1,4 +1,3 @@
-import Bio from "@/components/Bio";
 import { Heading } from "@/components/Heading";
 import { MotionSection, MotionSlide } from "@/components/Motion";
 import { SocialMedia } from "@/components/SocialMedia";
@@ -14,18 +13,16 @@ import { PortableText } from "@portabletext/react";
 import { GlobeIcon } from "@radix-ui/react-icons/dist";
 import { groq } from "next-sanity";
 
-export type HomeProps = {
-  _id: string;
-  summary: string;
-  bio: string;
-};
-
-type Home = {
-  home: HomeProps;
-};
-
 export default async function Home() {
-  const [home] = await client.fetch(groq`*[_type == "home"]`);
+  const [home] = await client.fetch(groq`
+    *[_type == "home"]{
+      summary,
+      biography
+    }
+  `);
+
+  const biography = home?.biography ?? [];
+
   return (
     <div className="max-w-2xl px-4">
       <MotionSlide>
@@ -71,19 +68,30 @@ export default async function Home() {
         </MotionSlide>
 
         <MotionSection>
-          <Bio />
-          <Heading>Eu ♥</Heading>
+          <div>
+            {biography.length > 0 ? (
+              biography.map(
+                (item: { _key: string; year: number; description: string }) => (
+                  <div key={item._key} className="pl-14 -indent-14">
+                    <span className="mr-4 font-bold">{item.year}</span>{" "}
+                    {item.description}
+                  </div>
+                ),
+              )
+            ) : (
+              <div>Nenhuma biografia encontrada.</div>
+            )}
+          </div>
 
+          <Heading>Eu ♥</Heading>
           <p className="inset-5 text-justify">
             Musica, Jogar, Codar, Ler, Aprender.
           </p>
-
           <div className="my-2 flex items-center justify-center">
             <Button href="work-experiences" size="textMd" variant="teal">
               Experiências <MdOutlineWorkOutline />
             </Button>
           </div>
-
           <SocialMedia />
         </MotionSection>
       </main>
