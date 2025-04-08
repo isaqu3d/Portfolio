@@ -10,5 +10,16 @@ export default defineType({
       title: "Summary",
       type: "blockContent",
     },
+
+    {
+      title: "Biography",
+      name: "biography",
+      type: "array",
+      of: [
+        {
+          type: "biography",
+        },
+      ],
+    },
   ],
 });
