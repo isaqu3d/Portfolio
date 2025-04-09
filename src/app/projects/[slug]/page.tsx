@@ -50,7 +50,7 @@ export default async function Slug({
 
           <Button
             variant="link"
-            size="textMd"
+            size="md"
             href={project.linkWebsite}
             target="__blank"
           >
@@ -62,7 +62,7 @@ export default async function Slug({
           <p>Github:</p>
           <Button
             variant="link"
-            size="textMd"
+            size="md"
             href={project.linkGithub}
             target="__blank"
           >

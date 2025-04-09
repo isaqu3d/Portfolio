@@ -61,7 +61,7 @@ export default async function Home() {
           </article>
 
           <div className="my-2 flex items-center justify-center">
-            <Button href="/projects" variant="teal" size="textMd">
+            <Button href="/projects" variant="teal" size="md">
               Projetos <BiChevronRight />
             </Button>
           </div>
@@ -88,7 +88,7 @@ export default async function Home() {
             Musica, Jogar, Codar, Ler, Aprender.
           </p>
           <div className="my-2 flex items-center justify-center">
-            <Button href="work-experiences" size="textMd" variant="teal">
+            <Button href="work-experiences" size="md" variant="teal">
               Experiências <MdOutlineWorkOutline />
             </Button>
           </div>

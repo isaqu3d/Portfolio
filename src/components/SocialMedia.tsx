@@ -10,7 +10,7 @@ export function SocialMedia() {
       <div>
         <Button
           variant="social"
-          size="textMd"
+          size="md"
           href="https://www.instagram.com/_isaque.s_/"
           target="_blank"
           className="font-bold"
@@ -21,7 +21,7 @@ export function SocialMedia() {
 
         <Button
           variant="social"
-          size="textMd"
+          size="md"
           href="https://www.linkedin.com/in/isaque-de-sousa/"
           target="_blank"
           className="font-bold"
@@ -32,8 +32,8 @@ export function SocialMedia() {
 
         <Button
           variant="social"
-          size="textMd"
-          href="https://github.com/X-SpeedBlack-X"
+          size="md"
+          href="https://github.com/isaqu3d"
           target="_blank"
           className="font-bold"
         >

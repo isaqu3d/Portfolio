@@ -21,9 +21,8 @@ const buttonVariants = cva(
 
       size: {
         sm: "text-xs antialiased",
-        textMd: "text-md antialiased font-normal",
-        textLg: "text-lg antialiased font-medium",
-        teal: "text-md font-medium",
+        md: "text-md antialiased font-normal",
+        lg: "text-lg antialiased font-medium",
       },
     },
     defaultVariants: {
