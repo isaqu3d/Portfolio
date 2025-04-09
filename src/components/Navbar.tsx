@@ -4,17 +4,15 @@ import NextLink, { LinkProps } from "next/link";
 import { usePathname } from "next/navigation";
 import { IoLogoGithub } from "react-icons/io5";
 
-import { ReactNode } from "react";
-import { ButtonTheme } from "./button-theme";
-
 import Logo from "./Logo";
 import { MenuItem } from "./MenuItem";
 import { MotionHeader } from "./Motion";
+import { ButtonTheme } from "./button-theme";
 
 interface LinkItemProps extends LinkProps {
   href: string;
   target?: string;
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 const LinkItem = ({ href, target, children }: LinkItemProps) => {
