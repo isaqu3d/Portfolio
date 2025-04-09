@@ -6,7 +6,7 @@ import { WorkExperienceProps } from "../types/workExperience";
 import { Button } from "./button";
 import { MotionSection } from "./motion";
 import { ProgressBarExperience } from "./progressbar-experience";
-import { Technology } from "./technology";
+import { Technology } from "./technologye";
 
 type ExperienceItemProps = {
   experience: WorkExperienceProps;
