@@ -1,17 +1,17 @@
-import { Heading } from "@/components/Heading";
+import { groq } from "next-sanity";
+import Image from "next/image";
+
+import { Button } from "@/components/Button";
 import { MotionSection, MotionSlide } from "@/components/Motion";
 import { SocialMedia } from "@/components/SocialMedia";
-import Image from "next/image";
 import { BiChevronRight } from "react-icons/bi";
 import { MdOutlineWorkOutline } from "react-icons/md";
 
-import { Button } from "@/components/Button";
-
-import { Typewriter } from "@/components/TypeWriter";
+import { Heading } from "@/components/Heading";
+import { Typewriter } from "@/components/typewriter";
 import client from "@/lib/sanityClient";
 import { PortableText } from "@portabletext/react";
 import { GlobeIcon } from "@radix-ui/react-icons/dist";
-import { groq } from "next-sanity";
 
 export default async function Home() {
   const [home] = await client.fetch(groq`
