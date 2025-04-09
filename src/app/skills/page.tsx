@@ -1,6 +1,6 @@
 import { GithubCalendar } from "@/components/github-calendar";
 import { Heading } from "@/components/heading";
-import { Motion } from "@/components/Motion";
+import { Motion } from "@/components/motion";
 import { SkillsCard } from "@/components/skills-card";
 import { SKILLS_CARD } from "@/utils/skills-card";
 import { SKILLS_TOOLS } from "@/utils/skills-tools";

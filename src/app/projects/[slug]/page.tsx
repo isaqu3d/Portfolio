@@ -1,4 +1,4 @@
-import { MotionSlide } from "@/components/Motion";
+import { MotionSlide } from "@/components/motion";
 import NextLink from "next/link";
 import { BiChevronRight } from "react-icons/bi";
 

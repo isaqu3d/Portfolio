@@ -5,8 +5,8 @@ import NextLink from "next/link";
 import client from "../../lib/sanityClient";
 import { urlFor } from "../../lib/urlSanity";
 
-import { MotionSlide } from "@/components/Motion";
 import { Heading } from "@/components/heading";
+import { MotionSlide } from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "Projetos",
