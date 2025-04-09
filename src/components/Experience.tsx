@@ -3,7 +3,7 @@ import client from "../lib/sanityClient";
 import { WorkExperienceProps } from "../types/workExperience";
 import { Heading } from "./Heading";
 import { MotionSlide } from "./Motion";
-import { ExperienceItem } from "./experienceItem";
+import { ExperienceItem } from "./experience-item";
 
 type WorkExperience = {
   experience: WorkExperienceProps;

@@ -1,4 +1,4 @@
-import { GithubCalendar } from "@/components/GithubCalendar";
+import { GithubCalendar } from "@/components/github-calendar";
 import { Heading } from "@/components/Heading";
 import { Motion } from "@/components/Motion";
 import { SkillsCard } from "@/components/SkillsCard";

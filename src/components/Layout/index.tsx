@@ -2,8 +2,8 @@
 
 import { ReactNode } from "react";
 import { Command } from "../Command/Command";
-import Footer from "../Footer";
 import Navbar from "../Navbar";
+import Footer from "../footer";
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
