@@ -6,7 +6,8 @@ import { IoLogoGithub } from "react-icons/io5";
 
 import { MotionHeader } from "./Motion";
 import { ButtonTheme } from "./button-theme";
-import Logo from "./logo";
+
+import { Logo } from "./logo";
 import { MenuItem } from "./menu-item";
 
 interface LinkItemProps extends LinkProps {
