@@ -7,7 +7,7 @@ import { MdOutlineWorkOutline } from "react-icons/md";
 
 import { Button } from "@/components/Button";
 
-import { CardTypeWriter } from "@/components/CardTypeWriter";
+import { Typewriter } from "@/components/TypeWriter";
 import client from "@/lib/sanityClient";
 import { PortableText } from "@portabletext/react";
 import { GlobeIcon } from "@radix-ui/react-icons/dist";
@@ -26,7 +26,7 @@ export default async function Home() {
   return (
     <div className="max-w-2xl px-4">
       <MotionSlide>
-        <CardTypeWriter />
+        <Typewriter />
 
         <header className="flex flex-col items-center gap-4 lg:flex-row lg:gap-0">
           <div className="flex-grow">
