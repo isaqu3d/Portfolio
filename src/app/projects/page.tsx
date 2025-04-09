@@ -1,5 +1,5 @@
-import { Heading } from "@/components/Heading";
 import { MotionSlide } from "@/components/Motion";
+import { Heading } from "@/components/heading";
 import { Metadata } from "next";
 import { groq } from "next-sanity";
 import Image, { StaticImageData } from "next/image";

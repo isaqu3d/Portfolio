@@ -4,9 +4,9 @@ import Image from "next/image";
 import { urlFor } from "../lib/urlSanity";
 import { WorkExperienceProps } from "../types/workExperience";
 import { MotionSection } from "./Motion";
-import { ProgressBarExperience } from "./ProgressBarExperience";
-import { Technology } from "./Technology";
 import { Button } from "./button";
+import { ProgressBarExperience } from "./progressbar-experience";
+import { Technology } from "./technology";
 
 type ExperienceItemProps = {
   experience: WorkExperienceProps;

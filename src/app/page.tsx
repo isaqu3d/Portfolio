@@ -6,10 +6,10 @@ import Image from "next/image";
 import { BiChevronRight } from "react-icons/bi";
 import { MdOutlineWorkOutline } from "react-icons/md";
 
-import { Heading } from "@/components/Heading";
 import { MotionSection, MotionSlide } from "@/components/Motion";
-import { SocialMedia } from "@/components/SocialMedia";
 import { Button } from "@/components/button";
+import { Heading } from "@/components/heading";
+import { SocialMedia } from "@/components/social-media";
 import { Typewriter } from "@/components/typewriter";
 
 export default async function Home() {

@@ -1,5 +1,5 @@
 import { Button } from "@/components/button";
-import { Heading } from "@/components/Heading";
+import { Heading } from "@/components/heading";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

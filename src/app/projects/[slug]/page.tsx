@@ -2,8 +2,8 @@ import { MotionSlide } from "@/components/Motion";
 import NextLink from "next/link";
 import { BiChevronRight } from "react-icons/bi";
 
-import { Technology } from "@/components/Technology";
 import { Button } from "@/components/button";
+import { Technology } from "@/components/technology";
 import { Badge } from "@/components/ui/badge";
 import { PortableText } from "@portabletext/react";
 import { groq } from "next-sanity";
