@@ -3,7 +3,7 @@ import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { urlFor } from "../lib/urlSanity";
 import { WorkExperienceProps } from "../types/workExperience";
-import { Button } from "./Button";
+import { Button } from "./button";
 import { MotionSection } from "./motion";
 import { ProgressBarExperience } from "./progressbar-experience";
 import { Technology } from "./technology";
