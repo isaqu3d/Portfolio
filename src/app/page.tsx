@@ -6,7 +6,7 @@ import Image from "next/image";
 import { BiChevronRight } from "react-icons/bi";
 import { MdOutlineWorkOutline } from "react-icons/md";
 
-import { Button } from "@/components/button";
+import { Button } from "@/components/button2";
 import { Heading } from "@/components/heading";
 import { MotionSection, MotionSlide } from "@/components/motion";
 import { SocialMedia } from "@/components/social-media";

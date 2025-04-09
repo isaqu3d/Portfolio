@@ -1,6 +1,6 @@
 import { Heading } from "@/components/heading";
 import { IoLogoGithub, IoLogoInstagram, IoLogoLinkedin } from "react-icons/io5";
-import { Button } from "./button";
+import { Button } from "./button2";
 
 export function SocialMedia() {
   return (

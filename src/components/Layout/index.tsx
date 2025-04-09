@@ -1,7 +1,7 @@
 "use client";
 
 import { Command } from "@/components/Command/Command";
-import Footer from "@/components/Footer";
+import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
