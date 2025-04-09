@@ -1,9 +1,11 @@
 "use client";
 import GitHubCalendar from "react-github-calendar";
+import { Heading } from "./heading";
 
 export function GithubCalendar() {
   return (
     <>
+      <Heading>Commits</Heading>
       <GitHubCalendar
         username="isaqu3d"
         year={new Date().getFullYear()}

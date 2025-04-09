@@ -1,3 +1,4 @@
+import { Button } from "@/components/button";
 import { Heading } from "@/components/heading";
 import { Metadata } from "next";
 
@@ -20,7 +21,11 @@ export default function NotFound() {
       </div>
 
       <div className="my-8 h-[1px] w-full bg-gray-600" />
-      <div className="flex justify-center"></div>
+      <div className="flex justify-center">
+        <Button href="/" variant="teal" size="md">
+          Retorne ao inicio
+        </Button>
+      </div>
     </div>
   );
 }
