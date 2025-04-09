@@ -1,4 +1,4 @@
-import { Button } from "@/components/button2";
+import { Button } from "@/components/button";
 import { Heading } from "@/components/heading";
 import { Metadata } from "next";
 
