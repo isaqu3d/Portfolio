@@ -2,7 +2,7 @@ import { groq } from "next-sanity";
 import client from "../lib/sanityClient";
 import { WorkExperienceProps } from "../types/workExperience";
 import { ExperienceItem } from "./experience-item";
-import { Heading } from "./heading";
+import { Heading } from "./headingnew";
 import { MotionSlide } from "./motion";
 
 type WorkExperience = {

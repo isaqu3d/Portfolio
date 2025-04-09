@@ -7,7 +7,7 @@ import { BiChevronRight } from "react-icons/bi";
 import { MdOutlineWorkOutline } from "react-icons/md";
 
 import { Button } from "@/components/button";
-import { Heading } from "@/components/heading";
+import { Heading } from "@/components/headingnew";
 import { MotionSection, MotionSlide } from "@/components/motion";
 import { SocialMedia } from "@/components/social-media";
 import { Typewriter } from "@/components/typewriter";
