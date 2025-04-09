@@ -2,7 +2,7 @@ import { MotionSlide } from "@/components/motion";
 import NextLink from "next/link";
 import { BiChevronRight } from "react-icons/bi";
 
-import { Button } from "@/components/button";
+import { Button } from "@/components/buttona";
 import { Technology } from "@/components/technology";
 import { Badge } from "@/components/ui/badge";
 import { PortableText } from "@portabletext/react";
