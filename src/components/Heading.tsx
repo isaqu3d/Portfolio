@@ -1,12 +1,12 @@
 import { cn } from "@/utils/cn";
-import { ReactNode } from "react";
 
-type HeadingProps = {
-  children: ReactNode;
+export function Heading({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
   className?: string;
-};
-
-export function Heading({ children, className }: HeadingProps) {
+}) {
   return (
     <h1
       className={cn(
