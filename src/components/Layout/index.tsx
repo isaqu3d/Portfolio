@@ -1,11 +1,10 @@
 "use client";
 
-import { ReactNode } from "react";
+import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
 import { Command } from "../Command/Command";
-import Footer from "../footer";
-import Navbar from "../navbar";
 
-export default function Layout({ children }: { children: ReactNode }) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="bg-gradient-to-r from-neutral-900 to-gray-900 text-white-100 dark:bg-gradient-to-br dark:from-primary dark:to-primary dark:text-black">
       <Navbar />
