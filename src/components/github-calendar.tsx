@@ -1,6 +1,6 @@
 "use client";
 import GitHubCalendar from "react-github-calendar";
-import { Heading } from "./headingnew";
+import { Heading } from "./heading";
 
 export function GithubCalendar() {
   return (

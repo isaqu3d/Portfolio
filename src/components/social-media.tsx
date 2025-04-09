@@ -1,4 +1,4 @@
-import { Heading } from "@/components/headingnew";
+import { Heading } from "@/components/heading";
 import { IoLogoGithub, IoLogoInstagram, IoLogoLinkedin } from "react-icons/io5";
 import { Button } from "./button";
 
