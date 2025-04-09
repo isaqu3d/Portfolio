@@ -1,11 +1,12 @@
-import { MotionSlide } from "@/components/Motion";
-import { Heading } from "@/components/heading";
 import { Metadata } from "next";
 import { groq } from "next-sanity";
 import Image, { StaticImageData } from "next/image";
 import NextLink from "next/link";
 import client from "../../lib/sanityClient";
 import { urlFor } from "../../lib/urlSanity";
+
+import { MotionSlide } from "@/components/Motion";
+import { Heading } from "@/components/heading";
 
 export const metadata: Metadata = {
   title: "Projetos",
