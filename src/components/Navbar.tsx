@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { IoLogoGithub } from "react-icons/io5";
 
 import { ReactNode } from "react";
-import { ButtonTheme } from "./ButtonTheme";
+import { ButtonTheme } from "./button-theme";
 
 import Logo from "./Logo";
 import { MenuItem } from "./MenuItem";
