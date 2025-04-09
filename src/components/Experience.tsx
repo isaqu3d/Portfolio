@@ -1,9 +1,9 @@
 import { groq } from "next-sanity";
 import client from "../lib/sanityClient";
 import { WorkExperienceProps } from "../types/workExperience";
-import { ExperienceItem } from "./ExperienceItem";
 import { Heading } from "./Heading";
 import { MotionSlide } from "./Motion";
+import { ExperienceItem } from "./experienceItem";
 
 type WorkExperience = {
   experience: WorkExperienceProps;

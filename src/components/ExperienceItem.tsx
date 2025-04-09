@@ -3,10 +3,10 @@ import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { urlFor } from "../lib/urlSanity";
 import { WorkExperienceProps } from "../types/workExperience";
-import { Button } from "./Button";
 import { MotionSection } from "./Motion";
 import { ProgressBarExperience } from "./ProgressBarExperience";
 import { Technology } from "./Technology";
+import { Button } from "./button";
 
 type ExperienceItemProps = {
   experience: WorkExperienceProps;

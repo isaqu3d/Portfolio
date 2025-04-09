@@ -1,7 +1,8 @@
-import { Experience } from "@/components/Experience";
 import { Metadata } from "next";
 import { groq } from "next-sanity";
 import client from "../../lib/sanityClient";
+
+import { Experience } from "@/components/experience";
 
 export const metadata: Metadata = {
   category: "Experience",
