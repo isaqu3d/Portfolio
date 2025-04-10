@@ -2,11 +2,11 @@ import client from "@/lib/sanityClient";
 import { PortableText } from "@portabletext/react";
 import { GlobeIcon } from "@radix-ui/react-icons/dist";
 import { groq } from "next-sanity";
-import Image from "next/image";
 import { BiChevronRight } from "react-icons/bi";
 import { MdOutlineWorkOutline } from "react-icons/md";
 
 import { Button } from "@/components/button";
+import { GitHubAvatar } from "@/components/github-avatar";
 import { Heading } from "@/components/heading";
 import { MotionSection, MotionSlide } from "@/components/motion";
 import { SocialMedia } from "@/components/social-media";
@@ -41,12 +41,7 @@ export default async function Home() {
           </div>
 
           <div className="inline-block h-[100px] w-[100px] overflow-hidden rounded-full ">
-            <Image
-              src="/profile.jpeg"
-              alt="Imagem de perfil"
-              width={100}
-              height={100}
-            />
+            <GitHubAvatar />
           </div>
         </header>
       </MotionSlide>
