@@ -1,4 +1,3 @@
-// src/components/GitHubAvatar.tsx
 "use client";
 
 import { GITHUB_API_URL } from "@/constants/github-api";
