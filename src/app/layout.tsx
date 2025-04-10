@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: "%s | Isaque de Sousa",
   },
   description:
-    "Olá, sou Isaque! Sou um Desenvolvedor Front-end com paixão por transformar ideias em realidade digitais. Venho explorando, aprimorando e estudando cada vez mais esse fascinante mundo da tecnologia. Tenho aprimorado meus conhecimentos em tecnologias como: ReactJS, NextJS, TailwindCSS, TypeScript, Sanity, NestJS ,PostgreSQL e Docker.",
+    "Olá, sou Isaque! Sou um Desenvolvedor Front-end com paixão por transformar ideias em realidade digitais. Venho explorando, aprimorando e estudando cada vez mais esse fascinante mundo da tecnologia. Tenho aprimorado meus conhecimentos em tecnologias como: ReactJS, NextJS, TailwindCSS, TypeScript, Sanity, NestJS, PostgreSQL e Docker.",
   keywords: [
     "Isaque de Sousa",
     "Desenvolvedor Web",
@@ -28,6 +28,20 @@ export const metadata: Metadata = {
     "Brazil",
     "Next.js",
   ],
+  openGraph: {
+    title: "Home | Isaque de Sousa",
+    description:
+      "Olá, sou Isaque! Sou um Desenvolvedor Front-end com paixão por transformar ideias em realidade digitais. Venho explorando, aprimorando e estudando cada vez mais esse fascinante mundo da tecnologia. Tenho aprimorado meus conhecimentos em tecnologias como: ReactJS, NextJS, TailwindCSS, TypeScript, Sanity, NestJS, PostgreSQL e Docker.",
+    url: "https://isaqu3d.vercel.app/",
+    siteName: "Isaque de Sousa",
+    images: [
+      {
+        url: "",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
