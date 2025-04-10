@@ -1,6 +1,6 @@
 "use client";
 
-import { Command } from "@/components/Command/Command";
+import { Command } from "@/components/Command/command";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 
