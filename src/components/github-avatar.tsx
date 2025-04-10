@@ -1,6 +1,7 @@
 // src/components/GitHubAvatar.tsx
 "use client";
 
+import { GITHUB_API_URL } from "@/constants/github-api";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Skeleton } from "./skeleton";
@@ -10,7 +11,7 @@ export function GitHubAvatar() {
 
   useEffect(() => {
     const fetchAvatar = async () => {
-      const url = "https://api.github.com/users/isaqu3d";
+      const url = GITHUB_API_URL;
       try {
         const response = await fetch(url);
         if (!response.ok) {
