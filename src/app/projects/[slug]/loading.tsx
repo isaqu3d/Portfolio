@@ -1,6 +1,6 @@
 "use client";
 
-import { Skeleton } from "../../../components/skeleton";
+import { Skeleton } from "@/components/skeleton";
 
 export default function ProjectLoading() {
   return (
