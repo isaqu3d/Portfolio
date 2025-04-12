@@ -1,18 +1,41 @@
+import { PortableTextBlock } from "sanity";
 import client from "./sanityClient";
 
-export async function getTranslations(locale: string) {
+type BiographyItem = {
+  _key: string;
+  year: number;
+  description: string;
+};
+
+type Translations = {
+  home_summary?: PortableTextBlock[];
+  home_biography?: BiographyItem[];
+};
+
+export async function getTranslations(
+  locale: string,
+): Promise<Translations | null> {
   const query = `
     *[_type == "translations" && locale == $locale][0] {
       locale,
-      messages
+      messages {
+        home_summary,
+        home_biography
+      }
     }
   `;
 
   try {
     const result = await client.fetch(query, { locale });
-    return result?.messages ?? null;
+
+    if (!result || !result.messages) {
+      return null;
+    }
+    console.log(result);
+
+    return result.messages as Translations;
   } catch (err) {
-    console.error("Erro ao buscar traduções:", err);
+    console.error(err);
     return null;
   }
 }
