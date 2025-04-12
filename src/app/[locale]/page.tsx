@@ -1,7 +1,5 @@
-import client from "@/lib/sanityClient";
 import { PortableText } from "@portabletext/react";
 import { GlobeIcon } from "@radix-ui/react-icons/dist";
-import { groq } from "next-sanity";
 import { BiChevronRight } from "react-icons/bi";
 import { MdOutlineWorkOutline } from "react-icons/md";
 
@@ -14,12 +12,6 @@ import { Typewriter } from "@/components/typewriter";
 import { getTranslations } from "@/lib/get-translations";
 
 export default async function Home({ params }: { params: { locale: string } }) {
-  const [home] = await client.fetch(groq`
-    *[_type == "home"]{
-      summary,
-      biography
-    }
-  `);
   const { locale } = params;
 
   const translations = await getTranslations(locale);
@@ -27,8 +19,6 @@ export default async function Home({ params }: { params: { locale: string } }) {
   if (!translations) {
     return <div>Erro ao carregar traduções para o idioma: {locale}</div>;
   }
-  const homeSummary = translations.home_summary || "Resumo não encontrado";
-  const biography = home?.biography ?? [];
 
   return (
     <div className="max-w-2xl px-4">
@@ -59,7 +49,11 @@ export default async function Home({ params }: { params: { locale: string } }) {
           <Heading>Sobre mim</Heading>
 
           <article className="inset-5 text-justify">
-            <PortableText value={homeSummary} />
+            {translations.home_summary ? (
+              <PortableText value={translations.home_summary} />
+            ) : (
+              <p>Resumo não encontrado.</p>
+            )}
           </article>
 
           <div className="my-2 flex items-center justify-center">
@@ -71,15 +65,13 @@ export default async function Home({ params }: { params: { locale: string } }) {
 
         <MotionSection>
           <div>
-            {biography.length > 0 ? (
-              biography.map(
-                (item: { _key: string; year: number; description: string }) => (
-                  <div key={item._key} className="pl-14 -indent-14">
-                    <span className="mr-4 font-bold">{item.year}</span>{" "}
-                    {item.description}
-                  </div>
-                ),
-              )
+            {translations.home_biography?.length ? (
+              translations.home_biography.map((item) => (
+                <div key={item._key} className="pl-14 -indent-14">
+                  <span className="mr-4 font-bold">{item.year}</span>{" "}
+                  {item.description}
+                </div>
+              ))
             ) : (
               <div>Nenhuma biografia encontrada.</div>
             )}
