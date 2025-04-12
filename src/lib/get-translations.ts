@@ -31,8 +31,6 @@ export async function getTranslations(
     if (!result || !result.messages) {
       return null;
     }
-    console.log(result);
-
     return result.messages as Translations;
   } catch (err) {
     console.error(err);
