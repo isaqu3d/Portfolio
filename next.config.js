@@ -1,16 +1,11 @@
 /** @type {import('next').NextConfig} */
-const path = require("path");
 
-import { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
-const nextConfig: NextConfig = {
+const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  webpack(config) {
-    config.resolve.alias["@"] = path.join(__dirname, "src");
-    return config;
-  },
+
   images: {
     remotePatterns: [
       {
@@ -38,4 +33,4 @@ const nextConfig: NextConfig = {
 };
 
 const withNextIntl = createNextIntlPlugin();
-module.exports = withNextIntl(nextConfig);
+export default withNextIntl(nextConfig);
