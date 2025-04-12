@@ -4,6 +4,7 @@ import projects from "./projects";
 import technology from "./technology";
 import biography from "./types/biography";
 import blockContent from "./types/blockContent";
+import translations from "./types/translations";
 
 export const schemaTypes = [
   projects,
@@ -12,4 +13,5 @@ export const schemaTypes = [
   technology,
   home,
   biography,
+  translations,
 ];
