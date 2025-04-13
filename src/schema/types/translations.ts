@@ -26,7 +26,7 @@ export default defineType({
         { name: "home_summary", title: "Home Summary", type: "blockContent" },
         {
           name: "home_biography",
-          title: "Home Subtitle",
+          title: "Home Biography",
           type: "array",
           of: [{ type: "biography" }],
         },
