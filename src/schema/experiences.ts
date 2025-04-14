@@ -7,19 +7,19 @@ export default defineType({
   fields: [
     {
       name: "companyName",
-      title: "CompanyName",
+      title: "Company Name",
       type: "string",
     },
 
     {
       name: "companyUrl",
-      title: "CompanyUrl",
+      title: "Company Url",
       type: "url",
     },
 
     {
       name: "companyLogo",
-      title: "CompanyLogo",
+      title: "Company Logo",
       type: "image",
     },
 
@@ -49,13 +49,13 @@ export default defineType({
     {
       name: "startDate",
       type: "date",
-      title: "StartDate",
+      title: "Start Date",
     },
 
     {
       name: "endDate",
       type: "date",
-      title: "EndDate",
+      title: "End Date",
     },
   ],
 });
