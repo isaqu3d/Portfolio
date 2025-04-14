@@ -1,19 +1,14 @@
 import { getTranslations } from "@/lib/get-translations";
-import { WorkExperienceProps } from "../types/workExperience";
 import { ExperienceItem } from "./experience-item";
 import { Heading } from "./heading";
 import { MotionSlide } from "./motion";
-
-type WorkExperience = {
-  experience: WorkExperienceProps;
-};
 
 export async function Experience({ params }: { params: { locale: string } }) {
   const { locale } = params;
 
   const translations = await getTranslations(locale);
 
-  if (!translations || !translations.experiences) {
+  if (!translations) {
     return <p>Erro ao carregar traduções para o idioma: {locale}</p>;
   }
 
@@ -31,7 +26,10 @@ export async function Experience({ params }: { params: { locale: string } }) {
 
         <div className="flex flex-col gap-4">
           {/* @ts-expect-error Server Component */}
-          <ExperienceItem key={translations.experiences._id} params={params} />
+          <ExperienceItem
+            key={translations.experiences?._key}
+            params={params}
+          />
         </div>
       </section>
     </>
