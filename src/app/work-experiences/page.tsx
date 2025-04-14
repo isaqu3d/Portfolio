@@ -1,6 +1,4 @@
 import { Metadata } from "next";
-import { groq } from "next-sanity";
-import client from "../../lib/sanityClient";
 
 import { Experience } from "@/components/experience";
 
@@ -23,13 +21,15 @@ export const metadata: Metadata = {
   ],
 };
 
-export default async function WorkExperiencePage() {
-  const [experiences] = await client.fetch(groq`*[_type == "experiences"]`);
-
+export default async function WorkExperiencePage({
+  params,
+}: {
+  params: { locale: string };
+}) {
   return (
     <div className="max-w-4xl px-4">
       {/* @ts-expect-error Server Component */}
-      <Experience experiences={experiences} />
+      <Experience params={params} />
     </div>
   );
 }
