@@ -30,6 +30,8 @@ export default defineType({
           type: "array",
           of: [{ type: "biography" }],
         },
+
+        { name: "experiences", title: "Experiences", type: "experiences" },
       ],
     },
   ],
