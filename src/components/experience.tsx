@@ -1,5 +1,4 @@
-import { groq } from "next-sanity";
-import client from "../lib/sanityClient";
+import { getTranslations } from "@/lib/get-translations";
 import { WorkExperienceProps } from "../types/workExperience";
 import { ExperienceItem } from "./experience-item";
 import { Heading } from "./heading";
@@ -9,10 +8,14 @@ type WorkExperience = {
   experience: WorkExperienceProps;
 };
 
-export async function Experience() {
-  const experiences = await client.fetch(
-    groq`*[_type == "experiences"] | order(startDate desc)`,
-  );
+export async function Experience({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+
+  const translations = await getTranslations(locale);
+
+  if (!translations || !translations.experiences) {
+    return <p>Erro ao carregar traduções para o idioma: {locale}</p>;
+  }
 
   return (
     <>
@@ -27,10 +30,8 @@ export async function Experience() {
         </MotionSlide>
 
         <div className="flex flex-col gap-4">
-          {experiences?.map((experience: WorkExperience) => (
-            // @ts-expect-error Server Component
-            <ExperienceItem key={experience._id} experience={experience} />
-          ))}
+          {/* @ts-expect-error Server Component */}
+          <ExperienceItem key={translations.experiences._id} params={params} />
         </div>
       </section>
     </>
