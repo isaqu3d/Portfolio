@@ -15,7 +15,7 @@ type Technology = {
 };
 
 type Experiences = {
-  _id: string;
+  _key: string;
   companyName: string;
   companyUrl: string;
   companyLogo: StaticImageData | StaticImageData[];
