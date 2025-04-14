@@ -20,7 +20,8 @@ export async function getTranslations(
       locale,
       messages {
         home_summary,
-        home_biography
+        home_biography,
+        experiences
       }
     }
   `;
