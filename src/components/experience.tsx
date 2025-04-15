@@ -25,7 +25,6 @@ export async function Experience({ params }: { params: { locale: string } }) {
         </MotionSlide>
 
         <div className="flex flex-col gap-4">
-          {/* @ts-expect-error Server Component */}
           <ExperienceItem
             key={translations.experiences?._key}
             params={params}
