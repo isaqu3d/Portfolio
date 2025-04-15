@@ -1,8 +1,10 @@
 import { getTranslations } from "@/lib/get-translations";
 import formatDate from "@/utils/format-date";
 import { PortableText } from "@portabletext/react";
+
 import Image from "next/image";
 import { urlFor } from "../lib/urlSanity";
+
 import { Button } from "./button";
 import { MotionSection } from "./motion";
 import { ProgressBarExperience } from "./progressbar-experience";
@@ -63,9 +65,9 @@ export async function ExperienceItem({
               {translations.experiences?.role}
             </h2>
             <span className="text-gray-300 dark:text-gray-400">
-              {formatDate(experiences?.startDate ?? "")} -{" "}
+              {formatDate(experiences?.startDate ?? "", locale)} -{" "}
               {experiences?.endDate
-                ? formatDate(experiences?.endDate)
+                ? formatDate(experiences?.endDate, locale)
                 : "No momento"}
             </span>
 
