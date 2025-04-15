@@ -31,7 +31,12 @@ export default defineType({
           of: [{ type: "biography" }],
         },
 
-        { name: "experiences", title: "Experiences", type: "experiences" },
+        {
+          name: "experiences",
+          title: "Experiences",
+          type: "array",
+          of: [{ type: "experiences" }],
+        },
       ],
     },
   ],
