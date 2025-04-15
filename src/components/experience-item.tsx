@@ -39,8 +39,12 @@ export async function ExperienceItem({
         <div className="flex flex-col items-center gap-4">
           <div className="rounded-full border border-gray-500 p-[2px]">
             <Image
-              src={urlFor(experiences?.companyLogo ?? "")?.url()}
-              alt={translations.experiences?.companyName ?? ""}
+              src={
+                experiences?.companyLogo
+                  ? urlFor(experiences.companyLogo).url()
+                  : ""
+              }
+              alt={experiences?.companyName ?? ""}
               width={50}
               height={50}
               quality={90}
