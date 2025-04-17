@@ -16,13 +16,18 @@ export default function formatDate(date: string, locale: string) {
     selectedLocale = enUS;
   }
 
+  if (!date) {
+    throw new Error("Date is empty or null");
+  }
+
   const parsedDate = new Date(date);
 
   if (isNaN(parsedDate.getTime())) {
-    throw new Error("Invalid date");
+    throw new Error(`Invalid date: ${date}`);
   }
+
   return capitalize(
-    format(new Date(date), "MMM yyyy", {
+    format(parsedDate, "MMM yyyy", {
       locale: selectedLocale,
     }),
   );
