@@ -1,111 +1,127 @@
-import { getTranslations } from "@/lib/get-translations";
-import formatDate from "@/utils/format-date";
-import { PortableText } from "@portabletext/react";
+"use client";
 
+import { PortableText } from "@portabletext/react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { urlFor } from "../lib/urlSanity";
+
+import { Translations } from "@/@types/types";
+import { getTranslations } from "@/lib/get-translations";
 
 import { Button } from "./button";
 import { MotionSection } from "./motion";
 import { ProgressBarExperience } from "./progressbar-experience";
-import { Technology } from "./technology";
+import { Skeleton } from "./skeleton";
 
-export async function ExperienceItem({
-  params,
-}: {
-  params: { locale: string };
-}) {
+export function ExperienceItem({ params }: { params: { locale: string } }) {
   const { locale } = params;
+  const [translations, setTranslations] = useState<Translations>();
 
-  const translations = await getTranslations(locale);
+  useEffect(() => {
+    getTranslations(locale).then((res) => {
+      if (res) {
+        setTranslations(res);
+      }
+    });
+  }, [locale]);
 
   if (!translations) {
-    return <p>Erro ao carregar traduções para o idioma: {locale}</p>;
+    return (
+      <Skeleton className="h-3 w-3/5 rounded-lg bg-rose-100/10 dark:bg-slate-300" />
+    );
   }
 
   const { experiences } = translations;
 
-  const description = experiences?.description;
-
-  const finalDescription = Array.isArray(description)
-    ? description
-    : description
-      ? [description]
-      : [];
+  if (!experiences || !Array.isArray(experiences)) {
+    return <p>Experiências não encontradas.</p>;
+  }
 
   return (
-    <MotionSection>
-      <section className="grid grid-cols-[40px,1fr] gap-4 md:gap-10">
-        <div className="flex flex-col items-center gap-4">
-          <div className="rounded-full border border-gray-500 p-[2px]">
-            <Image
-              src={
-                experiences?.companyLogo
-                  ? urlFor(experiences.companyLogo).url()
-                  : ""
-              }
-              alt={experiences?.companyName ?? ""}
-              width={50}
-              height={50}
-              quality={90}
-              className="rounded-full"
-            />
-          </div>
+    <>
+      {experiences.map((experience) => {
+        const description = experience?.description;
+        const finalDescription = Array.isArray(description)
+          ? description
+          : description
+            ? [description]
+            : [];
 
-          <ProgressBarExperience />
-        </div>
+        return (
+          <MotionSection key={experience._key}>
+            <section className="grid grid-cols-[40px,1fr] gap-4 md:gap-10">
+              <div className="flex flex-col items-center gap-4">
+                <div className="rounded-full border border-gray-500 p-[2px]">
+                  <Image
+                    src={
+                      experience?.companyLogo
+                        ? urlFor(experience.companyLogo).url()
+                        : ""
+                    }
+                    alt={experience?.companyName ?? ""}
+                    width={50}
+                    height={50}
+                    quality={90}
+                    className="rounded-full"
+                  />
+                </div>
 
-        <div>
-          <div className="flex flex-col gap-2">
-            <Button
-              variant="link"
-              href={translations.experiences?.companyUrl}
-              target="_blank"
-              className="lg:text-md w-max text-base"
-            >
-              <span>@</span> {translations.experiences?.companyName}
-            </Button>
-            <h2 className="font-medium text-gray-100 dark:text-gray-700">
-              {translations.experiences?.role}
-            </h2>
-            <span className="text-gray-300 dark:text-gray-400">
-              {formatDate(experiences?.startDate ?? "", locale)} -{" "}
-              {experiences?.endDate
-                ? formatDate(experiences?.endDate, locale)
-                : "No momento"}
-            </span>
+                <ProgressBarExperience />
+              </div>
 
-            {finalDescription.length > 0 && (
-              <article className="prose text-gray-500">
-                <PortableText value={finalDescription} />
-              </article>
-            )}
-          </div>
+              <div>
+                <div className="flex flex-col gap-2">
+                  <Button
+                    variant="link"
+                    href={experience?.companyUrl}
+                    target="_blank"
+                    className="lg:text-md w-max text-base"
+                  >
+                    <span>@</span> {experience?.companyName}
+                  </Button>
+                  <h2 className="font-medium text-gray-100 dark:text-gray-700">
+                    {experience?.role}
+                  </h2>
+                  <span className="text-gray-300 dark:text-gray-400">
+                    {/* formatDate(experience?.startDate, locale) - formatDate(experience?.endDate, locale) */}
+                  </span>
 
-          <div>
-            <p className="mb-3 mt-6 text-sm font-semibold text-gray-400">
-              Tecnologias
-            </p>
+                  {finalDescription.length > 0 && (
+                    <article className="prose text-gray-500">
+                      <PortableText value={finalDescription} />
+                    </article>
+                  )}
+                </div>
 
-            <div className="mb-8 flex flex-wrap gap-x-2 gap-y-4 lg:max-w-[350px]">
-              {experiences?.technologies.map((technology) => (
-                <Technology key={technology._id}>
-                  {technology.image ? (
-                    <Image
-                      src={urlFor(technology.image)?.url()}
-                      alt={technology.name ?? ""}
-                      width={16}
-                      height={16}
-                      quality={90}
-                    />
-                  ) : null}
-                  <p className="text-sm">{technology.name}</p>
-                </Technology>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-    </MotionSection>
+                <div>
+                  <p className="mb-3 mt-6 text-sm font-semibold text-gray-400">
+                    Tecnologias
+                  </p>
+
+                  <div className="mb-8 flex flex-wrap gap-x-2 gap-y-4 lg:max-w-[350px]">
+                    {/* 
+                    {experience?.technologies.map((tech) => (
+                      <Technology key={tech._key}>
+                        {tech.image && (
+                          <Image
+                            src={urlFor(tech.image)?.url()}
+                            alt={tech.name ?? ""}
+                            width={16}
+                            height={16}
+                            quality={90}
+                          />
+                        )}
+                        <p className="text-sm">{tech.name}</p>
+                      </Technology>
+                    ))} 
+                    */}
+                  </div>
+                </div>
+              </div>
+            </section>
+          </MotionSection>
+        );
+      })}
+    </>
   );
 }
