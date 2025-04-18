@@ -8,7 +8,7 @@ type BiographyItem = {
 };
 
 type Technology = {
-  _id: string;
+  _key: string;
   name: string & string[];
   image: StaticImageData[];
 };
