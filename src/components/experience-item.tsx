@@ -12,6 +12,7 @@ import { Button } from "./button";
 import { MotionSection } from "./motion";
 import { ProgressBarExperience } from "./progressbar-experience";
 import { Skeleton } from "./skeleton";
+import { Technology } from "./technology";
 
 export function ExperienceItem({ params }: { params: { locale: string } }) {
   const { locale } = params;
@@ -99,7 +100,6 @@ export function ExperienceItem({ params }: { params: { locale: string } }) {
                   </p>
 
                   <div className="mb-8 flex flex-wrap gap-x-2 gap-y-4 lg:max-w-[350px]">
-                    {/* 
                     {experience?.technologies.map((tech) => (
                       <Technology key={tech._key}>
                         {tech.image && (
@@ -113,8 +113,7 @@ export function ExperienceItem({ params }: { params: { locale: string } }) {
                         )}
                         <p className="text-sm">{tech.name}</p>
                       </Technology>
-                    ))} 
-                    */}
+                    ))}
                   </div>
                 </div>
               </div>
