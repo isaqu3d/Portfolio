@@ -8,6 +8,7 @@ import { urlFor } from "../lib/urlSanity";
 import { Translations } from "@/@types/types";
 import { getTranslations } from "@/lib/get-translations";
 
+import { getLocalTranslations } from "@/lib/get-local-translations";
 import formatDate from "@/utils/format-date";
 import { normalizeDescription } from "@/utils/normalize-description";
 import { Button } from "./button";
@@ -42,6 +43,7 @@ export function ExperienceItem({ params }: { params: { locale: string } }) {
   }
 
   const { experiences } = translations;
+  const local = getLocalTranslations(locale);
 
   if (!experiences || !Array.isArray(experiences)) {
     return <p>Experiências não encontradas.</p>;
@@ -93,9 +95,7 @@ export function ExperienceItem({ params }: { params: { locale: string } }) {
                     {formatDate(experience.startDate, locale)} -{" "}
                     {experience.endDate
                       ? formatDate(experience.endDate, locale)
-                      : locale === "pt"
-                        ? "No momento"
-                        : "Present"}
+                      : local.experiences.presentLabel}
                   </span>
 
                   {finalDescription.length > 0 && (
