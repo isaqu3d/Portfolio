@@ -7,5 +7,11 @@
   },
   "projects": {
     "title": "Projects"
+  },
+  "summary": {
+    "title": "About me"
+  },
+  "biography": {
+    "title": "Biography"
   }
 }
