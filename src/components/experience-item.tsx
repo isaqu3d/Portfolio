@@ -1,16 +1,15 @@
 "use client";
 
+import { Translations } from "@/@types/types";
+import { getLocalTranslations } from "@/lib/get-local-translations";
+import { getTranslations } from "@/lib/get-translations";
+import { urlFor } from "@/lib/urlSanity";
+import formatDate from "@/utils/format-date";
+import { normalizeDescription } from "@/utils/normalize-description";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { urlFor } from "../lib/urlSanity";
 
-import { Translations } from "@/@types/types";
-import { getTranslations } from "@/lib/get-translations";
-
-import { getLocalTranslations } from "@/lib/get-local-translations";
-import formatDate from "@/utils/format-date";
-import { normalizeDescription } from "@/utils/normalize-description";
 import { Button } from "./button";
 import { ExperienceSkeleton } from "./experience-skeleton";
 import { MotionSection } from "./motion";
