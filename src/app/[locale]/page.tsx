@@ -48,7 +48,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
 
       <main>
         <MotionSlide>
-          <Heading>{local.summary.title}</Heading>
+          <Heading>{local.home.summary.title}</Heading>
 
           <article className="inset-5 text-justify">
             {translations.home_summary ? (
@@ -60,13 +60,13 @@ export default async function Home({ params }: { params: { locale: string } }) {
 
           <div className="my-2 flex items-center justify-center">
             <Button href="/projects" variant="teal" size="md">
-              {local.projects.title} <BiChevronRight />
+              {local.home.projects.title} <BiChevronRight />
             </Button>
           </div>
         </MotionSlide>
 
         <MotionSection>
-          <Heading>{local.biography.title}</Heading>
+          <Heading>{local.home.biography.title}</Heading>
           <div>
             {translations.home_biography?.length ? (
               translations.home_biography.map((item) => (
