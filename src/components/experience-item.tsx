@@ -19,11 +19,19 @@ import { Technology } from "./technology";
 export function ExperienceItem({ params }: { params: { locale: string } }) {
   const { locale } = params;
   const [translations, setTranslations] = useState<Translations>();
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await getTranslations(locale);
-      if (res) setTranslations(res);
+      try {
+        const res = await getTranslations(locale);
+        if (res) {
+          setTranslations(res);
+        }
+      } catch (error) {
+        console.error("Erro ao buscar traduções:", error);
+        setError("Erro ao carregar experiências");
+      }
     };
 
     fetchData();
@@ -41,7 +49,7 @@ export function ExperienceItem({ params }: { params: { locale: string } }) {
 
   return (
     <>
-      {experiences.map((experience) => {
+      {experiences?.map((experience) => {
         const finalDescription = normalizeDescription(experience?.description);
 
         return (
