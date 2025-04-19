@@ -9,15 +9,17 @@ import { Heading } from "@/components/heading";
 import { MotionSection, MotionSlide } from "@/components/motion";
 import { SocialMedia } from "@/components/social-media";
 import { Typewriter } from "@/components/typewriter";
+import { getLocalTranslations } from "@/lib/get-local-translations";
 import { getTranslations } from "@/lib/get-translations";
 
 export default async function Home({ params }: { params: { locale: string } }) {
   const { locale } = params;
 
   const translations = await getTranslations(locale);
+  const local = getLocalTranslations(locale);
 
   if (!translations) {
-    return <div>Erro ao carregar traduções para o idioma: {locale}</div>;
+    return <p>Erro ao carregar traduções para o idioma: {locale}</p>;
   }
 
   return (
@@ -58,7 +60,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
 
           <div className="my-2 flex items-center justify-center">
             <Button href="/projects" variant="teal" size="md">
-              Projetos <BiChevronRight />
+              {local.projects.title} <BiChevronRight />
             </Button>
           </div>
         </MotionSlide>
@@ -83,7 +85,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
           </p>
           <div className="my-2 flex items-center justify-center">
             <Button href="work-experiences" size="md" variant="teal">
-              Experiências <MdOutlineWorkOutline />
+              {local.experiences.title} <MdOutlineWorkOutline />
             </Button>
           </div>
           <SocialMedia />

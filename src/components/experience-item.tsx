@@ -106,7 +106,7 @@ export function ExperienceItem({ params }: { params: { locale: string } }) {
 
                 <div>
                   <p className="mb-3 mt-6 text-sm font-semibold text-gray-400">
-                    Tecnologias
+                    {local.experiences.technologiesLabel}
                   </p>
 
                   <div className="mb-8 flex flex-wrap gap-x-2 gap-y-4 lg:max-w-[350px]">
