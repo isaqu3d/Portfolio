@@ -48,7 +48,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
 
       <main>
         <MotionSlide>
-          <Heading>Sobre mim</Heading>
+          <Heading>{local.summary.title}</Heading>
 
           <article className="inset-5 text-justify">
             {translations.home_summary ? (
@@ -66,6 +66,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
         </MotionSlide>
 
         <MotionSection>
+          <Heading>{local.biography.title}</Heading>
           <div>
             {translations.home_biography?.length ? (
               translations.home_biography.map((item) => (
