@@ -1,6 +1,8 @@
 {
-  "HomePage": {
-    "title": "Olá, Mundo!",
-    "about": "Ir para a página sobre"
+  "experiences": {
+    "title": "Experiências",
+    "description": "Todas minhas experiências profissionais detalhadas para você!",
+    "presentLabel": "No momento",
+    "technologiesLabel": "Tecnologias"
   }
 }
