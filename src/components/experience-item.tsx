@@ -61,7 +61,7 @@ export function ExperienceItem({ params }: { params: { locale: string } }) {
                     src={
                       experience?.companyLogo
                         ? urlFor(experience.companyLogo).url()
-                        : ""
+                        : "/bag.jpg"
                     }
                     alt={experience?.companyName ?? ""}
                     width={50}
