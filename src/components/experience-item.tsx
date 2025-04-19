@@ -9,6 +9,7 @@ import { Translations } from "@/@types/types";
 import { getTranslations } from "@/lib/get-translations";
 
 import formatDate from "@/utils/format-date";
+import { normalizeDescription } from "@/utils/normalize-description";
 import { Button } from "./button";
 import { ExperienceSkeleton } from "./experience-skeleton";
 import { MotionSection } from "./motion";
@@ -41,12 +42,7 @@ export function ExperienceItem({ params }: { params: { locale: string } }) {
   return (
     <>
       {experiences.map((experience) => {
-        const description = experience?.description;
-        const finalDescription = Array.isArray(description)
-          ? description
-          : description
-            ? [description]
-            : [];
+        const finalDescription = normalizeDescription(experience?.description);
 
         return (
           <MotionSection key={experience._key}>
