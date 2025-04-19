@@ -8,6 +8,7 @@ import { urlFor } from "../lib/urlSanity";
 import { Translations } from "@/@types/types";
 import { getTranslations } from "@/lib/get-translations";
 
+import formatDate from "@/utils/format-date";
 import { Button } from "./button";
 import { MotionSection } from "./motion";
 import { ProgressBarExperience } from "./progressbar-experience";
@@ -84,7 +85,10 @@ export function ExperienceItem({ params }: { params: { locale: string } }) {
                     {experience?.role}
                   </h2>
                   <span className="text-gray-300 dark:text-gray-400">
-                    {/* formatDate(experience?.startDate, locale) - formatDate(experience?.endDate, locale) */}
+                    {formatDate(experience.startDate, locale)} -{" "}
+                    {experience.endDate
+                      ? formatDate(experience.endDate, locale)
+                      : "No momento"}
                   </span>
 
                   {finalDescription.length > 0 && (
