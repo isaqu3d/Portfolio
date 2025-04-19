@@ -6,13 +6,16 @@
     "technologiesLabel": "Tecnologias"
   },
 
-  "projects": {
-    "title": "Projetos"
-  },
-  "summary": {
-    "title": "Sobre mim"
-  },
-  "biography": {
-    "title": "Biografia"
+  "home": {
+    "projects": {
+      "title": "Projetos"
+    },
+    "summary": {
+      "title": "Sobre mim"
+    },
+
+    "biography": {
+      "title": "Biografia"
+    }
   }
 }

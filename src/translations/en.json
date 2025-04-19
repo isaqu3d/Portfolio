@@ -5,13 +5,16 @@
     "presentLabel": "Present",
     "technologiesLabel": "Technologies"
   },
-  "projects": {
-    "title": "Projects"
-  },
-  "summary": {
-    "title": "About me"
-  },
-  "biography": {
-    "title": "Biography"
+  "home": {
+    "projects": {
+      "title": "Projects"
+    },
+    "summary": {
+      "title": "About me"
+    },
+
+    "biography": {
+      "title": "Biography"
+    }
   }
 }
