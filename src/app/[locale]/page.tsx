@@ -17,7 +17,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
 
   const translations = await getTranslations(locale);
   const local = getLocalTranslations(locale);
-
+  const { home, experiences } = getLocalTranslations(locale);
   if (!translations) {
     return <p>Erro ao carregar traduções para o idioma: {locale}</p>;
   }
@@ -48,7 +48,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
 
       <main>
         <MotionSlide>
-          <Heading>{local.home.summary.title}</Heading>
+          <Heading>{home.summary.title}</Heading>
 
           <article className="inset-5 text-justify">
             {translations.home_summary ? (
@@ -60,13 +60,13 @@ export default async function Home({ params }: { params: { locale: string } }) {
 
           <div className="my-2 flex items-center justify-center">
             <Button href="/projects" variant="teal" size="md">
-              {local.home.projects.title} <BiChevronRight />
+              {home.projects.title} <BiChevronRight />
             </Button>
           </div>
         </MotionSlide>
 
         <MotionSection>
-          <Heading>{local.home.biography.title}</Heading>
+          <Heading>{home.biography.title}</Heading>
           <div>
             {translations.home_biography?.length ? (
               translations.home_biography.map((item) => (
@@ -86,7 +86,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
           </p>
           <div className="my-2 flex items-center justify-center">
             <Button href="work-experiences" size="md" variant="teal">
-              {local.experiences.title} <MdOutlineWorkOutline />
+              {experiences.title} <MdOutlineWorkOutline />
             </Button>
           </div>
           <SocialMedia />
