@@ -4,5 +4,8 @@
     "description": "All my professional experiences detailed for you!",
     "presentLabel": "Present",
     "technologiesLabel": "Technologies"
+  },
+  "projects": {
+    "title": "Projects"
   }
 }

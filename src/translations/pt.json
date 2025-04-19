@@ -4,5 +4,9 @@
     "description": "Todas minhas experiências profissionais detalhadas para você!",
     "presentLabel": "No momento",
     "technologiesLabel": "Tecnologias"
+  },
+
+  "projects": {
+    "title": "Projetos"
   }
 }
