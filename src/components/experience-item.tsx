@@ -63,10 +63,11 @@ export function ExperienceItem({ params }: { params: { locale: string } }) {
                         ? urlFor(experience.companyLogo).url()
                         : "/bag.jpg"
                     }
-                    alt={experience?.companyName ?? ""}
+                    alt={experience?.companyName ?? "Logo"}
                     width={50}
                     height={50}
                     quality={90}
+                    loading="lazy"
                     className="rounded-full"
                   />
                 </div>
