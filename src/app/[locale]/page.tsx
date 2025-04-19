@@ -16,7 +16,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
   const { locale } = params;
 
   const translations = await getTranslations(locale);
-  const local = getLocalTranslations(locale);
+
   const { home, experiences } = getLocalTranslations(locale);
   if (!translations) {
     return <p>Erro ao carregar traduções para o idioma: {locale}</p>;
