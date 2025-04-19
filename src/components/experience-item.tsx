@@ -20,11 +20,12 @@ export function ExperienceItem({ params }: { params: { locale: string } }) {
   const [translations, setTranslations] = useState<Translations>();
 
   useEffect(() => {
-    getTranslations(locale).then((res) => {
-      if (res) {
-        setTranslations(res);
-      }
-    });
+    const fetchData = async () => {
+      const res = await getTranslations(locale);
+      if (res) setTranslations(res);
+    };
+
+    fetchData();
   }, [locale]);
 
   if (!translations) {
