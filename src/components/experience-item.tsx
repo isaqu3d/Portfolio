@@ -76,6 +76,7 @@ export function ExperienceItem({ params }: { params: { locale: string } }) {
                     variant="link"
                     href={experience?.companyUrl}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="lg:text-md w-max text-base"
                   >
                     <span>@</span> {experience?.companyName}
