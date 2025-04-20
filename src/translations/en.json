@@ -1,11 +1,4 @@
 {
-  "experiences": {
-    "title": "Experiences",
-    "description": "All my professional experiences detailed for you!",
-    "presentLabel": "Present",
-    "technologiesLabel": "Technologies"
-  },
-
   "home": {
     "projects": {
       "title": "Projects"
@@ -20,6 +13,13 @@
     "contact": {
       "title": "Connect with me"
     }
+  },
+
+  "experiences": {
+    "title": "Experiences",
+    "description": "All my professional experiences detailed for you!",
+    "presentLabel": "Present",
+    "technologiesLabel": "Technologies"
   },
 
   "navbar": {
