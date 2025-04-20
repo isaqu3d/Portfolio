@@ -5,6 +5,7 @@
     "presentLabel": "Present",
     "technologiesLabel": "Technologies"
   },
+
   "home": {
     "projects": {
       "title": "Projects"
@@ -16,5 +17,12 @@
     "biography": {
       "title": "Biography"
     }
+  },
+
+  "navbar": {
+    "home": "Home",
+    "projects": "Projects",
+    "experiences": "Experiences",
+    "skills": "Technical skills"
   }
 }

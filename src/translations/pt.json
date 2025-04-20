@@ -17,5 +17,12 @@
     "biography": {
       "title": "Biografia"
     }
+  },
+
+  "navbar": {
+    "home": "Início",
+    "projects": "Projetos",
+    "experiences": "Experiências",
+    "skills": "Habilidades técnicas"
   }
 }
