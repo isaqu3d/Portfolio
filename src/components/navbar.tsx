@@ -7,6 +7,7 @@ import { IoLogoGithub } from "react-icons/io5";
 import { ButtonTheme } from "./button-theme";
 import { MotionHeader } from "./motion";
 
+import { getLocalTranslations } from "@/lib/get-local-translations";
 import Logo from "./logo";
 import { MenuItem } from "./menu-item";
 
@@ -33,7 +34,8 @@ const LinkItem = ({ href, target, children }: LinkItemProps) => {
   );
 };
 
-export default function Navbar() {
+export default function Navbar({ locale }: { locale: string }) {
+  const { navbar } = getLocalTranslations(locale);
   return (
     <>
       <MotionHeader className="fixed z-50 flex w-full justify-center border-b-[1px] border-gray-600 bg-gray-900/30 backdrop-blur-sm dark:border-zinc-400 dark:bg-white-100/30">
@@ -43,9 +45,9 @@ export default function Navbar() {
           </div>
 
           <div className="hidden flex-grow items-center gap-4 md:flex">
-            <LinkItem href="/projects">Projetos</LinkItem>
-            <LinkItem href="/work-experiences">Experiências</LinkItem>
-            <LinkItem href="/skills">Habilidades</LinkItem>
+            <LinkItem href="/projects">{navbar.projects}</LinkItem>
+            <LinkItem href="/work-experiences">{navbar.experiences}</LinkItem>
+            <LinkItem href="/skills">{navbar.skills}</LinkItem>
 
             <LinkItem
               target="_blank"
