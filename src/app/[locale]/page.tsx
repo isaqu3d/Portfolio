@@ -80,15 +80,12 @@ export default async function Home({ params }: { params: { locale: string } }) {
             )}
           </div>
 
-          <Heading>Eu ♥</Heading>
-          <p className="inset-5 text-justify">
-            Musica, Jogar, Codar, Ler, Aprender.
-          </p>
           <div className="my-2 flex items-center justify-center">
             <Button href="work-experiences" size="md" variant="teal">
               {experiences.title} <MdOutlineWorkOutline />
             </Button>
           </div>
+          <Heading>{home.contact.title}</Heading>
           <SocialMedia />
         </MotionSection>
       </main>

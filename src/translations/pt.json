@@ -10,12 +10,17 @@
     "projects": {
       "title": "Projetos"
     },
+
     "summary": {
       "title": "Sobre mim"
     },
 
     "biography": {
       "title": "Biografia"
+    },
+
+    "contact": {
+      "title": "Conecte-se comigo "
     }
   },
 
