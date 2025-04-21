@@ -32,6 +32,12 @@ type Projects = {
   description: string;
   slug: { current: string; _type: string };
   thumbnail: StaticImageData;
+  content: TypedObject[];
+  github: string;
+  website: string;
+  badge: number;
+  image: StaticImageData[];
+  technologies: Technology[];
 };
 
 type Translations = {
