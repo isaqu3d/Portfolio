@@ -1,27 +1,57 @@
+"use client";
+
 import { MotionSlide } from "@/components/motion";
 import NextLink from "next/link";
 import { BiChevronRight } from "react-icons/bi";
 
+import { Translations } from "@/@types/types";
 import { Button } from "@/components/button";
 import { Technology } from "@/components/technology";
 import { Badge } from "@/components/ui/badge";
-import client from "@/lib/sanityClient";
+import { getTranslations } from "@/lib/get-translations";
 import { urlFor } from "@/lib/urlSanity";
 import { PortableText } from "@portabletext/react";
-import { groq } from "next-sanity";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import ProjectLoading from "./loading";
 
-export default async function Slug({
-  params: { slug },
-}: {
-  params: { slug: string };
-}) {
-  const [project] = await client.fetch(
-    groq`*[_type == "project" && slug.current == $slug]`,
-    {
-      slug,
-    },
-  );
+export default function Slug({ params }: { params: { locale: string } }) {
+  const [translations, setTranslations] = useState<Translations>();
+  const [loading, setLoading] = useState<boolean>(true);
+
+  const { locale } = params;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await getTranslations(locale);
+        if (res) {
+          setTranslations(res);
+          console.log("res", res);
+        }
+
+        console.log("res", res);
+      } catch (error) {
+        console.error("Erro ao buscar traduções:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [locale]);
+
+  if (loading) {
+    return <ProjectLoading />;
+  }
+
+  const { projects } = translations || {};
+
+  if (!projects || projects.length === 0) {
+    return <p>Projetos não encontrados.</p>;
+  }
+
+  const project = projects[0];
 
   return (
     <MotionSlide className="max-w-xl px-4">
@@ -51,10 +81,10 @@ export default async function Slug({
           <Button
             variant="link"
             size="md"
-            href={project.linkWebsite}
+            href={project.website}
             target="__blank"
           >
-            {project.linkWebsite}
+            {project.website}
           </Button>
         </div>
 
@@ -63,10 +93,10 @@ export default async function Slug({
           <Button
             variant="link"
             size="md"
-            href={project.linkGithub}
+            href={project.github}
             target="__blank"
           >
-            {project.linkGithub}
+            {project.github}
           </Button>
         </div>
 
@@ -75,7 +105,7 @@ export default async function Slug({
 
           <div className="mt-2 flex flex-wrap justify-center gap-x-[6px] gap-y-4 md:mt-0 md:justify-start lg:max-w-[550px]">
             {project.technologies?.map((technology) => (
-              <Technology key={technology._id}>
+              <Technology key={technology._key}>
                 {technology.image ? (
                   <Image
                     src={urlFor(technology.image)?.url()}

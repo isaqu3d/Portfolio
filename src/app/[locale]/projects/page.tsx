@@ -9,6 +9,7 @@ import { Heading } from "@/components/heading";
 import { MotionSlide } from "@/components/motion";
 import { getTranslations } from "@/lib/get-translations";
 import { urlFor } from "@/lib/urlSanity";
+import ProjectLoading from "./[slug]/loading";
 
 export default function Projects({ params }: { params: { locale: string } }) {
   const [translations, setTranslations] = useState<Translations>();
@@ -34,7 +35,7 @@ export default function Projects({ params }: { params: { locale: string } }) {
   }, [locale]);
 
   if (!translations) {
-    return <p>Carregando...</p>;
+    return <ProjectLoading />;
   }
 
   const { projects } = translations;
