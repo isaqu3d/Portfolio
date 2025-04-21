@@ -54,7 +54,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
             {translations.home_summary ? (
               <PortableText value={translations.home_summary} />
             ) : (
-              <p>Resumo não encontrado.</p>
+              <p>{home.summary.notFound}</p>
             )}
           </article>
 
@@ -76,7 +76,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
                 </div>
               ))
             ) : (
-              <div>Nenhuma biografia encontrada.</div>
+              <p>{home.biography.notFound}</p>
             )}
           </div>
 
@@ -85,6 +85,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
               {experiences.title} <MdOutlineWorkOutline />
             </Button>
           </div>
+
           <Heading>{home.contact.title}</Heading>
           <SocialMedia />
         </MotionSection>
