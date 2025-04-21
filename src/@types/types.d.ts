@@ -27,7 +27,7 @@ type Experiences = {
 };
 
 type Projects = {
-  _id: string;
+  _key: string;
   name: string;
   description: string;
   slug: { current: string; _type: string };

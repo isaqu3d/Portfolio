@@ -51,7 +51,7 @@ export default function Projects({ params }: { params: { locale: string } }) {
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {projects.map((project) => (
-            <div className="w-full text-center" key={project._id}>
+            <div className="w-full text-center" key={project._key}>
               <NextLink href={`projects/${project.slug.current}`}>
                 <Image
                   src={urlFor(project.thumbnail)
