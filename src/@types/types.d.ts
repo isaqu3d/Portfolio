@@ -26,8 +26,17 @@ type Experiences = {
   description: TypedObject | TypedObject[];
 };
 
+type Projects = {
+  _id: string;
+  name: string;
+  description: string;
+  slug: { current: string; _type: string };
+  thumbnail: StaticImageData;
+};
+
 type Translations = {
   home_summary?: PortableTextBlock[];
   home_biography?: BiographyItem[];
   experiences?: Experiences;
+  projects?: Projects[];
 };
