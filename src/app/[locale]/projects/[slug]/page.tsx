@@ -8,6 +8,7 @@ import { Translations } from "@/@types/types";
 import { Button } from "@/components/button";
 import { Technology } from "@/components/technology";
 import { Badge } from "@/components/ui/badge";
+import { getLocalTranslations } from "@/lib/get-local-translations";
 import { getTranslations } from "@/lib/get-translations";
 import { urlFor } from "@/lib/urlSanity";
 import { PortableText } from "@portabletext/react";
@@ -24,6 +25,8 @@ export default function Slug({
   const [loading, setLoading] = useState<boolean>(true);
 
   const { locale, slug } = params;
+
+  const local = getLocalTranslations(locale);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -52,13 +55,13 @@ export default function Slug({
   const { projects } = translations || {};
 
   if (!projects || projects.length === 0) {
-    return <p>Projetos não encontrados.</p>;
+    return <p>{local.projects.notFound.projects}</p>;
   }
 
   const project = projects.find((p) => p.slug.current === slug);
 
   if (!project) {
-    return <p>Projeto não encontrado.</p>;
+    return <p>{local.projects.notFound.projects}</p>;
   }
 
   return (
@@ -68,7 +71,7 @@ export default function Slug({
           href="/projects"
           className="flex items-center text-sm text-pink-400 hover:underline dark:text-teal-600 dark:hover:underline md:text-base"
         >
-          Projeto
+          {local.projects.title}
           <span className="text-white-100 dark:text-black">
             <BiChevronRight />
           </span>
