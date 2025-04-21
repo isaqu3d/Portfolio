@@ -16,7 +16,7 @@ const buttonVariants = cva(
         secondary:
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         social:
-          "ml-2 flex w-max items-center gap-2 rounded-md py-2 px-3 text-teal-200 hover:bg-teal-400/20 hover:underline hover:decoration-pink-500 hover:decoration-1 hover:underline-offset-[6px] dark:text-teal-600 dark:hover:decoration-teal-600",
+          "flex w-max items-center gap-2 rounded-md py-2 px-3 text-teal-200 hover:bg-teal-400/20 hover:underline hover:decoration-pink-500 hover:decoration-1 hover:underline-offset-[6px] dark:text-teal-600 dark:hover:decoration-teal-600",
       },
 
       size: {
