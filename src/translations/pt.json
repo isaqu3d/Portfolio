@@ -19,6 +19,15 @@
     }
   },
 
+  "projects": {
+    "title": "Projetos",
+    "notFound": {
+      "technologies": "Nenhuma tecnologia encontrada",
+      "images": "Nenhuma imagem encontrada",
+      "projects": "Nenhum projeto encontrado"
+    }
+  },
+
   "experiences": {
     "title": "Experiências",
     "description": "Todas minhas experiências profissionais detalhadas para você!",

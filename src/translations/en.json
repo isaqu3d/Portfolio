@@ -12,8 +12,18 @@
       "title": "Biography",
       "notFound": "Biography not found."
     },
+
     "contact": {
       "title": "Connect with me"
+    }
+  },
+
+  "projects": {
+    "title": "Projects",
+    "notFound": {
+      "technologies": "No technologies found",
+      "images": "No images found",
+      "projects": "No projects found"
     }
   },
 
