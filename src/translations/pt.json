@@ -26,6 +26,11 @@
     "technologiesLabel": "Tecnologias"
   },
 
+  "technicalSkills": {
+    "technologies": "Tecnologias",
+    "tools": "Ferramentas"
+  },
+
   "navbar": {
     "home": "Início",
     "projects": "Projetos",
