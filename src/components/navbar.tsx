@@ -1,5 +1,3 @@
-"use client";
-
 import NextLink, { LinkProps } from "next/link";
 import { usePathname } from "next/navigation";
 import { IoLogoGithub } from "react-icons/io5";
@@ -8,6 +6,7 @@ import { ButtonTheme } from "./button-theme";
 import { MotionHeader } from "./motion";
 
 import { getLocalTranslations } from "@/lib/get-local-translations";
+
 import Logo from "./logo";
 import { MenuItem } from "./menu-item";
 
