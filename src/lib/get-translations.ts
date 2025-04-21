@@ -10,7 +10,8 @@ export async function getTranslations(
       messages {
         home_summary,
         home_biography,
-        experiences
+        experiences,
+        projects
       }
     }
   `;
