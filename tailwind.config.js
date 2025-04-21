@@ -67,7 +67,7 @@ module.exports = {
       },
 
       fontFamily: {
-        sansMPlus: ['"M PLUS Rounded 1c"', "sans-serif"],
+        sans: ['"M PLUS Rounded 1c"', "sans-serif"],
         serif: ["-apple-system", "sans-serif"],
       },
 
