@@ -32,6 +32,13 @@ export default defineType({
         },
 
         {
+          name: "projects",
+          title: "Projects",
+          type: "array",
+          of: [{ type: "projects" }],
+        },
+
+        {
           name: "experiences",
           title: "Experiences",
           type: "array",
