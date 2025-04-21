@@ -15,11 +15,15 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import ProjectLoading from "./loading";
 
-export default function Slug({ params }: { params: { locale: string } }) {
+export default function Slug({
+  params,
+}: {
+  params: { slug: string; locale: string };
+}) {
   const [translations, setTranslations] = useState<Translations>();
   const [loading, setLoading] = useState<boolean>(true);
 
-  const { locale } = params;
+  const { locale, slug } = params;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -51,7 +55,11 @@ export default function Slug({ params }: { params: { locale: string } }) {
     return <p>Projetos não encontrados.</p>;
   }
 
-  const project = projects[0];
+  const project = projects.find((p) => p.slug.current === slug);
+
+  if (!project) {
+    return <p>Projeto não encontrado.</p>;
+  }
 
   return (
     <MotionSlide className="max-w-xl px-4">
@@ -104,36 +112,44 @@ export default function Slug({ params }: { params: { locale: string } }) {
           <p>Tech:</p>
 
           <div className="mt-2 flex flex-wrap justify-center gap-x-[6px] gap-y-4 md:mt-0 md:justify-start lg:max-w-[550px]">
-            {project.technologies?.map((technology) => (
-              <Technology key={technology._key}>
-                {technology.image ? (
-                  <Image
-                    src={urlFor(technology.image)?.url()}
-                    alt={technology.name ?? ""}
-                    width={14}
-                    height={14}
-                    quality={90}
-                  />
-                ) : null}
-                <p className="text-sm">{technology.name}</p>
-              </Technology>
-            ))}
+            {project.technologies?.length > 0 ? (
+              project.technologies.map((technology) => (
+                <Technology key={technology._key}>
+                  {technology.image ? (
+                    <Image
+                      src={urlFor(technology.image)?.url()}
+                      alt={technology.name ?? ""}
+                      width={14}
+                      height={14}
+                      quality={90}
+                    />
+                  ) : null}
+                  <p className="text-sm">{technology.name}</p>
+                </Technology>
+              ))
+            ) : (
+              <p>Sem tecnologias listadas.</p>
+            )}
           </div>
         </div>
       </div>
 
       <div className="flex flex-col gap-2 ">
-        {project.image.map((image, index) => (
-          <Image
-            key={index}
-            src={urlFor(image).width(720).height(400).quality(90).url()}
-            alt={project.name}
-            width={720}
-            height={400}
-            quality={90}
-            className="rounded-md"
-          />
-        ))}
+        {project.image?.length > 0 ? (
+          project.image.map((image, index) => (
+            <Image
+              key={project._key || index}
+              src={urlFor(image).width(720).height(400).quality(90).url()}
+              alt={project.name}
+              width={720}
+              height={400}
+              quality={90}
+              className="rounded-md"
+            />
+          ))
+        ) : (
+          <p>Sem imagens para exibir.</p>
+        )}
       </div>
     </MotionSlide>
   );
