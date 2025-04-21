@@ -1,34 +1,47 @@
-import { Metadata } from "next";
-import { groq } from "next-sanity";
-import Image, { StaticImageData } from "next/image";
-import NextLink from "next/link";
+"use client";
 
+import Image from "next/image";
+import NextLink from "next/link";
+import { useEffect, useState } from "react";
+
+import { Translations } from "@/@types/types";
 import { Heading } from "@/components/heading";
 import { MotionSlide } from "@/components/motion";
-import client from "@/lib/sanityClient";
+import { getTranslations } from "@/lib/get-translations";
 import { urlFor } from "@/lib/urlSanity";
 
-export const metadata: Metadata = {
-  title: "Projetos",
-  description: "Projetos desenvolvidos por mim.",
-};
+export default function Projects({ params }: { params: { locale: string } }) {
+  const [translations, setTranslations] = useState<Translations>();
 
-export type ProjectsProps = {
-  _id: string;
-  name: string;
-  description: string;
-  slug: string;
-  thumbnail: StaticImageData;
-};
+  const { locale } = params;
 
-export default async function Projects() {
-  const projects = await client.fetch(groq`*[_type == "project"] {
-    _id,
-    name, 
-    description,
-    "slug": slug.current,
-    thumbnail
-  }`);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await getTranslations(locale);
+        if (res) {
+          setTranslations(res);
+          console.log("res", res);
+        }
+
+        console.log("res", res);
+      } catch (error) {
+        console.error("Erro ao buscar traduções:", error);
+      }
+    };
+
+    fetchData();
+  }, [locale]);
+
+  if (!translations) {
+    return <p>Carregando...</p>;
+  }
+
+  const { projects } = translations;
+
+  if (!projects || projects.length === 0) {
+    return <p>Projetos não encontrados.</p>;
+  }
 
   return (
     <div className="max-w-xl px-4">
@@ -36,9 +49,9 @@ export default async function Projects() {
         <Heading>Projetos</Heading>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {projects?.map((project: ProjectsProps) => (
+          {projects.map((project) => (
             <div className="w-full text-center" key={project._id}>
-              <NextLink href={`projects/${project.slug}`}>
+              <NextLink href={`projects/${project.slug.current}`}>
                 <Image
                   src={urlFor(project.thumbnail)
                     .width(720)
