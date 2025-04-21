@@ -50,11 +50,11 @@ export default function Navbar({ locale }: { locale: string }) {
 
             <LinkItem
               target="_blank"
-              href="https://github.com/X-SpeedBlack-X/Portfolio"
+              href="https://github.com/isaqu3d/Portfolio"
             >
               <div className="flex items-center justify-center gap-1">
-                <IoLogoGithub />
-                Código
+                <IoLogoGithub size={20} />
+                {navbar.code}
               </div>
             </LinkItem>
           </div>
