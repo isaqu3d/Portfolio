@@ -7,7 +7,7 @@ export default function Logo({ className }: { className?: string }) {
     <Link href="/">
       <span
         className={cn(
-          "group inline-flex h-8 items-center p-3 font-sansMPlus text-lg font-semibold tracking-tighter text-white-100 dark:text-gray-600",
+          "group inline-flex h-8 items-center p-3 font-sans text-lg font-semibold tracking-tighter text-white-100 dark:text-gray-600",
           className,
         )}
       >

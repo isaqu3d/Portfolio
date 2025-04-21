@@ -21,7 +21,7 @@ export function MenuItem() {
 
         <Menu.Items
           as="nav"
-          className="dark:border-background/15 absolute -bottom-[200px] right-3 flex w-52 animate-ToggleMenu flex-col gap-[6px] rounded-md border border-gray-300 bg-gray-900 px-4 py-2 font-sansMPlus dark:bg-white-100"
+          className="dark:border-background/15 absolute -bottom-[200px] right-3 flex w-52 animate-ToggleMenu flex-col gap-[6px] rounded-md border border-gray-300 bg-gray-900 px-4 py-2 font-sans dark:bg-white-100"
         >
           {LINKS_ITEMS.map((link) => (
             <Menu.Item key={link.id}>
