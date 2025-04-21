@@ -20,7 +20,8 @@ function SkillCardRender({ icon: Icon, color }) {
   );
 }
 
-export default function Skills({ locale }: { locale: string }) {
+export default function Skills({ params }: { params: { locale: string } }) {
+  const { locale } = params;
   const { technicalSkills } = getLocalTranslations(locale);
 
   return (
