@@ -5,11 +5,13 @@
     },
 
     "summary": {
-      "title": "Sobre mim"
+      "title": "Sobre mim",
+      "notFound": "Resumo não encontrado."
     },
 
     "biography": {
-      "title": "Biografia"
+      "title": "Biografia",
+      "notFound": "Biografia não encontrada."
     },
 
     "contact": {
