@@ -1,10 +1,10 @@
-import experiences from "./experiences";
-import home from "./home";
-import projects from "./projects";
-import technology from "./technology";
 import translations from "./translations";
 import biography from "./types/biography";
 import blockContent from "./types/blockContent";
+import experiences from "./types/experiences";
+import home from "./types/home";
+import projects from "./types/projects";
+import technology from "./types/technology";
 
 export const schemaTypes = [
   projects,
