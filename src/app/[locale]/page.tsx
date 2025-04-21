@@ -27,11 +27,12 @@ export default async function Home({ params }: { params: { locale: string } }) {
       <MotionSlide>
         <Typewriter />
 
-        <header className="flex flex-col items-center gap-4 lg:flex-row lg:gap-0">
+        <header className="font flex flex-col items-center gap-4 lg:flex-row lg:gap-0">
           <div className="flex-grow">
-            <h1 className="font-sansMPlus text-4xl font-bold sm:text-center lg:text-start">
+            <h1 className="font-sans text-4xl font-bold sm:text-center lg:text-start">
               Isaque de Sousa
             </h1>
+
             <p className="flex items-center justify-center gap-2 text-zinc-400 lg:justify-start">
               <span>
                 <GlobeIcon className="h-4 w-4 text-green-600" />
