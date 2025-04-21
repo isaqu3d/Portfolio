@@ -26,7 +26,7 @@ export default function Slug({
 
   const { locale, slug } = params;
 
-  const local = getLocalTranslations(locale);
+  const { projects: projectLocal } = getLocalTranslations(locale);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -55,13 +55,13 @@ export default function Slug({
   const { projects } = translations || {};
 
   if (!projects || projects.length === 0) {
-    return <p>{local.projects.notFound.projects}</p>;
+    return <p>{projectLocal.notFound.projects}</p>;
   }
 
   const project = projects.find((p) => p.slug.current === slug);
 
   if (!project) {
-    return <p>{local.projects.notFound.projects}</p>;
+    return <p>{projectLocal.notFound.projects}</p>;
   }
 
   return (
@@ -71,7 +71,7 @@ export default function Slug({
           href="/projects"
           className="flex items-center text-sm text-pink-400 hover:underline dark:text-teal-600 dark:hover:underline md:text-base"
         >
-          {local.projects.title}
+          {projectLocal.title}
           <span className="text-white-100 dark:text-black">
             <BiChevronRight />
           </span>
@@ -131,7 +131,7 @@ export default function Slug({
                 </Technology>
               ))
             ) : (
-              <p>Sem tecnologias listadas.</p>
+              <p>{projectLocal.notFound.technologies}</p>
             )}
           </div>
         </div>
@@ -151,7 +151,7 @@ export default function Slug({
             />
           ))
         ) : (
-          <p>Sem imagens para exibir.</p>
+          <p>{projectLocal.notFound.images}</p>
         )}
       </div>
     </MotionSlide>
