@@ -2,6 +2,7 @@ import { GithubCalendar } from "@/components/github-calendar";
 import { Heading } from "@/components/heading";
 import { Motion } from "@/components/motion";
 import { SkillsCard } from "@/components/skills-card";
+import { getLocalTranslations } from "@/lib/get-local-translations";
 import { SKILLS_CARD } from "@/utils/skills-card";
 import { SKILLS_TOOLS } from "@/utils/skills-tools";
 import { Metadata } from "next";
@@ -19,12 +20,14 @@ function SkillCardRender({ icon: Icon, color }) {
   );
 }
 
-export default function Skills() {
+export default function Skills({ locale }: { locale: string }) {
+  const { technicalSkills } = getLocalTranslations(locale);
+
   return (
     <div className="max-w-xl px-4">
       <Motion>
         <div>
-          <Heading>Habilidades</Heading>
+          <Heading>{technicalSkills.technologies}</Heading>
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
             {SKILLS_CARD.map((skill) => (
               <SkillCardRender
@@ -37,7 +40,7 @@ export default function Skills() {
         </div>
 
         <div>
-          <Heading>Ferramentas</Heading>
+          <Heading>{technicalSkills.tools}</Heading>
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
             {SKILLS_TOOLS.map((skill) => (
               <SkillCardRender
