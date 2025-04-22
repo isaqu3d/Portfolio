@@ -7,6 +7,7 @@ import { MotionHeader } from "./motion";
 
 import { getLocalTranslations } from "@/lib/get-local-translations";
 
+import { LanguageSwitcher } from "./language-switcher";
 import Logo from "./logo";
 import { MenuMobile } from "./menu-item";
 
@@ -62,7 +63,7 @@ export default function Navbar({ locale }: { locale: string }) {
 
           <div className="flex flex-col justify-end gap-2 xs:flex-row">
             <ButtonTheme />
-
+            <LanguageSwitcher />
             <MenuMobile />
           </div>
         </nav>
