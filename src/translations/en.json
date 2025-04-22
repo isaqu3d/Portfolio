@@ -41,6 +41,7 @@
 
   "navbar": {
     "home": "Home",
+    "about": "About me",
     "projects": "Projects",
     "experiences": "Experiences",
     "skills": "Technical skills",
