@@ -76,11 +76,11 @@ export default async function RootLayout({
       <body>
         <ThemeProvider attribute="class" defaultTheme="system">
           <Toaster richColors />
-          <Layout locale={locale}>
-            <NextIntlClientProvider messages={messages} locale={locale}>
+          <NextIntlClientProvider messages={messages} locale={locale}>
+            <Layout locale={locale}>
               <main>{children}</main>
-            </NextIntlClientProvider>
-          </Layout>
+            </Layout>
+          </NextIntlClientProvider>
         </ThemeProvider>
       </body>
     </html>
