@@ -1,13 +1,19 @@
 "use client";
 
 import { LINKS_ITEMS } from "@/constants/links-menu";
+import { getLocalTranslations } from "@/lib/get-local-translations";
 import { Menu } from "@headlessui/react";
+import { useLocale } from "next-intl";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 import { BiMenu } from "react-icons/bi";
 
 export function MenuMobile() {
   const router = usePathname();
+
+  const locale = useLocale();
+  const translations = getLocalTranslations(locale);
+  const navbar = translations.navbar;
 
   return (
     <main className="flex md:hidden">
@@ -31,7 +37,7 @@ export function MenuMobile() {
                     router === link.href ? "text-teal-400" : "hover:underline"
                   }
                 >
-                  {link.name}
+                  {navbar?.[link.key] ?? link.key}
                 </p>
               </NextLink>
             </Menu.Item>
