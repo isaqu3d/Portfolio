@@ -8,7 +8,7 @@ import { MotionHeader } from "./motion";
 import { getLocalTranslations } from "@/lib/get-local-translations";
 
 import Logo from "./logo";
-import { MenuItem } from "./menu-item";
+import { MenuMobile } from "./menu-item";
 
 interface LinkItemProps extends LinkProps {
   href: string;
@@ -35,6 +35,7 @@ const LinkItem = ({ href, target, children }: LinkItemProps) => {
 
 export default function Navbar({ locale }: { locale: string }) {
   const { navbar } = getLocalTranslations(locale);
+
   return (
     <>
       <MotionHeader className="fixed z-50 flex w-full justify-center border-b-[1px] border-gray-600 bg-gray-900/30 backdrop-blur-sm dark:border-zinc-400 dark:bg-white-100/30">
@@ -62,7 +63,7 @@ export default function Navbar({ locale }: { locale: string }) {
           <div className="flex flex-col justify-end gap-2 xs:flex-row">
             <ButtonTheme />
 
-            <MenuItem />
+            <MenuMobile />
           </div>
         </nav>
       </MotionHeader>
