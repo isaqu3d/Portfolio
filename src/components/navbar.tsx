@@ -61,7 +61,7 @@ export default function Navbar({ locale }: { locale: string }) {
             </LinkItem>
           </div>
 
-          <div className="flex flex-col justify-end gap-2 xs:flex-row">
+          <div className="flex flex-col items-center justify-end gap-2 xs:flex-row">
             <ButtonTheme />
             <LanguageSwitcher />
             <MenuMobile />
