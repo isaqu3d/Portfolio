@@ -40,7 +40,7 @@ export default function Navbar({ locale }: { locale: string }) {
   return (
     <>
       <MotionHeader className="fixed z-50 flex w-full justify-center border-b-[1px] border-gray-600 bg-gray-900/30 backdrop-blur-sm dark:border-zinc-400 dark:bg-white-100/30">
-        <nav className="flex max-w-screen-md flex-1 items-center justify-between p-2">
+        <nav className="flex max-w-screen-lg flex-1 items-center justify-between p-2">
           <div className="mr-5">
             <Logo />
           </div>
