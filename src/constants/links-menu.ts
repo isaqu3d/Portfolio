@@ -1,17 +1,9 @@
 import { v4 as uuidv4 } from "uuid";
 
 export const LINKS_ITEMS = [
-  {
-    id: uuidv4(),
-    name: "Sobre mim",
-    href: "/",
-  },
-  { id: uuidv4(), name: "Projetos", href: "/projects" },
-  { id: uuidv4(), name: "Experiências", href: "/work-experiences" },
-  { id: uuidv4(), name: "Habilidades", href: "/skills" },
-  {
-    id: uuidv4(),
-    name: "Código",
-    href: "https://github.com/isaqu3d/Portfolio",
-  },
+  { id: uuidv4(), key: "about", href: "/" },
+  { id: uuidv4(), key: "projects", href: "/projects" },
+  { id: uuidv4(), key: "experiences", href: "/work-experiences" },
+  { id: uuidv4(), key: "skills", href: "/skills" },
+  { id: uuidv4(), key: "code", href: "https://github.com/isaqu3d/Portfolio" },
 ];
