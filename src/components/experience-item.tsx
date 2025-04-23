@@ -10,14 +10,16 @@ import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+import { useLocale } from "next-intl";
 import { Button } from "./button";
 import { ExperienceSkeleton } from "./experience-skeleton";
 import { MotionSection } from "./motion";
 import { ProgressBarExperience } from "./progressbar-experience";
 import { Technology } from "./technology";
 
-export function ExperienceItem({ params }: { params: { locale: string } }) {
-  const { locale } = params;
+export function ExperienceItem() {
+  const locale = useLocale();
+
   const [translations, setTranslations] = useState<Translations>();
   const [error, setError] = useState<string | null>(null);
 

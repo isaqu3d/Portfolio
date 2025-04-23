@@ -22,10 +22,7 @@ export async function Experience({ params }: { params: { locale: string } }) {
         </MotionSlide>
 
         <div className="flex flex-col gap-4">
-          <ExperienceItem
-            key={translations?.experiences?._key}
-            params={params}
-          />
+          <ExperienceItem key={translations?.experiences?._key} />
         </div>
       </section>
     </>

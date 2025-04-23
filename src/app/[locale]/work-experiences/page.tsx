@@ -21,15 +21,11 @@ export const metadata: Metadata = {
   ],
 };
 
-export default async function WorkExperiencePage({
-  params,
-}: {
-  params: { locale: string };
-}) {
+export default async function WorkExperiencePage() {
   return (
     <div className="max-w-4xl px-4">
       {/* @ts-expect-error Server Component */}
-      <Experience params={params} />
+      <Experience />
     </div>
   );
 }
