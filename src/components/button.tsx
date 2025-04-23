@@ -10,11 +10,11 @@ const buttonVariants = cva(
       variant: {
         default:
           "bg-primary text-primary-foreground shadow hover:bg-primary/90",
+        secondary:
+          "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         teal: "gap-2 my-2 py-2 px-4 rounded-md bg-teal-200 text-black transition-colors hover:bg-teal-400 dark:bg-teal-400 dark:text-white-100 dark:hover:bg-teal-600",
         link: "text-pink-600 transition-colors  hover:text-pink-700 dark:text-teal-600 dark:hover:text-teal-500 hover:underline underline-offset-4",
         pink: "text-pink-600 transition-colors hover:text-pink-700 hover:underline underline-offset-4",
-        secondary:
-          "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         social:
           "flex w-max items-center gap-2 rounded-md py-2 px-3 text-teal-200 hover:bg-teal-400/20 hover:underline hover:decoration-pink-500 hover:decoration-1 hover:underline-offset-[6px] dark:text-teal-600 dark:hover:decoration-teal-600",
       },
