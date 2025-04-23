@@ -1,18 +1,27 @@
 "use client";
 
 import { Translations } from "@/@types/types";
+import { ExperienceLoading } from "@/app/[locale]/work-experiences/components/loading";
 import { getLocalTranslations } from "@/lib/get-local-translations";
 import { getTranslations } from "@/lib/get-translations";
 import { useLocale } from "next-intl";
 import { useEffect, useState } from "react";
+
+import { Heading } from "@/components/heading";
+import { MotionSlide } from "@/components/motion";
 import { ExperienceItem } from "./experience-item";
-import { Heading } from "./heading";
-import { MotionSlide } from "./motion";
+
+type LocalTranslations = {
+  experiences: {
+    title: string;
+    description: string;
+  };
+};
 
 export function Experience() {
   const locale = useLocale();
   const [translations, setTranslations] = useState<Translations | null>(null);
-  const [local, setLocal] = useState<any>(null);
+  const [local, setLocal] = useState<LocalTranslations | null>(null);
 
   useEffect(() => {
     const loadData = async () => {
@@ -26,7 +35,7 @@ export function Experience() {
   }, [locale]);
 
   if (!translations || !local) {
-    return <div>Loading...</div>;
+    return <ExperienceLoading />;
   }
 
   return (
@@ -40,7 +49,7 @@ export function Experience() {
         </MotionSlide>
 
         <div className="flex flex-col gap-4">
-          <ExperienceItem key={translations?.experiences?._key} />
+          <ExperienceItem key={translations.experiences?._key} />
         </div>
       </section>
     </>

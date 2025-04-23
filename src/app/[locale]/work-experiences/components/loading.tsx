@@ -1,6 +1,6 @@
-import { Skeleton } from "./skeleton";
+import { Skeleton } from "@/components/skeleton";
 
-export function ExperienceSkeleton() {
+export function ExperienceLoading() {
   return (
     <div className="grid grid-cols-[40px,1fr] gap-4 md:gap-10">
       <div className="flex flex-col items-center gap-4">

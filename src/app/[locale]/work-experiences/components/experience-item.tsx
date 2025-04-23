@@ -10,12 +10,12 @@ import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+import { ExperienceLoading } from "@/app/[locale]/work-experiences/components/loading";
+import { Button } from "@/components/button";
+import { MotionSection } from "@/components/motion";
+import { ProgressBarExperience } from "@/components/progressbar-experience";
+import { Technology } from "@/components/technology";
 import { useLocale } from "next-intl";
-import { Button } from "./button";
-import { ExperienceSkeleton } from "./experience-skeleton";
-import { MotionSection } from "./motion";
-import { ProgressBarExperience } from "./progressbar-experience";
-import { Technology } from "./technology";
 
 export function ExperienceItem() {
   const locale = useLocale();
@@ -40,7 +40,7 @@ export function ExperienceItem() {
   }, [locale]);
 
   if (!translations) {
-    return <ExperienceSkeleton />;
+    return <ExperienceLoading />;
   }
 
   const { experiences } = translations;
