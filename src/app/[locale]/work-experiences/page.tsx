@@ -1,6 +1,5 @@
 import { Metadata } from "next";
-
-import { Experience } from "@/components/experience";
+import { Experience } from "./components/experience";
 
 export const metadata: Metadata = {
   category: "Experience",
@@ -24,7 +23,6 @@ export const metadata: Metadata = {
 export default async function WorkExperiencePage() {
   return (
     <div className="max-w-4xl px-4">
-      {/* @ts-expect-error Server Component */}
       <Experience />
     </div>
   );
