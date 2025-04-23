@@ -1,15 +1,33 @@
+"use client";
+
+import { Translations } from "@/@types/types";
 import { getLocalTranslations } from "@/lib/get-local-translations";
 import { getTranslations } from "@/lib/get-translations";
+import { useLocale } from "next-intl";
+import { useEffect, useState } from "react";
 import { ExperienceItem } from "./experience-item";
 import { Heading } from "./heading";
 import { MotionSlide } from "./motion";
 
-export async function Experience({ params }: { params: { locale: string } }) {
-  const { locale } = params;
+export function Experience() {
+  const locale = useLocale();
+  const [translations, setTranslations] = useState<Translations | null>(null);
+  const [local, setLocal] = useState<any>(null);
 
-  const translations = await getTranslations(locale);
+  useEffect(() => {
+    const loadData = async () => {
+      const translationsData = await getTranslations(locale);
+      const localData = getLocalTranslations(locale);
+      setTranslations(translationsData);
+      setLocal(localData);
+    };
 
-  const local = getLocalTranslations(locale);
+    loadData();
+  }, [locale]);
+
+  if (!translations || !local) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
