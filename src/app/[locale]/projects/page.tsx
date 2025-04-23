@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { Translations } from "@/@types/types";
 import { Heading } from "@/components/heading";
 import { MotionSlide } from "@/components/motion";
+import { getLocalTranslations } from "@/lib/get-local-translations";
 import { getTranslations } from "@/lib/get-translations";
 import { urlFor } from "@/lib/urlSanity";
 import ProjectLoading from "./[slug]/loading";
@@ -15,7 +16,7 @@ export default function Projects({ params }: { params: { locale: string } }) {
   const [translations, setTranslations] = useState<Translations>();
 
   const { locale } = params;
-
+  const local = getLocalTranslations(locale);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -47,7 +48,7 @@ export default function Projects({ params }: { params: { locale: string } }) {
   return (
     <div className="max-w-xl px-4">
       <MotionSlide>
-        <Heading>Projetos</Heading>
+        <Heading>{local.projects.title}</Heading>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {projects.map((project) => (
