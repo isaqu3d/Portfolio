@@ -46,5 +46,12 @@
     "experiences": "Experiences",
     "skills": "Technical skills",
     "code": "Code"
+  },
+
+  "typeWriter": {
+    "welcomeMessage": "Hello, welcome to my portfolio",
+    "techEnthusiast": "Technology Enthusiast",
+    "developer": "I am a Web and Mobile Developer",
+    "frontend": "Front-end"
   }
 }
