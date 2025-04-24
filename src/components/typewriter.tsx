@@ -1,13 +1,9 @@
 "use client";
 
-import { getLocalTranslations } from "@/lib/get-local-translations";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import TypewriterComponent from "typewriter-effect";
 
 export function Typewriter() {
-  const locale = useLocale();
-  const translations = getLocalTranslations(locale);
-  const navbar = translations;
   const t = useTranslations();
 
   return (
@@ -15,10 +11,10 @@ export function Typewriter() {
       <TypewriterComponent
         options={{
           strings: [
-            t("typeWriter.welcomeMessage"),
-            t("typeWriter.techEnthusiast"),
-            t("typeWriter.developer"),
-            t("typeWriter.frontend"),
+            `< ${t("typeWriter.welcomeMessage")}`,
+            `< ${t("typeWriter.techEnthusiast")}`,
+            `< ${t("typeWriter.developer")}`,
+            `< ${t("typeWriter.frontend")}`,
           ],
 
           autoStart: true,
