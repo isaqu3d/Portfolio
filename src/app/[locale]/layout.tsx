@@ -2,13 +2,13 @@ import "../../styles/global.css";
 
 import { routing } from "@/i18n/routing";
 import { Metadata } from "next";
-import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { NextIntlClientProvider, hasLocale, useLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { Toaster } from "sonner";
 
 import Layout from "@/components/Layout";
 import { ThemeProvider } from "@/components/Theme/theme-provider";
-import { getTranslations } from "@/lib/get-translations";
+import ClientQueryProvider from "@/components/client-query-provider";
 
 export const metadata: Metadata = {
   authors: [{ name: "Isaque de Sousa" }],
@@ -40,22 +40,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
-  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
 }) {
-  const locale = params.locale;
+  const locale = useLocale();
 
   if (!hasLocale(routing.locales, locale)) {
-    notFound();
-  }
-
-  const messages = await getTranslations(locale);
-
-  if (!messages) {
     notFound();
   }
 
@@ -75,12 +67,14 @@ export default async function RootLayout({
       </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system">
-          <Toaster richColors />
-          <NextIntlClientProvider messages={messages} locale={locale}>
-            <Layout locale={locale}>
-              <main>{children}</main>
-            </Layout>
-          </NextIntlClientProvider>
+          <ClientQueryProvider>
+            <Toaster richColors />
+            <NextIntlClientProvider locale={locale}>
+              <Layout locale={locale}>
+                <main>{children}</main>
+              </Layout>
+            </NextIntlClientProvider>
+          </ClientQueryProvider>
         </ThemeProvider>
       </body>
     </html>
