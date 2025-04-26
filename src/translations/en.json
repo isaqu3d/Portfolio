@@ -31,7 +31,8 @@
     "title": "Experiences",
     "description": "All my professional experiences detailed for you!",
     "presentLabel": "Present",
-    "technologiesLabel": "Technologies"
+    "technologiesLabel": "Technologies",
+    "notFound": "Experiences not found."
   },
 
   "technicalSkills": {
