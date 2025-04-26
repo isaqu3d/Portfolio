@@ -1,14 +1,12 @@
 "use client";
 
-import { Translations } from "@/@types/types";
+import { Experiences, Translations } from "@/@types/types";
 import { ExperienceLoading } from "@/app/[locale]/work-experiences/components/loading";
 import { getLocalTranslations } from "@/lib/get-local-translations";
 import { getTranslations } from "@/lib/get-translations";
 import { useLocale } from "next-intl";
-import { useEffect, useState } from "react";
 
-import { Heading } from "@/components/heading";
-import { MotionSlide } from "@/components/motion";
+import { useQuery } from "@tanstack/react-query";
 import { ExperienceItem } from "./experience-item";
 
 type LocalTranslations = {
@@ -18,40 +16,38 @@ type LocalTranslations = {
   };
 };
 
+type ExperienceItemProps = {
+  experience: Experiences;
+};
+
 export function Experience() {
   const locale = useLocale();
-  const [translations, setTranslations] = useState<Translations | null>(null);
-  const [local, setLocal] = useState<LocalTranslations | null>(null);
 
-  useEffect(() => {
-    const loadData = async () => {
-      const translationsData = await getTranslations(locale);
-      const localData = getLocalTranslations(locale);
-      setTranslations(translationsData);
-      setLocal(localData);
-    };
+  const {
+    data: translations,
+    isLoading,
+    error,
+  } = useQuery<Translations | null>({
+    queryKey: ["translations", locale],
+    queryFn: () => {
+      const result = getTranslations(locale);
+      return result;
+    },
+  });
 
-    loadData();
-  }, [locale]);
+  if (isLoading) return <ExperienceLoading />;
+  if (error || !translations) return <p>Erro ao carregar experiências.</p>;
 
-  if (!translations || !local) {
-    return <ExperienceLoading />;
-  }
+  const local = getLocalTranslations(locale);
 
   return (
-    <>
-      <section className="flex flex-col gap-10 py-0 md:gap-4 lg:flex-row lg:gap-16 lg:py-16">
-        <MotionSlide>
-          <div className="w-full lg:w-[250px]">
-            <Heading>{local.experiences.title}</Heading>
-            <p className="text-gray-500">{local.experiences.description}</p>
-          </div>
-        </MotionSlide>
+    <section>
+      <h1>{local.experiences.title}</h1>
+      <p>{local.experiences.description}</p>
 
-        <div className="flex flex-col gap-4">
-          <ExperienceItem key={translations.experiences?._key} />
-        </div>
-      </section>
-    </>
+      {translations.experiences?.map((experience) => (
+        <ExperienceItem key={experience._key} experience={experience} />
+      ))}
+    </section>
   );
 }
