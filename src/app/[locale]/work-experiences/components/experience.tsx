@@ -19,8 +19,7 @@ export function Experience() {
   } = useQuery<Translations | null>({
     queryKey: ["translations", locale],
     queryFn: () => {
-      const result = getTranslations(locale);
-      return result;
+      return getTranslations(locale);
     },
   });
 
@@ -30,13 +29,17 @@ export function Experience() {
   const local = getLocalTranslations(locale);
 
   return (
-    <section>
-      <h1>{local.experiences.title}</h1>
-      <p>{local.experiences.description}</p>
+    <section className="flex flex-col gap-10 py-0 md:gap-4 lg:flex-row lg:gap-16 lg:py-16">
+      <div className="w-full lg:w-[350px]">
+        <h1 className="text-2xl font-bold">{local.experiences.title}</h1>
+        <p className="text-gray-500">{local.experiences.description}</p>
+      </div>
 
-      {translations.experiences?.map((experience) => (
-        <ExperienceItem key={experience._key} experience={experience} />
-      ))}
+      <div className="flex w-full flex-col gap-8">
+        {translations.experiences?.map((experience) => (
+          <ExperienceItem key={experience._key} experience={experience} />
+        ))}
+      </div>
     </section>
   );
 }
