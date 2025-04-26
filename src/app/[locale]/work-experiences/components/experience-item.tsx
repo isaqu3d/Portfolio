@@ -8,39 +8,33 @@ import formatDate from "@/utils/format-date";
 import { normalizeDescription } from "@/utils/normalize-description";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 
 import { ExperienceLoading } from "@/app/[locale]/work-experiences/components/loading";
 import { Button } from "@/components/button";
 import { MotionSection } from "@/components/motion";
 import { ProgressBarExperience } from "@/components/progressbar-experience";
 import { Technology } from "@/components/technology";
+import { useQuery } from "@tanstack/react-query";
 import { useLocale } from "next-intl";
 
 export function ExperienceItem() {
   const locale = useLocale();
 
-  const [translations, setTranslations] = useState<Translations>();
-  const [error, setError] = useState<string | null>(null);
+  const {
+    isLoading,
+    error,
+    data: translations,
+  } = useQuery<Translations | null>({
+    queryKey: ["translations", locale],
+    queryFn: () => getTranslations(locale),
+  });
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await getTranslations(locale);
-        if (res) {
-          setTranslations(res);
-        }
-      } catch (error) {
-        console.error("Erro ao buscar traduções:", error);
-        setError("Erro ao carregar experiências");
-      }
-    };
-
-    fetchData();
-  }, [locale]);
-
-  if (!translations) {
+  if (isLoading) {
     return <ExperienceLoading />;
+  }
+
+  if (error || !translations || !translations.experiences) {
+    return <p>Experiências não encontradas.</p>;
   }
 
   const { experiences } = translations;
@@ -82,12 +76,12 @@ export function ExperienceItem() {
                 <div className="flex flex-col gap-2">
                   <Button
                     variant="link"
-                    href={experience?.companyUrl}
+                    href={experience.companyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="lg:text-md w-max text-base"
                   >
-                    <span>@</span> {experience?.companyName}
+                    <span>@</span> {experience.companyName}
                   </Button>
                   <h2 className="font-medium text-gray-100 dark:text-gray-700">
                     {experience?.role}
