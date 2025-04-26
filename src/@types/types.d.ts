@@ -43,6 +43,6 @@ type Projects = {
 type Translations = {
   home_summary?: PortableTextBlock[];
   home_biography?: BiographyItem[];
-  experiences?: Experiences;
+  experiences?: Experiences[];
   projects?: Projects[];
 };
