@@ -1,6 +1,6 @@
 "use client";
 
-import { Translations } from "@/@types/types";
+import { Experiences, Translations } from "@/@types/types";
 import { getLocalTranslations } from "@/lib/get-local-translations";
 import { getTranslations } from "@/lib/get-translations";
 import { urlFor } from "@/lib/urlSanity";
@@ -17,23 +17,29 @@ import { Technology } from "@/components/technology";
 import { useQuery } from "@tanstack/react-query";
 import { useLocale } from "next-intl";
 
-export function ExperienceItem() {
+export function ExperienceItem({ experience }: { experience: Experiences }) {
   const locale = useLocale();
 
   const {
     isLoading,
     error,
     data: translations,
-  } = useQuery<Translations | null>({
+  } = useQuery<Translations>({
     queryKey: ["translations", locale],
-    queryFn: () => getTranslations(locale),
+    queryFn: async () => {
+      const result = await getTranslations(locale);
+      if (!result) {
+        throw new Error("No translations found");
+      }
+      return result;
+    },
   });
 
   if (isLoading) {
     return <ExperienceLoading />;
   }
 
-  if (error || !translations || !translations.experiences) {
+  if (error || !translations) {
     return <p>Experiências não encontradas.</p>;
   }
 
