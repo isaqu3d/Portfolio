@@ -12,8 +12,8 @@ import { getLocalTranslations } from "@/lib/get-local-translations";
 import { getTranslations } from "@/lib/get-translations";
 import { urlFor } from "@/lib/urlSanity";
 import { PortableText } from "@portabletext/react";
+import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import ProjectLoading from "./loading";
 
 export default function Slug({
@@ -21,38 +21,31 @@ export default function Slug({
 }: {
   params: { slug: string; locale: string };
 }) {
-  const [translations, setTranslations] = useState<Translations>();
-  const [loading, setLoading] = useState<boolean>(true);
-
   const { locale, slug } = params;
 
   const { projects: projectLocal } = getLocalTranslations(locale);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await getTranslations(locale);
-        if (res) {
-          setTranslations(res);
-          console.log("res", res);
-        }
+  const {
+    data: translations,
+    isLoading,
+    error,
+  } = useQuery<Translations | null>({
+    queryKey: ["translations", locale],
+    queryFn: async () => {
+      const res = await getTranslations(locale);
+      return res;
+    },
+  });
 
-        console.log("res", res);
-      } catch (error) {
-        console.error("Erro ao buscar traduções:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [locale]);
-
-  if (loading) {
+  if (isLoading) {
     return <ProjectLoading />;
   }
 
-  const { projects } = translations || {};
+  if (error || !translations) {
+    return <p>{projectLocal.notFound.projects}</p>;
+  }
+
+  const { projects } = translations;
 
   if (!projects || projects.length === 0) {
     return <p>{projectLocal.notFound.projects}</p>;
@@ -88,7 +81,6 @@ export default function Slug({
       <div className="my-3 flex flex-col gap-2">
         <div className="flex flex-col items-center gap-0 md:flex-row md:gap-2">
           <p>Website:</p>
-
           <Button
             variant="link"
             size="md"
@@ -113,12 +105,11 @@ export default function Slug({
 
         <div className="flex flex-col items-center gap-0 md:flex-row md:items-start md:gap-2">
           <p>Tech:</p>
-
           <div className="mt-2 flex flex-wrap justify-center gap-x-[6px] gap-y-4 md:mt-0 md:justify-start lg:max-w-[550px]">
             {project.technologies?.length > 0 ? (
               project.technologies.map((technology) => (
                 <Technology key={technology._key}>
-                  {technology.image ? (
+                  {technology.image && (
                     <Image
                       src={urlFor(technology.image)?.url()}
                       alt={technology.name ?? ""}
@@ -126,7 +117,7 @@ export default function Slug({
                       height={14}
                       quality={90}
                     />
-                  ) : null}
+                  )}
                   <p className="text-sm">{technology.name}</p>
                 </Technology>
               ))
@@ -137,11 +128,11 @@ export default function Slug({
         </div>
       </div>
 
-      <div className="flex flex-col gap-2 ">
+      <div className="flex flex-col gap-2">
         {project.image?.length > 0 ? (
           project.image.map((image, index) => (
             <Image
-              key={project._key || index}
+              key={index}
               src={urlFor(image).width(720).height(400).quality(90).url()}
               alt={project.name}
               width={720}
