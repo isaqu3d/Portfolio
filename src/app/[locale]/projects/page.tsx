@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import NextLink from "next/link";
-import { useEffect, useState } from "react";
 
 import { Translations } from "@/@types/types";
 import { Heading } from "@/components/heading";
@@ -12,31 +11,30 @@ import { getTranslations } from "@/lib/get-translations";
 import { urlFor } from "@/lib/urlSanity";
 import ProjectLoading from "./[slug]/loading";
 
-export default function Projects({ params }: { params: { locale: string } }) {
-  const [translations, setTranslations] = useState<Translations>();
+import { useQuery } from "@tanstack/react-query";
 
+export default function Projects({ params }: { params: { locale: string } }) {
   const { locale } = params;
   const local = getLocalTranslations(locale);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await getTranslations(locale);
-        if (res) {
-          setTranslations(res);
-          console.log("res", res);
-        }
 
-        console.log("res", res);
-      } catch (error) {
-        console.error("Erro ao buscar traduções:", error);
-      }
-    };
+  const {
+    data: translations,
+    isLoading,
+    error,
+  } = useQuery<Translations | null>({
+    queryKey: ["translations", locale],
+    queryFn: async () => {
+      const res = await getTranslations(locale);
+      return res;
+    },
+  });
 
-    fetchData();
-  }, [locale]);
-
-  if (!translations) {
+  if (isLoading) {
     return <ProjectLoading />;
+  }
+
+  if (error || !translations) {
+    return <p>Erro ao carregar projetos.</p>;
   }
 
   const { projects } = translations;
