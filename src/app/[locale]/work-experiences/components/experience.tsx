@@ -1,6 +1,6 @@
 "use client";
 
-import { Experiences, Translations } from "@/@types/types";
+import { Translations } from "@/@types/types";
 import { ExperienceLoading } from "@/app/[locale]/work-experiences/components/loading";
 import { getLocalTranslations } from "@/lib/get-local-translations";
 import { getTranslations } from "@/lib/get-translations";
@@ -8,17 +8,6 @@ import { useLocale } from "next-intl";
 
 import { useQuery } from "@tanstack/react-query";
 import { ExperienceItem } from "./experience-item";
-
-type LocalTranslations = {
-  experiences: {
-    title: string;
-    description: string;
-  };
-};
-
-type ExperienceItemProps = {
-  experience: Experiences;
-};
 
 export function Experience() {
   const locale = useLocale();
