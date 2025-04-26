@@ -14,7 +14,7 @@ import { urlFor } from "@/lib/urlSanity";
 import { PortableText } from "@portabletext/react";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
-import ProjectLoading from "./loading";
+import ProjectLoading from "../components/loading";
 
 export default function Slug({
   params,
