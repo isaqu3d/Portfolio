@@ -1,8 +1,11 @@
+"use client";
+
 import { PortableText } from "@portabletext/react";
 import { GlobeIcon } from "@radix-ui/react-icons/dist";
 import { BiChevronRight } from "react-icons/bi";
 import { MdOutlineWorkOutline } from "react-icons/md";
 
+import { Translations } from "@/@types/types";
 import { Button } from "@/components/button";
 import { GitHubAvatar } from "@/components/github-avatar";
 import { Heading } from "@/components/heading";
@@ -11,16 +14,27 @@ import { SocialMedia } from "@/components/social-media";
 import { Typewriter } from "@/components/typewriter";
 import { getLocalTranslations } from "@/lib/get-local-translations";
 import { getTranslations } from "@/lib/get-translations";
+import { useQuery } from "@tanstack/react-query";
+import { useLocale } from "next-intl";
 
-export default async function Home({ params }: { params: { locale: string } }) {
-  const { locale } = params;
+export default function Home() {
+  const locale = useLocale();
 
-  const translations = await getTranslations(locale);
+  const {
+    data: translations,
+    isLoading,
+    error,
+  } = useQuery<Translations | null>({
+    queryKey: ["translations", locale],
+    queryFn: () => {
+      return getTranslations(locale);
+    },
+  });
+
+  if (isLoading) return <p>Loading...</p>;
+  if (error || !translations) return <p>Erro ao carregar experiências.</p>;
 
   const { home, experiences } = getLocalTranslations(locale);
-  if (!translations) {
-    return <p>Erro ao carregar traduções para o idioma: {locale}</p>;
-  }
 
   return (
     <div className="max-w-2xl px-4">
