@@ -66,16 +66,16 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="system">
-          <ClientQueryProvider>
+        <ClientQueryProvider>
+          <ThemeProvider attribute="class" defaultTheme="system">
             <Toaster richColors />
             <NextIntlClientProvider locale={locale}>
               <Layout locale={locale}>
                 <main>{children}</main>
               </Layout>
             </NextIntlClientProvider>
-          </ClientQueryProvider>
-        </ThemeProvider>
+          </ThemeProvider>
+        </ClientQueryProvider>
       </body>
     </html>
   );
