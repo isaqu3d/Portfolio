@@ -66,8 +66,8 @@ export default function Home() {
           <Heading>{home.summary.title}</Heading>
 
           <article className="inset-5 text-justify">
-            {translations.home_summary ? (
-              <PortableText value={translations.home_summary} />
+            {translations.home?.summary.length ? (
+              <PortableText value={translations.home?.summary} />
             ) : (
               <p>{home.summary.notFound}</p>
             )}
@@ -83,8 +83,8 @@ export default function Home() {
         <MotionSection>
           <Heading>{home.biography.title}</Heading>
           <div>
-            {translations.home_biography?.length ? (
-              translations.home_biography.map((item) => (
+            {translations.home?.biography?.length ? (
+              translations.home.biography.map((item) => (
                 <div key={item._key} className="pl-14 -indent-14">
                   <span className="mr-4 font-bold">{item.year}</span>{" "}
                   {item.description}
