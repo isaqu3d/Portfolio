@@ -32,7 +32,7 @@ export default function Home() {
   });
 
   if (isLoading) return <p>Loading...</p>;
-  if (error || !translations) return <p>Erro ao carregar experiências.</p>;
+  if (error || !translations) return <p>Erro ao carregar dados.</p>;
 
   const { home, experiences } = getLocalTranslations(locale);
 
