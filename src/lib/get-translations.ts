@@ -8,8 +8,10 @@ export async function getTranslations(
     *[_type == "translations" && locale == $locale][0] {
       locale,
       messages {
-        home_summary,
-        home_biography,
+        home {
+          summary,
+          biography
+        },
         experiences,
         projects
       }
