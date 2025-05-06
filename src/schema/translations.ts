@@ -23,13 +23,7 @@ export default defineType({
       title: "Messages",
       type: "object",
       fields: [
-        { name: "home_summary", title: "Home Summary", type: "blockContent" },
-        {
-          name: "home_biography",
-          title: "Home Biography",
-          type: "array",
-          of: [{ type: "biography" }],
-        },
+        { name: "home", title: "Home", type: "home" },
 
         {
           name: "projects",
