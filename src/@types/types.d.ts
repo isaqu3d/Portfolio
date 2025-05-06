@@ -41,8 +41,16 @@ type Projects = {
 };
 
 type Home = {
-  summary: TypedObject[];
-  biography: BiographyItem[];
+  summary: {
+    title: string;
+    notFound: string;
+    content: TypedObject[];
+  };
+  biography: {
+    title: string;
+    notFound: string;
+    content: BiographyItem[];
+  };
 };
 
 type Translations = {
