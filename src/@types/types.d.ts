@@ -40,7 +40,13 @@ type Projects = {
   technologies: Technology[];
 };
 
+type Home = {
+  summary: TypedObject[];
+  biography: BiographyItem[];
+};
+
 type Translations = {
+  home?: Home;
   home_summary?: PortableTextBlock[];
   home_biography?: BiographyItem[];
   experiences?: Experiences[];
