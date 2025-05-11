@@ -6,9 +6,9 @@ import { NextIntlClientProvider, hasLocale, useLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { Toaster } from "sonner";
 
-import Layout from "@/components/Layout";
-import { ThemeProvider } from "@/components/Theme/theme-provider";
 import ClientQueryProvider from "@/components/client-query-provider";
+import Layout from "@/components/layout";
+import { ThemeProvider } from "@/components/theme/theme-provider";
 
 export const metadata: Metadata = {
   authors: [{ name: "Isaque de Sousa" }],
