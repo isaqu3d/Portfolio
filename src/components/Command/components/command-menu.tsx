@@ -5,7 +5,7 @@ import { Command as CommandPrimitive } from "cmdk";
 
 import { cn } from "@/utils/cn";
 import { BiSearch } from "react-icons/bi";
-import { Dialog, DialogContent } from "./CommandDialog";
+import { Dialog, DialogContent } from "./command-dialog";
 
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
