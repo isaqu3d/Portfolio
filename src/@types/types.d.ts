@@ -47,8 +47,6 @@ type Home = {
 
 type Translations = {
   home?: Home;
-  home_summary?: PortableTextBlock[];
-  home_biography?: BiographyItem[];
   experiences?: Experiences[];
   projects?: Projects[];
 };
