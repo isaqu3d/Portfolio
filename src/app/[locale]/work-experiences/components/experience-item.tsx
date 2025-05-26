@@ -24,6 +24,13 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
 
   const finalDescription = normalizeDescription(experience.description);
 
+  const positionLevelsMap = {
+    junior: local.experiences.positionLevels.junior,
+    midLevel: local.experiences.positionLevels.midLevel,
+    senior: local.experiences.positionLevels.senior,
+    lead: local.experiences.positionLevels.lead,
+  };
+
   return (
     <MotionSection key={experience._key}>
       <section className="grid grid-cols-[40px,1fr] gap-4 md:gap-10">
@@ -58,9 +65,16 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
             >
               <span>@</span> {experience.companyName}
             </Button>
-            <h2 className="font-medium text-gray-100 dark:text-gray-700">
-              {experience.role}
-            </h2>
+
+            <h3 className="font-medium text-gray-100 dark:text-gray-700">
+              {experience.role}{" "}
+              {experience.positionLevel && (
+                <span className="text-sm font-normal text-gray-400">
+                  - {positionLevelsMap[experience.positionLevel]}
+                </span>
+              )}
+            </h3>
+
             <span className="text-gray-300 dark:text-gray-400">
               {formatDate(experience.startDate, locale)} -{" "}
               {experience.endDate

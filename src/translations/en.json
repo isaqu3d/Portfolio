@@ -32,7 +32,13 @@
     "description": "All my professional experiences detailed for you!",
     "presentLabel": "Present",
     "technologiesLabel": "Technologies",
-    "notFound": "Experiences not found."
+    "notFound": "Experiences not found.",
+    "positionLevels": {
+      "junior": "Junior",
+      "midLevel": "Mid Level",
+      "senior": "Senior",
+      "lead": "Lead"
+    }
   },
 
   "technicalSkills": {

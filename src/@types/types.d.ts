@@ -19,6 +19,7 @@ type Experiences = {
   companyUrl: string;
   companyLogo: StaticImageData | StaticImageData[];
   role: string;
+  positionLevel?: "junior" | "midLevel" | "senior" | "lead";
   startDate: string;
   endDate: string;
   imageTech: StaticImageData;
