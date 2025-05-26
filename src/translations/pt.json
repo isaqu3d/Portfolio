@@ -33,7 +33,13 @@
     "description": "Todas minhas experiências profissionais detalhadas para você!",
     "presentLabel": "No momento",
     "technologiesLabel": "Tecnologias",
-    "notFound": "Experiências não encontradas."
+    "notFound": "Experiências não encontradas.",
+    "positionLevels": {
+      "junior": "Júnior",
+      "midLevel": "Pleno",
+      "senior": "Sênior",
+      "lead": "Lead"
+    }
   },
 
   "technicalSkills": {
