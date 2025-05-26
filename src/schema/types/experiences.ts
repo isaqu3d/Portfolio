@@ -28,6 +28,20 @@ export default defineType({
       title: "Role",
       type: "string",
     },
+    {
+      name: "positionLevel",
+      title: "Position Level",
+      type: "string",
+      options: {
+        list: [
+          { title: "Júnior", value: "junior" },
+          { title: "Mid Level", value: "midLevel" },
+          { title: "Sênior", value: "senior" },
+          { title: "Lead", value: "lead" },
+        ],
+        layout: "radio",
+      },
+    },
 
     {
       name: "description",
