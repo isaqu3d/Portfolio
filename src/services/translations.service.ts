@@ -1,5 +1,5 @@
-import { Translations } from "@/@types/types";
-import client from "./sanityClient";
+import { Translations } from "@/types";
+import client from "@/lib/sanity/client";
 
 export async function getTranslations(
   locale: string,
