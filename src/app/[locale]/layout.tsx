@@ -1,12 +1,12 @@
 import "../../styles/global.css";
 
-import { routing } from "@/i18n/routing";
+import { routing } from "@/config/i18n/routing";
 import { Metadata } from "next";
 import { NextIntlClientProvider, hasLocale, useLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { Toaster } from "sonner";
 
-import ClientQueryProvider from "@/components/client-query-provider";
+import ClientQueryProvider from "@/lib/react-query/provider";
 import Layout from "@/components/layout";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 

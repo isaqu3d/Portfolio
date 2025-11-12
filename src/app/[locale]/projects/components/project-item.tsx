@@ -1,7 +1,7 @@
 "use client";
 
-import { Projects } from "@/@types/types";
-import { urlFor } from "@/lib/urlSanity";
+import { Projects } from "@/types";
+import { urlFor } from "@/lib/sanity/url";
 import Image from "next/image";
 import NextLink from "next/link";
 

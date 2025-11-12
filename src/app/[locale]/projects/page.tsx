@@ -1,8 +1,8 @@
 "use client";
 
-import { Heading } from "@/components/heading";
-import { MotionSlide } from "@/components/motion";
-import { getLocalTranslations } from "@/lib/get-local-translations";
+import { Heading } from "@/components/shared/heading";
+import { MotionSlide } from "@/components/shared/motion";
+import { getLocalTranslations } from "@/services/local-translations.service";
 import ProjectLoading from "./components/loading";
 import { ProjectItem } from "./components/project-item";
 import { useProjects } from "./hooks/use-projects";
