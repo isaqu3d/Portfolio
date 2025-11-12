@@ -3,7 +3,7 @@ import * as React from "react";
 import { type DialogProps } from "@radix-ui/react-dialog";
 import { Command as CommandPrimitive } from "cmdk";
 
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils/cn";
 import { BiSearch } from "react-icons/bi";
 import { Dialog, DialogContent } from "./command-dialog";
 

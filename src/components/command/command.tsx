@@ -12,7 +12,7 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "./components/command-menu";
+} from "./command-menu";
 
 type Groups = Array<{
   heading: string;

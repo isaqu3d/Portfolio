@@ -1,9 +1,9 @@
 "use client";
 
-import { GITHUB_API_URL } from "@/constants/github-api";
+import { GITHUB_API_URL } from "@/config/constants/github-api";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Skeleton } from "./skeleton";
+import { Skeleton } from "@/components/shared/skeleton";
 
 export function GitHubAvatar() {
   const [avatar, setAvatar] = useState<string | null>(null);

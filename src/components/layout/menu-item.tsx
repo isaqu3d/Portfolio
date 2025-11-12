@@ -1,7 +1,7 @@
 "use client";
 
-import { LINKS_ITEMS } from "@/constants/links-menu";
-import { getLocalTranslations } from "@/lib/get-local-translations";
+import { LINKS_ITEMS } from "@/config/constants/links-menu";
+import { getLocalTranslations } from "@/services/local-translations.service";
 import { Menu } from "@headlessui/react";
 import { useLocale } from "next-intl";
 import NextLink from "next/link";

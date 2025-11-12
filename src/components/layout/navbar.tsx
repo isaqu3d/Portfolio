@@ -2,13 +2,13 @@ import NextLink, { LinkProps } from "next/link";
 import { usePathname } from "next/navigation";
 import { IoLogoGithub } from "react-icons/io5";
 
-import { ButtonTheme } from "./button-theme";
-import { MotionHeader } from "./motion";
+import { ButtonTheme } from "@/components/theme/button-theme";
+import { MotionHeader } from "@/components/shared/motion";
 
-import { getLocalTranslations } from "@/lib/get-local-translations";
+import { getLocalTranslations } from "@/services/local-translations.service";
 
-import { LanguageSwitcher } from "./language-switcher";
-import Logo from "./logo";
+import { LanguageSwitcher } from "@/components/shared/language-switcher";
+import Logo from "@/components/shared/logo";
 import { MenuMobile } from "./menu-item";
 
 interface LinkItemProps extends LinkProps {
