@@ -1,9 +1,9 @@
 "use client";
 
-import { Translations } from "@/@types/types";
+import { Translations } from "@/types";
 import { ExperienceLoading } from "@/app/[locale]/work-experiences/components/loading";
-import { getLocalTranslations } from "@/lib/get-local-translations";
-import { getTranslations } from "@/lib/get-translations";
+import { getLocalTranslations } from "@/services/local-translations.service";
+import { getTranslations } from "@/services/translations.service";
 import { useLocale } from "next-intl";
 
 import { useQuery } from "@tanstack/react-query";
