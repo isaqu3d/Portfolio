@@ -15,10 +15,11 @@ import { Typewriter } from "@/components/typewriter";
 import { getLocalTranslations } from "@/lib/get-local-translations";
 import { getTranslations } from "@/lib/get-translations";
 import { useQuery } from "@tanstack/react-query";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function Home() {
   const locale = useLocale();
+  const t = useTranslations();
 
   const {
     data: translations,
@@ -31,10 +32,10 @@ export default function Home() {
     },
   });
 
-  if (isLoading) return <p>Loading...</p>;
-  if (error || !translations) return <p>Erro ao carregar dados.</p>;
-
   const { home, experiences } = getLocalTranslations(locale);
+
+  if (isLoading) return <p>{t("loading")}</p>;
+  if (error || !translations) return <p>{t("error")}</p>;
 
   return (
     <div className="max-w-2xl px-4">
