@@ -1,10 +1,10 @@
-import { GithubCalendar } from "@/components/github-calendar";
-import { Heading } from "@/components/heading";
-import { Motion } from "@/components/motion";
-import { SkillsCard } from "@/components/skills-card";
-import { getLocalTranslations } from "@/lib/get-local-translations";
-import { SKILLS_CARD } from "@/utils/skills-card";
-import { SKILLS_TOOLS } from "@/utils/skills-tools";
+import { GithubCalendar } from "@/components/github/github-calendar";
+import { Heading } from "@/components/shared/heading";
+import { Motion } from "@/components/shared/motion";
+import { SkillsCard } from "@/features/skills/components/skills-card";
+import { getLocalTranslations } from "@/services/local-translations.service";
+import { SKILLS_CARD } from "@/features/skills/utils/skills-card";
+import { SKILLS_TOOLS } from "@/features/skills/utils/skills-tools";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
