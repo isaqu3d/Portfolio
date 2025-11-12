@@ -1,0 +1,65 @@
+{
+  "home": {
+    "projects": {
+      "title": "Projetos"
+    },
+
+    "summary": {
+      "title": "Sobre mim",
+      "notFound": "Resumo não encontrado."
+    },
+
+    "biography": {
+      "title": "Biografia",
+      "notFound": "Biografia não encontrada."
+    },
+
+    "contact": {
+      "title": "Conecte-se comigo "
+    }
+  },
+
+  "projects": {
+    "title": "Projetos",
+    "notFound": {
+      "technologies": "Nenhuma tecnologia encontrada",
+      "images": "Nenhuma imagem encontrada",
+      "projects": "Nenhum projeto encontrado"
+    }
+  },
+
+  "experiences": {
+    "title": "Experiências",
+    "description": "Todas minhas experiências profissionais detalhadas para você!",
+    "presentLabel": "No momento",
+    "technologiesLabel": "Tecnologias",
+    "notFound": "Experiências não encontradas.",
+    "positionLevels": {
+      "junior": "Júnior",
+      "midLevel": "Pleno",
+      "senior": "Sênior",
+      "lead": "Lead"
+    }
+  },
+
+  "technicalSkills": {
+    "technologies": "Tecnologias",
+    "tools": "Ferramentas"
+  },
+
+  "navbar": {
+    "home": "Início",
+    "about": "Sobre mim",
+    "projects": "Projetos",
+    "experiences": "Experiências",
+    "skills": "Habilidades técnicas",
+    "code": "Código"
+  },
+
+  "typeWriter": {
+    "welcomeMessage": "Olá, bem-vindo ao meu portfólio",
+    "techEnthusiast": "Entusiasta de tecnologia",
+    "developer": "Sou um desenvolvedor Web e Mobile",
+    "frontend": "Front-end"
+  }
+}
