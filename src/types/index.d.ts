@@ -46,8 +46,33 @@ type Home = {
   biography: BiographyItem[];
 };
 
+type SkillCategory = "technology" | "tool" | "framework" | "language";
+type SkillProficiency = "beginner" | "intermediate" | "advanced" | "expert";
+
+type Skill = {
+  _id: string;
+  _createdAt: string;
+  _updatedAt: string;
+  name: string;
+  slug: {
+    current: string;
+    _type: string;
+  };
+  logo: StaticImageData;
+  category: SkillCategory;
+  description: {
+    pt: string;
+    en: string;
+  };
+  proficiency?: SkillProficiency;
+  color?: string;
+  order?: number;
+  featured?: boolean;
+};
+
 type Translations = {
   home?: Home;
   experiences?: Experiences[];
   projects?: Projects[];
+  skills?: Skill[];
 };
