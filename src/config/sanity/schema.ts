@@ -5,12 +5,14 @@ import experiences from "./types/experiences";
 import home from "./types/home";
 import projects from "./types/projects";
 import technology from "./types/technology";
+import skill from "./types/skill";
 
 export const schemaTypes = [
   projects,
   blockContent,
   experiences,
   technology,
+  skill,
   home,
   biography,
   translations,
