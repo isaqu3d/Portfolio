@@ -14,7 +14,7 @@ export function Typewriter() {
             `< ${t("typeWriter.welcomeMessage")}`,
             `< ${t("typeWriter.techEnthusiast")}`,
             `< ${t("typeWriter.developer")}`,
-            `< ${t("typeWriter.frontend")}`,
+            `< ${t("typeWriter.fullstack")} >`,
           ],
 
           autoStart: true,

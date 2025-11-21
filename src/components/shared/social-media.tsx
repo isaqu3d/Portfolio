@@ -1,20 +1,9 @@
-import { IoLogoGithub, IoLogoInstagram, IoLogoLinkedin } from "react-icons/io5";
 import { Button } from "@/components/ui/button";
+import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io5";
 
 export function SocialMedia() {
   return (
     <div>
-      <Button
-        variant="social"
-        size="md"
-        href="https://www.instagram.com/_isaque.s_/"
-        target="_blank"
-        className="font-bold"
-      >
-        <IoLogoInstagram />
-        Instagram
-      </Button>
-
       <Button
         variant="social"
         size="md"

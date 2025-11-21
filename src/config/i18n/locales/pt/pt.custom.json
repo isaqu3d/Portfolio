@@ -59,7 +59,7 @@
   "typeWriter": {
     "welcomeMessage": "Olá, bem-vindo ao meu portfólio",
     "techEnthusiast": "Entusiasta de tecnologia",
-    "developer": "Sou um desenvolvedor Web e Mobile",
-    "frontend": "Front-end"
+    "developer": "Sou um desenvolvedor Web, Mobile e Backend",
+    "fullstack": "Desenvolvedor Full-Stack"
   }
 }
