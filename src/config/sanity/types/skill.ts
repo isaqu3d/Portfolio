@@ -84,17 +84,7 @@ export default defineType({
         ],
       },
     },
-    {
-      title: "Color",
-      name: "color",
-      type: "string",
-      description: "Brand color of the technology (hex code)",
-      validation: (Rule) =>
-        Rule.regex(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/, {
-          name: "hex color",
-          invert: false,
-        }),
-    },
+
     {
       title: "Order",
       name: "order",
