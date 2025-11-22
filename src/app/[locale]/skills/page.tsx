@@ -1,10 +1,11 @@
 "use client";
 
+import { SkillCard } from "@/app/[locale]/skills/components/skill-card";
+import { SkillsSectionSkeleton } from "@/app/[locale]/skills/components/skill-card-skeleton";
+import { SkillModal } from "@/app/[locale]/skills/components/skill-modal";
 import { GithubCalendar } from "@/components/github/github-calendar";
 import { Heading } from "@/components/shared/heading";
 import { Motion } from "@/components/shared/motion";
-import { SkillCard } from "@/features/skills/components/skill-card";
-import { SkillModal } from "@/features/skills/components/skill-modal";
 import { getSkills } from "@/services/skills.service";
 import { Skill } from "@/types";
 import { useQuery } from "@tanstack/react-query";
@@ -47,8 +48,14 @@ export default function Skills() {
 
   if (isLoading) {
     return (
-      <div className="flex min-h-screen items-center justify-center">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-pink-500 border-t-transparent dark:border-teal-500" />
+      <div className="mx-auto max-w-3xl px-4 py-8">
+        <Motion>
+          <SkillsSectionSkeleton
+            title={t("technicalSkills.technologies")}
+            count={8}
+          />
+          <SkillsSectionSkeleton title={t("technicalSkills.tools")} count={6} />
+        </Motion>
       </div>
     );
   }
