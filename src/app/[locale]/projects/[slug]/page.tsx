@@ -4,13 +4,13 @@ import { MotionSlide } from "@/components/shared/motion";
 import NextLink from "next/link";
 import { BiChevronRight } from "react-icons/bi";
 
-import { Translations } from "@/types";
-import { Button } from "@/components/ui/button";
-import { Technology } from "@/features/skills/components/technology";
+import { Technology } from "@/components/shared/technology";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { urlFor } from "@/lib/sanity/url";
 import { getLocalTranslations } from "@/services/local-translations.service";
 import { getTranslations } from "@/services/translations.service";
-import { urlFor } from "@/lib/sanity/url";
+import { Translations } from "@/types";
 import { PortableText } from "@portabletext/react";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";

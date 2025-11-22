@@ -5,15 +5,15 @@ import { GlobeIcon } from "@radix-ui/react-icons/dist";
 import { BiChevronRight } from "react-icons/bi";
 import { MdOutlineWorkOutline } from "react-icons/md";
 
-import { Translations } from "@/types";
-import { Button } from "@/components/ui/button";
 import { GitHubAvatar } from "@/components/github/github-avatar";
 import { Heading } from "@/components/shared/heading";
 import { MotionSection, MotionSlide } from "@/components/shared/motion";
 import { SocialMedia } from "@/components/shared/social-media";
-import { Typewriter } from "@/features/home/components/typewriter";
+import { Typewriter } from "@/components/shared/typewriter";
+import { Button } from "@/components/ui/button";
 import { getLocalTranslations } from "@/services/local-translations.service";
 import { getTranslations } from "@/services/translations.service";
+import { Translations } from "@/types";
 import { useQuery } from "@tanstack/react-query";
 import { useLocale, useTranslations } from "next-intl";
 

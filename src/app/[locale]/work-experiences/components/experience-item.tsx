@@ -1,17 +1,18 @@
 "use client";
 
-import { Experiences } from "@/types";
-import { getLocalTranslations } from "@/services/local-translations.service";
 import { urlFor } from "@/lib/sanity/url";
-import formatDate from "@/features/experiences/utils/format-date";
 import { normalizeDescription } from "@/lib/utils/normalize-description";
+import { getLocalTranslations } from "@/services/local-translations.service";
+import { Experiences } from "@/types";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 
-import { Button } from "@/components/ui/button";
 import { MotionSection } from "@/components/shared/motion";
 import { ProgressBarExperience } from "@/components/shared/progressbar-experience";
-import { Technology } from "@/features/skills/components/technology";
+
+import { Technology } from "@/components/shared/technology";
+import { Button } from "@/components/ui/button";
+import formatDate from "@/lib/utils/format-date";
 import { useLocale } from "next-intl";
 
 type ExperienceItemProps = {
