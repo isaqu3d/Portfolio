@@ -2,8 +2,8 @@ import NextLink, { LinkProps } from "next/link";
 import { usePathname } from "next/navigation";
 import { IoLogoGithub } from "react-icons/io5";
 
-import { ButtonTheme } from "@/components/theme/button-theme";
 import { MotionHeader } from "@/components/shared/motion";
+import { ButtonTheme } from "@/components/theme/button-theme";
 
 import { getLocalTranslations } from "@/services/local-translations.service";
 
