@@ -1,8 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { useLocale, useTranslations } from "next-intl";
 import { GithubCalendar } from "@/components/github/github-calendar";
 import { Heading } from "@/components/shared/heading";
 import { Motion } from "@/components/shared/motion";
@@ -10,6 +7,9 @@ import { SkillCard } from "@/features/skills/components/skill-card";
 import { SkillModal } from "@/features/skills/components/skill-modal";
 import { getSkills } from "@/services/skills.service";
 import { Skill } from "@/types";
+import { useQuery } from "@tanstack/react-query";
+import { useLocale, useTranslations } from "next-intl";
+import { useState } from "react";
 
 export default function Skills() {
   const locale = useLocale();
@@ -38,16 +38,17 @@ export default function Skills() {
 
   // Group skills by category
   const technologies = skills.filter(
-    (skill) => skill.category === "technology" || skill.category === "language"
+    (skill) =>
+      skill.category === "technology" ||
+      skill.category === "language" ||
+      skill.category === "framework",
   );
-  const tools = skills.filter(
-    (skill) => skill.category === "tool" || skill.category === "framework"
-  );
+  const tools = skills.filter((skill) => skill.category === "tool");
 
   if (isLoading) {
     return (
       <div className="flex min-h-screen items-center justify-center">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-pink-500 border-t-transparent dark:border-teal-500"></div>
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-pink-500 border-t-transparent dark:border-teal-500" />
       </div>
     );
   }
@@ -65,13 +66,13 @@ export default function Skills() {
   }
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8">
+    <div className="mx-auto max-w-3xl px-4 py-8">
       <Motion>
         {/* Technologies Section */}
         {technologies.length > 0 && (
           <section className="mb-12">
             <Heading>{t("technicalSkills.technologies")}</Heading>
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4">
               {technologies.map((skill, index) => (
                 <SkillCard
                   key={skill._id}
